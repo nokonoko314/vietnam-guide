@@ -1,0 +1,16 @@
+{
+  "name": "ベトナム研修 完全ガイド",
+  "short_name": "ベトナム研修",
+  "description": "岐阜高専 ベトナム研修（2026/11/10-14）のしおり・持ち物チェッカー・現地情報",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#111111",
+  "theme_color": "#111111",
+  "icons": [
+    {"src": "icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "icon-512.png", "sizes": "512x512", "type": "image/png"},
+    {"src": "icon-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable"}
+  ]
+}

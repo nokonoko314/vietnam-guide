@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#111111">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ベトナム研修">
+<script>window.__PWA__=true;window.__NOPDF__=true;</script>
+
+<title>ベトナム研修 完全ガイド</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<script>try{var t=localStorage.getItem("vn-guide-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
+<style>
+:root{--bg:#f4f4f1;--panel:#fff;--panel2:#f8f8f6;--ink:#141414;--sub:#6a6a66;--line:#e6e5e0;--line2:#d4d3cd;--red:#d6312b;--yel:#f2c230;--blue:#1f5fbf;--ok:#128a5e;--chip:#f2f2ef;--top:#111;--hero:#121212;--never:#fff7f5;--neverl:#f2d6d1;--sh:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.04);--tgc-b:#e6eefb;--tgc-c:#1f4f8f;--tgo-b:#f3eee3;--tgo-c:#7a6440;--tga-b:#fde6e1;--tga-c:#a8361a;--my:#e6f5ee;--myl:#bfe3d2;--myc:#0b6b48;--mn:#fff0ee;--mnl:#f3cbc6;--mnc:#a12620;--ill:#f3f1ea;--mark:#ffe58a;color-scheme:light}
+[data-theme=dark]{--bg:#0e0e0d;--panel:#171716;--panel2:#1d1d1b;--ink:#ecebe7;--sub:#9b9a94;--line:#282826;--line2:#3a3a37;--red:#ff5d52;--blue:#79adff;--ok:#41d197;--chip:#222220;--top:#090909;--hero:#1a1a19;--never:#1f1514;--neverl:#3e2421;--sh:0 1px 0 rgba(255,255,255,.02);--tgc-b:#1b2a43;--tgc-c:#a5c6ff;--tgo-b:#2d281d;--tgo-c:#dcc595;--tga-b:#3a1c18;--tga-c:#ffa596;--my:#12291f;--myl:#1f4a37;--myc:#7fe0b4;--mn:#2c1614;--mnl:#4d2420;--mnc:#ff9b8f;--ill:#e9e6dc;--mark:#6b5a12;color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{margin:0}
+body{background:var(--bg);color:var(--ink);font-family:"Inter","IBM Plex Sans JP",system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:14.5px;line-height:1.65;transition:background .2s,color .2s;font-feature-settings:"palt" 1}
+a{color:var(--blue);text-decoration:none}a:hover{text-decoration:underline}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:2px;border-radius:6px}
+::selection{background:var(--yel);color:#111}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;padding-top:env(safe-area-inset-top)!important;height:calc(58px + env(safe-area-inset-top))!important;padding-left:max(14px,env(safe-area-inset-left))!important;background:var(--top);color:#fff;display:flex;align-items:center;gap:10px;padding:0 14px;height:58px;border-bottom:1px solid #ffffff10}
+.burger{width:40px;height:40px;border:none;background:none;cursor:pointer;display:grid;place-content:center;gap:5px;padding:0;flex:none;border-radius:10px}
+.burger:hover{background:#ffffff14}
+.burger i{display:block;width:20px;height:2px;background:#fff;border-radius:2px}
+.brand{font:800 14.5px Inter;letter-spacing:.04em;white-space:nowrap;color:#fff}
+.brand b{color:var(--yel)}
+.tabs{display:flex;gap:2px;overflow-x:auto;scrollbar-width:none;flex:1;margin-left:6px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 12px,#000 calc(100% - 24px),transparent);mask-image:linear-gradient(90deg,transparent 0,#000 12px,#000 calc(100% - 24px),transparent);padding:0 12px}
+.tabs::-webkit-scrollbar{display:none}
+.tabs a{color:#a9a9a4;padding:7px 11px;border-radius:9px;font-size:13px;white-space:nowrap;font-weight:500;transition:.15s}
+.tabs a:hover{color:#fff;text-decoration:none;background:#ffffff12}
+.tabs a.on{color:#111;background:#fff}
+.tools{display:flex;gap:4px;align-items:center;flex:none}
+.tb{height:36px;min-width:36px;padding:0 10px;border:1px solid #ffffff1f;background:#ffffff0d;color:#eee;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;font-size:12.5px;white-space:nowrap}
+.tb:hover{background:#ffffff1f}
+.tb kbd{font:600 10.5px Inter;color:#999;border:1px solid #ffffff26;border-radius:4px;padding:0 4px}
+.tb svg{width:16px;height:16px}
+.cd{font:600 11.5px Inter;color:#a9a9a4;white-space:nowrap;padding-left:6px}
+@media(max-width:1100px){.cd{display:none}.tb kbd{display:none}}
+@media(max-width:760px){.tabs{display:none}.brand{flex:1}.tb .lb{display:none}}
+/* drawer */
+.scrim{position:fixed;inset:0;background:#0008;z-index:30;opacity:0;pointer-events:none;transition:.2s;backdrop-filter:blur(2px)}
+.scrim.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;left:0;bottom:0;width:min(340px,86vw);background:#111;color:#fff;z-index:31;transform:translateX(-100%);transition:transform .25s cubic-bezier(.2,.8,.2,1);padding:20px 14px;overflow:auto;display:flex;flex-direction:column}
+.drawer.show{transform:none}
+.drawer h3{font:600 10.5px Inter;letter-spacing:.18em;color:#777;margin:8px 10px 10px}
+.drawer nav a{display:flex;gap:12px;align-items:center;color:#e8e8e8;padding:10px 10px;border-radius:10px;font-size:14px}
+.drawer nav a:hover,.drawer nav a.on{background:#ffffff14;text-decoration:none}
+.drawer nav a.on{box-shadow:inset 3px 0 0 var(--red)}
+.drawer .no{font:600 11px Inter;color:#777;width:20px}
+.drawer .ds{font-size:11px;color:#888;display:block;margin-top:-2px}
+.drawer .close{position:absolute;right:12px;top:12px;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;width:36px;height:36px;border-radius:10px}
+.drawer .close:hover{background:#ffffff14}
+.dfoot{margin-top:auto;padding:14px 10px 4px;border-top:1px solid #ffffff14;display:flex;gap:8px;flex-wrap:wrap}
+.dfoot .tb{flex:1;justify-content:center}
+/* main */
+main{max-width:1440px;margin:0 auto;padding:26px 28px 80px}
+.view{animation:fade .22s ease}
+@keyframes fade{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.vh{display:flex;align-items:flex-end;gap:18px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.vh .num{font:800 12px Inter;color:var(--red);letter-spacing:.12em;width:100%;margin-bottom:-12px}
+.vh h1{font-size:28px;margin:0;font-weight:800;letter-spacing:-.01em;line-height:1.25}
+.vh .lead{color:var(--sub);font-size:13px;flex:1;min-width:240px}
+.pg{display:inline-flex;align-items:center;font:700 10.5px/1 Inter;background:var(--ink);color:var(--panel);border-radius:5px;padding:3px 6px;cursor:pointer;white-space:nowrap;vertical-align:2px;transition:.15s;letter-spacing:.02em}
+.pg:hover{background:var(--red);color:#fff}.pg.nolink{cursor:default}.pg.nolink:hover{background:var(--ink);color:var(--panel)}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(310px,1fr))}
+.grid.g4{grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.gap{margin-top:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;box-shadow:var(--sh);transition:border-color .15s}
+.card h2{font-size:15.5px;margin:0 0 10px;font-weight:700;display:flex;gap:10px;align-items:center;line-height:1.35}
+.card h2 .k{font:800 10.5px Inter;letter-spacing:.14em;color:var(--red);flex:none}
+.card p{margin:6px 0}
+.card ul,.card ol{margin:6px 0;padding-left:20px}
+.card li{margin:4px 0}
+.card li::marker{color:var(--sub)}
+.big{font:800 32px/1.05 Inter;letter-spacing:-.02em;margin:2px 0 8px}
+.big small{font-size:13px;font-weight:600;color:var(--sub);margin-left:4px;letter-spacing:0}
+.muted{color:var(--sub);font-size:12.5px}
+.src{margin-top:12px;display:flex;gap:6px;flex-wrap:wrap;font-size:11.5px}
+.src a{background:var(--chip);border:1px solid var(--line);border-radius:7px;padding:2px 8px;color:var(--ink);opacity:.85}
+.src a:hover{border-color:var(--ink);text-decoration:none;opacity:1}
+.src a:before{content:"↗ ";color:var(--sub)}
+.warn{border-left:3px solid var(--red)}
+.span2{grid-column:span 2}
+.flash{animation:flash 1.6s ease}
+@keyframes flash{0%,30%{box-shadow:0 0 0 3px var(--yel)}100%{box-shadow:var(--sh)}}
+@media(max-width:760px){.span2{grid-column:auto}main{padding:18px 14px 80px}.vh h1{font-size:23px}}
+/* home */
+.hero{background:var(--hero);color:#fff;border-radius:22px;padding:30px 32px;display:grid;grid-template-columns:1.3fr 1fr;gap:28px;margin-bottom:16px;position:relative;overflow:hidden;border:1px solid #ffffff10}
+.hero:after{content:"★";position:absolute;right:-18px;bottom:-74px;font-size:260px;color:var(--red);line-height:1;z-index:0;opacity:.95}
+.hero>*{position:relative;z-index:2}
+.hero h1{font-size:34px;margin:6px 0 10px;font-weight:800;line-height:1.2;letter-spacing:-.01em}
+.hero .eb{font:700 10.5px Inter;letter-spacing:.2em;color:var(--yel)}
+.hero .sub{color:#c9c9c4;font-size:13px}
+.hero .facts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;align-content:center}
+.hero .f{background:#222;border:1px solid #ffffff12;border-radius:14px;padding:12px 14px}
+.hero .f b{display:block;font:800 21px Inter;letter-spacing:-.01em}
+.hero .f span{font-size:11.5px;color:#aaa}
+@media(max-width:860px){.hero{grid-template-columns:1fr;padding:24px}.hero h1{font-size:28px}}
+.next{display:flex;gap:16px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:14px 18px;margin-bottom:16px;box-shadow:var(--sh);flex-wrap:wrap}
+.next .lab{font:800 10.5px Inter;letter-spacing:.14em;color:var(--red)}
+.next .when{font:800 20px Inter;letter-spacing:-.01em}
+.next .what{font-weight:600}
+.next .rest{margin-left:auto;font:600 12.5px Inter;color:var(--sub)}
+.homegrid{display:grid;grid-template-columns:2fr 1fr;gap:16px}
+@media(max-width:980px){.homegrid{grid-template-columns:1fr}}
+.toc{display:grid;gap:12px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.toc a{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;color:var(--ink);display:flex;flex-direction:column;gap:4px;min-height:112px;transition:.15s;box-shadow:var(--sh)}
+.toc a:hover{border-color:var(--ink);text-decoration:none;transform:translateY(-2px)}
+.toc .n{font:800 11.5px Inter;color:var(--red)}
+.toc .t{font-weight:700;font-size:15px}
+.toc .d{font-size:12px;color:var(--sub)}
+.mini .bar{margin:8px 0 6px}
+@media(max-width:520px){.toc{grid-template-columns:1fr 1fr;gap:10px}.toc a{min-height:96px;padding:13px}.toc .d{font-size:11px}.hero .eb{font-size:9.5px;letter-spacing:.12em}}
+/* timeline */
+.days{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(270px,1fr);gap:14px;overflow-x:auto;padding:2px 2px 10px;scroll-snap-type:x mandatory}
+.day{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 18px;scroll-snap-align:start;box-shadow:var(--sh)}
+.day.today{border:2px solid var(--red)}
+.day .dh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:2px solid var(--ink);padding-bottom:8px;margin-bottom:8px}
+.day .dh b{font:800 22px Inter;letter-spacing:-.01em}
+.day .dh small{font-size:12px;color:var(--sub);font-weight:600;margin-left:3px}
+.day .dh span{font-size:12px;color:var(--sub)}
+.ev{display:grid;grid-template-columns:54px 1fr;gap:8px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.ev:last-of-type{border-bottom:none}
+.ev .t{font:700 12.5px Inter;font-variant-numeric:tabular-nums}
+.ev.past{opacity:.45}
+.meal{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.meal span{font-size:11.5px;padding:2px 9px;border-radius:99px;background:var(--chip);border:1px solid var(--line)}
+.meal span.y{background:var(--my);border-color:var(--myl);color:var(--myc)}
+.meal span.n{background:var(--mn);border-color:var(--mnl);color:var(--mnc)}
+.stay{margin-top:8px;font-size:12px;color:var(--sub)}
+.stay.alert{color:var(--mnc)}
+/* checklist */
+.ck-top{position:sticky;top:58px;z-index:5;display:flex;align-items:center;gap:12px;flex-wrap:wrap;background:color-mix(in srgb,var(--panel) 92%,transparent);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:16px;padding:12px 16px;margin-bottom:16px;box-shadow:var(--sh)}
+.bar{flex:1;min-width:160px;height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--ink),var(--ink));border-radius:99px;transition:width .35s cubic-bezier(.2,.8,.2,1)}
+.bar.full i{background:var(--ok)}
+.pct{font:800 22px Inter;min-width:60px;text-align:right;font-variant-numeric:tabular-nums}
+.btn{border:1px solid var(--line2);background:var(--panel);color:var(--ink);border-radius:10px;padding:7px 12px;font:inherit;font-size:12.5px;cursor:pointer;transition:.15s;white-space:nowrap}
+.btn:hover{border-color:var(--ink)}
+.btn.on{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.save{font-size:11.5px;color:var(--sub)}
+.save.ok{color:var(--ok)}
+.filters{display:flex;gap:6px;flex-wrap:wrap;margin:-4px 0 14px}
+.chipf{border:1px solid var(--line2);background:var(--panel);color:var(--ink);border-radius:99px;padding:4px 12px;font-size:12px;cursor:pointer}
+.chipf.on{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.cols{columns:3 330px;column-gap:16px}
+.cols .card{break-inside:avoid;margin-bottom:16px;padding:0;overflow:hidden}
+.cols .card .ch{padding:14px 16px 4px;display:flex;align-items:center;gap:8px}
+.cols .card .ch h2{margin:0;flex:1}
+.cols .card .ch .n{font:700 12px Inter;color:var(--sub);font-variant-numeric:tabular-nums}
+.cols .card .ch .n.full{color:var(--ok)}
+.cols .card .cd2{padding:0 16px 10px;font-size:12px;color:var(--sub)}
+.card.research{border:2px solid var(--ink)}
+.card.never{background:var(--never);border-color:var(--neverl)}
+.it{display:flex;gap:10px;padding:10px 16px;border-top:1px solid var(--line);cursor:pointer;align-items:flex-start;transition:background .12s}
+.it:hover{background:var(--panel2)}
+.it input{appearance:none;-webkit-appearance:none;flex:none;width:20px;height:20px;border:1.8px solid var(--line2);border-radius:6px;margin:1px 0 0;display:grid;place-content:center;background:var(--panel);cursor:pointer;transition:.15s}
+.it input:checked{background:var(--ink);border-color:var(--ink)}
+.it input:checked:after{content:"";width:5px;height:10px;border:solid var(--panel);border-width:0 2.2px 2.2px 0;transform:rotate(45deg) translate(-1px,-1px)}
+.it .tx{flex:1;min-width:0}
+.it .nm{font-size:13.5px;font-weight:500}
+.it.done .nm{color:var(--sub);text-decoration:line-through;text-decoration-color:var(--line2)}
+.it .nt{font-size:12px;color:var(--sub);margin-top:1px}
+.tg{display:inline-block;font-size:10.5px;padding:0 6px;border-radius:4px;margin:4px 4px 0 0;font-weight:600}
+.tg.carry{background:var(--tgc-b);color:var(--tgc-c)}.tg.opt{background:var(--tgo-b);color:var(--tgo-c)}.tg.alert{background:var(--tga-b);color:var(--tga-c)}
+.it .src{margin-top:5px}
+.del{border:none;background:none;color:var(--sub);font-size:16px;cursor:pointer}
+.hid{border:1px solid var(--line);background:var(--panel);color:var(--sub);font:inherit;font-size:11px;border-radius:6px;padding:1px 7px;cursor:pointer;flex:none;opacity:.5;transition:.15s}
+.it:hover .hid{opacity:1}.hid:hover{border-color:var(--red);color:var(--red)}
+@media(hover:none){.hid{opacity:.8}}
+.hide-done .it.done,.f-todo .it.done,.f-carry .it:not([data-tg~="carry"]),.f-alert .it:not([data-tg~="alert"]){display:none}
+.hiddenc{background:var(--panel2)}
+.hiddenc .it{cursor:default;align-items:center}
+.add{display:flex;gap:8px;padding:12px 16px;border-top:1px solid var(--line)}
+.add input,.add select{font:inherit;font-size:13px;border:1px solid var(--line2);border-radius:9px;background:var(--panel);color:var(--ink)}
+.add input{flex:1;min-width:0;padding:7px 10px}
+.add select{max-width:42%;padding:0 6px}
+/* tables */
+table{width:100%;border-collapse:collapse;font-size:13px}
+th,td{text-align:left;padding:8px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;color:var(--sub);font-weight:600;letter-spacing:.04em}
+tr:last-child td{border-bottom:none}
+.vn{font-weight:700}
+.kana{color:var(--sub);font-size:12px}
+/* food */
+.dish{display:flex;flex-direction:column}
+.dish .ill{position:relative;background:var(--ill);border-radius:12px;margin:-6px -8px 12px;padding:6px 10px;height:150px;display:flex;align-items:center;justify-content:center}
+.dish .ill.photo{padding:0;overflow:hidden;height:190px;background:#222}.dish .ill.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}.dish:hover .ill.photo img{transform:scale(1.04)}.dish .credit{font-size:10.5px;color:var(--sub);margin:-6px 0 8px}.dish .credit a{color:var(--sub);text-decoration:underline}.dish .ill svg{height:100%;width:auto;max-width:100%}
+.dish .cat{position:absolute;left:10px;top:9px;font:700 10.5px Inter;background:#141414;color:#fff;border-radius:5px;padding:1px 7px}
+.dish .meta{display:flex;gap:6px;flex-wrap:wrap;font-size:11.5px;margin:2px 0 6px}
+.dish .meta span{background:var(--chip);border:1px solid var(--line);border-radius:99px;padding:1px 8px}
+.dish .src{margin-top:auto;padding-top:10px}
+.food .vnn{font:700 12px Inter;color:var(--red);letter-spacing:.03em}
+/* pdf */
+.pdfwrap{display:grid;grid-template-columns:132px 1fr;gap:14px;height:calc(100vh - 200px);min-height:480px}
+.thumbs{overflow:auto;display:flex;flex-direction:column;gap:8px;padding-right:4px}
+.thumbs button{border:2px solid transparent;border-radius:9px;padding:0;background:#fff;cursor:pointer;position:relative;flex:none}
+.thumbs button.on{border-color:var(--red)}
+.thumbs img{width:100%;display:block;border-radius:7px}
+.thumbs span{position:absolute;left:4px;top:4px;font:700 10px Inter;background:#141414;color:#fff;border-radius:4px;padding:0 5px}
+.viewer{background:#262624;border-radius:16px;overflow:auto;display:flex;flex-direction:column;align-items:center;padding:18px}
+.viewer img{max-width:100%;height:auto;box-shadow:0 8px 30px #0007;background:#fff;border-radius:2px}
+.vbar{display:flex;gap:8px;align-items:center;margin-bottom:12px;flex-wrap:wrap}
+.vbar .lbl{font:700 13px Inter;min-width:70px;text-align:center;font-variant-numeric:tabular-nums}
+@media(max-width:760px){.pdfwrap{grid-template-columns:1fr;height:auto}.thumbs{flex-direction:row;overflow-x:auto;height:112px}.thumbs button{flex:0 0 74px}}
+/* overlays */
+.modal{position:fixed;inset:0;background:#0008;display:none;align-items:center;justify-content:center;z-index:40;padding:20px}
+.modal.show{display:flex}
+.modal .box{background:var(--panel);color:var(--ink);border-radius:16px;padding:22px;max-width:360px;border:1px solid var(--line)}
+.modal .acts{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+.sov{position:fixed;inset:0;background:#000a;z-index:45;display:none;justify-content:center;align-items:flex-start;padding:10vh 16px 16px;backdrop-filter:blur(3px)}
+.sov.show{display:flex}
+.sbox{width:min(700px,100%);background:var(--panel);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px #0006;overflow:hidden;display:flex;flex-direction:column;max-height:76vh}
+.sin{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line)}
+.sin svg{width:18px;height:18px;color:var(--sub);flex:none}
+.sin input{flex:1;border:none;background:none;color:var(--ink);font:500 17px "Inter","IBM Plex Sans JP",sans-serif;outline:none}
+.sin kbd{font:600 10.5px Inter;color:var(--sub);border:1px solid var(--line2);border-radius:5px;padding:1px 6px}
+.sres{overflow:auto;padding:8px}
+.sr{display:block;width:100%;text-align:left;border:none;background:none;color:var(--ink);padding:10px 12px;border-radius:10px;cursor:pointer;font:inherit}
+.sr:hover,.sr.sel{background:var(--panel2)}
+.sr .sv{font:700 10.5px Inter;color:var(--red);letter-spacing:.06em}
+.sr .st{font-weight:700;font-size:14px}
+.sr .ss{font-size:12.5px;color:var(--sub);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
+.sempty{padding:22px;color:var(--sub);font-size:13px;text-align:center}
+.shint{display:flex;gap:6px;flex-wrap:wrap;padding:4px 12px 12px}
+.conv{position:fixed;top:66px;right:14px;z-index:42;width:min(360px,calc(100vw - 28px));background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:18px;box-shadow:0 20px 60px #0005;padding:18px;display:none}
+.conv.show{display:block;animation:fade .18s}
+.conv h3{margin:0 0 12px;font-size:14px;display:flex;justify-content:space-between;align-items:center}
+.conv h3 button{border:none;background:none;color:var(--sub);font-size:18px;cursor:pointer}
+.cv{display:flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:12px;padding:8px 12px;margin-bottom:8px;background:var(--panel2)}
+.cv input{flex:1;min-width:0;border:none;background:none;color:var(--ink);font:800 22px Inter;outline:none;font-variant-numeric:tabular-nums}
+.cv span{font:700 13px Inter;color:var(--sub)}
+.swap{display:block;margin:-2px auto 6px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);border-radius:99px;width:30px;height:30px;cursor:pointer}
+.qk{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.qk button{border:1px solid var(--line2);background:var(--panel);color:var(--ink);border-radius:99px;padding:3px 10px;font:600 12px Inter;cursor:pointer}
+.qk button:hover{border-color:var(--ink)}
+.rate{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--sub);margin-top:8px}
+.rate input{width:70px;border:1px solid var(--line2);border-radius:7px;padding:3px 6px;background:var(--panel);color:var(--ink);font:600 12px Inter}
+.cvbig{font-size:12px;color:var(--sub);margin-top:2px}
+.totop{position:fixed;right:18px;bottom:18px;z-index:15;width:44px;height:44px;border-radius:99px;border:1px solid var(--line2);background:var(--panel);color:var(--ink);box-shadow:var(--sh);cursor:pointer;opacity:0;pointer-events:none;transition:.2s;font-size:18px}
+.totop.show{opacity:1;pointer-events:auto}
+.srclist{columns:2 380px;column-gap:24px;font-size:13px;margin:0;padding-left:18px}
+.srclist li{break-inside:avoid;margin:5px 0}
+footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+.toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--panel);padding:9px 16px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:50}
+.toast.show{opacity:1;transform:translateX(-50%)}
+@media print{.top,.drawer,.scrim,.totop,.conv,.sov,.ck-top button{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header class="top">
+ <button class="burger" id="burger" aria-label="目次を開く" title="目次"><i></i><i></i><i></i></button>
+ <a class="brand" href="#home" style="text-decoration:none">VIETNAM <b>★</b> GUIDE</a>
+ <nav class="tabs" id="tabs"></nav>
+ <div class="tools">
+  <button class="tb" id="sBtn" title="ページ内検索（/ または ⌘K）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span class="lb">検索</span><kbd>/</kbd></button>
+  <button class="tb" id="cBtn" title="ドン⇄円 換算"><b style="font:800 12px Inter">₫⇄¥</b><span class="lb">換算</span></button>
+  <button class="tb" id="tBtn" title="ダークモード切替" aria-label="ダークモード切替"><span id="tIcon">◐</span></button>
+  <div class="cd" id="cd"></div>
+ </div>
+</header>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer"><button class="close" id="dclose" aria-label="閉じる">×</button><h3>CONTENTS</h3><nav id="dnav"></nav><div class="dfoot"><button class="tb" id="dS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg> 検索</button><button class="tb" id="dC">₫⇄¥ 換算</button><button class="tb" id="dT">◐ テーマ</button></div></aside>
+<main id="main"></main>
+<script id="seed" type="application/json">{}</script>
+<div class="sov" id="sov"><div class="sbox" role="dialog" aria-label="ページ内検索"><div class="sin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="sq" placeholder="キーワードで全ページを検索（例：両替、Wi-Fi、p.6、フォー）" autocomplete="off"><kbd>Esc</kbd></div><div class="sres" id="sres"></div></div></div>
+<div class="conv" id="conv" role="dialog" aria-label="ドン円換算"><h3>₫ ⇄ ¥ 換算<button id="cClose" aria-label="閉じる">×</button></h3>
+ <div class="cv"><input id="cvV" inputmode="numeric" placeholder="0"><span>₫</span></div>
+ <button class="swap" id="cvSw" title="入れ替え">⇅</button>
+ <div class="cv"><input id="cvY" inputmode="numeric" placeholder="0"><span>円</span></div>
+ <div class="cvbig" id="cvHint"></div>
+ <div class="qk" id="cvQ"><button data-v="10000">1万₫</button><button data-v="50000">5万₫</button><button data-v="100000">10万₫</button><button data-v="200000">20万₫</button><button data-v="500000">50万₫</button></div>
+ <div class="rate">レート 1円 = <input id="cvR" inputmode="decimal"> ₫ <button class="btn" id="cvRR" style="padding:2px 8px">163に戻す</button></div>
+ <div class="muted" style="margin-top:6px">初期値は2026/11/3時点の約163₫。両替所のレートに合わせて変えられます。暗算は「下3桁を取って×6」。</div>
+</div>
+<button class="totop" id="totop" aria-label="ページ上部へ">↑</button>
+<div class="toast" id="toast"></div>
+<div class="modal" id="modal"><div class="box"><div>チェック・追加した項目・外した項目をすべて元に戻しますか？</div><div class="acts"><button class="btn" id="mno">やめる</button><button class="btn on" id="myes">リセット</button></div></div></div>
+<script>
+(function(){
+"use strict";
+var NPAGES=23;
+/* ---------- sources ---------- */
+var S={
+ newt11:["NEWT 11月の気温","https://newt.net/vnm/mag-376764556"],
+ time:["地球の歩き方 時差","https://www.arukikata.co.jp/areainfo/vn-time/"],
+ vietjo:["VIETJO 通貨・レート","https://www.viet-jo.com/home/currency_list.php"],
+ hay:["両替所レート比較 2026","https://www.hay0930.com/entry/2026/08/29/131243"],
+ veltraC:["VELTRA ドン換算","https://www.veltra.com/jp/yokka/article/vietnam-currency/"],
+ plug:["地球の歩き方 コンセント","https://www.arukikata.co.jp/areainfo/vn-plug/"],
+ newtPlug:["NEWT コンセント","https://newt.net/mag/4096173334"],
+ rurubu:["るるぶ 水・トイレ","https://rurubu.jp/andmore/article/18547?page=3"],
+ tip:["All About チップ事情","https://allabout.co.jp/gm/gc/442713/"],
+ cross:["vietnamtourism 道路横断","https://www.vietnamtourism.com/ja/crossing-the-street-in-vietnam-the-real-technique-nobody"],
+ grab:["trifa Grab","https://www.trifa.co/ja/column/preparation-tips-travel/vietnam-grab"],
+ grab2:["vietnamtourism Grab","https://www.vietnamtourism.com/ja/does-grab-work-in-vietnam-complete-guide-2026"],
+ cons:["在ホーチミン総領事館","https://www.hcmcgj.vn.emb-japan.go.jp/files/000138237.pdf"],
+ ascii:["ASCII スマホ盗難対策","https://weekly.ascii.jp/elem/000/004/151/4151073/2/"],
+ mhlw:["厚労省 デング熱","https://www.mhlw.go.jp/content/10900000/000447574.pdf"],
+ ichi:["一宮市 デング熱","https://www.city.ichinomiya.aichi.jp/_res/projects/default_project/_page_/001/057/370/denpos.pdf"],
+ food:["Vietnam.travel 名物料理","https://vietnam.travel/jp/things-to-do/explore-delicious-dishes-ho-chi-minh-city/"],
+ food2:["Vietnam.travel ローカルフード","https://vietnam.travel/jp/things-to-do/eating-local-hcmc"],
+ sky:["skygate ホーチミングルメ","https://www.skygate.co.jp/guide/6452/"],
+ trv:["trvlogue ベトナム料理","https://www.trvlogue.com/ja/vietnamese-food-guide-must-try-dishes"],
+ cath:["4travel サイゴン大教会","https://4travel.jp/os_shisetsu/10336379"],
+ cath2:["Saigoneer 改修延長","https://saigoneer.com/saigon-news/25698-saigon-extends-notre-dame-cathedral-renovation-by-4-years-to-2027"],
+ post:["ベトナム航空 中央郵便局","https://www.vietnamairlines.com/jp/ja/plan-book/travel/travel-guide/saigon-central-post"],
+ post2:["VietJet 中央郵便局","https://www.vietjetair.com/ja/destinations/ho-chi-minh-city/%E3%82%B5%E3%82%A4%E3%82%B4%E3%83%B3%E4%B8%AD%E5%A4%AE%E9%83%B5%E4%BE%BF%E5%B1%80"],
+ ben:["VELTRA ベンタイン市場","https://www.veltra.com/jp/yokka/article/vietnam-benthan-market/"],
+ ben2:["現代ビジネス ベンタイン市場","https://gendai.media/articles/-/62189"],
+ phr:["Vietnam.travel フレーズ","https://vietnam.travel/jp/node/59"],
+ hotel:["KAYAK Bong Sen Hotel","https://www.il.kayak.com/Ho-Chi-Minh-City-Hotels-Bong-Sen-Sai-Gon-Hotel.87180.ksp"],
+ toko:["まっぷる 常滑","https://www.mapple.net/region/a0403050100_g04000000_s-situation=one/spot/"],
+ toko2:["Aichi Now 常滑","https://aichinow.pref.aichi.jp/modelcourse/detail/6/"],
+ ct:["Cao Thang 公式","https://caothang.edu.vn/en/about.html"],
+ ct2:["SGGP 119周年","https://en.sggp.org.vn/119-year-old-vocational-education-institution-in-hcmc-opens-new-academic-year-post120091.html"],
+ ct3:["SGGP 歴史","https://sggpnews.org.vn/education/first-threeyear-school-receives-abet-accreditation-78763.html"],
+ saily:["Saily 持ち物","https://saily.com/ja/blog/vietnam-travel-essentials/"],
+ holaP:["Holafly コンセント","https://esim.holafly.com/ja/guides-travel/vietnam-plug-types/"],
+ holaL:["Holafly 持ち物","https://esim.holafly.com/ja/guides-travel/vietnam-travel-packing-list/"],
+ newtL:["NEWT 持ち物","https://newt.net/vnm/mag-438554193"],
+ tabireg:["たびレジ（外務省）","https://www.ezairyu.mofa.go.jp/tabireg/index.html"],
+ customs:["税関 免税範囲","https://www.customs.go.jp/kaigairyoko/menzei.htm"],
+ commons:["Wikimedia Commons（料理写真）","https://commons.wikimedia.org/"],
+ cath3:["トラベルコ 大教会","https://www.tour.ne.jp/w_review/SGN/sightseeing/spot/111221/"],
+ aruP:["地球の歩き方 機内グッズ","https://www.arukikata.co.jp/webmagazine/329577/"],
+ jalL:["JAL 持ち物リスト","https://www.jal.co.jp/jp/ja/other/content/inter-travel-items/"],
+ trvl:["トラベリスト 機内グッズ","https://travelist.jp/column/cat_01/airplane-goods-sa10.html"],
+ trvl2:["トラベリスト 機内の乾燥","https://travelist.jp/column/?p=2292"],
+ aaDry:["All About 機内の乾燥","https://allabout.co.jp/gm/gc/451953/"],
+ mfSlip:["マネーフォワード 機内の履物","https://media.moneyforward.com/articles/10823"],
+ docomo:["ドコモ 海外の持ち物","https://www.docomo.ne.jp/service/world/roaming/column/001_overseas_belongings/"],
+ native:["ネイティブキャンプ 便利グッズ","https://nativecamp.net/blog/20250827_study_abroad_pass"],
+ gmap:["ライフハッカー オフライン地図","https://www.lifehacker.jp/article/2406-googkemap-offline/"],
+ trifaP:["trifa 持ち物","https://www.trifa.co/ja/column/overseas-travel-essentials/overseas-travel-packing"],
+ jalKey:["JAL 必須の持ち物20","https://skywardplus.jal.co.jp/plus_one/other/travel_checklist_inter/"],
+ aruF:["地球の歩き方 ホーチミンの名店","https://www.arukikata.co.jp/webmagazine/235669/"],
+ aruM:["地球の歩き方 料理10選とマナー","https://www.arukikata.co.jp/webmagazine/378792/"],
+ hutieu:["vietnamtourism フーティウ","https://www.vietnamtourism.com/ja/hu-tieu-the-southern-noodle-soup-that-is-not-pho"],
+ gendaiN:["現代ビジネス ベトナムの麺","https://gendai.media/articles/-/62076"],
+ vtBud:["vietnamtourism 2026年の予算","https://www.vietnamtourism.com/ja/vietnam-on-a-backpacker-budget-costs-routes-and-money-saving"],
+ tvt:["テレ東プラス 地域の麺料理","https://www.tv-tokyo.co.jp/plus/gourmet/entry/2020/021042.html"],
+ veltraF:["VELTRA 食べ歩きツアー","https://www.veltra.com/jp/asia/vietnam/ho_chi_minh/a/186067"],
+ vnaCath:["ベトナム航空 大教会とカフェ","https://www.vietnamairlines.com/jp/ja/plan-book/travel/travel-guide/notre-dame-cathedral-of-sai-gon"],
+ vtOrd:["vietnamtourism 注文のしかた","https://www.vietnamtourism.com/ja/how-to-order-at-a-local-vietnamese-restaurant-the-phrases-th"],
+ vnEt:["Vietnam.travel 礼儀作法","https://www.vietnam.travel/jp/things-to-do/vietnamese-etiquette-travellers"],
+ payO:["PayPay公式 海外で利用する","https://paypay.ne.jp/guide/overseas/"],
+ cardVN:["ベトナムのカード事情","https://pay-route.co.jp/article/?p=1865"],
+ vnPay:["Vietnam.travel 通貨と支払い","https://vietnam.travel/jp/things-to-do/currency-and-payments-vietnam"],
+ pricey:["ベトナムの物価 2026","https://pricey.jp/web/articles/4155"]
+};
+function src(keys){if(!keys||!keys.length)return "";return '<div class="src">'+keys.map(function(k){var s=S[k];return '<a href="'+s[1]+'" target="_blank" rel="noopener">'+s[0]+'</a>'}).join("")+'</div>'}
+function pg(n){var a=String(n).split("-");if(window.__NOPDF__)return '<span class="pg nolink" title="紙のしおりのページ">p.'+n+'</span>';return '<span class="pg" data-pg="'+a[0]+'">p.'+n+'</span>'}
+function pgs(list){return (list||[]).map(pg).join(" ")}
+
+/* ---------- views ---------- */
+var VIEWS=[
+ {id:"home",t:"目次",d:"全体のトップ"},
+ {id:"schedule",t:"行程・時間",d:"5日間のタイムライン・集合・ホテル"},
+ {id:"checklist",t:"持ち物チェッカー",d:"しおりのページ付き・自動保存"},
+ {id:"basics",t:"ベトナム基本情報",d:"時差・お金・気候・電源・水・チップ"},
+ {id:"food",t:"ベトナム料理",d:"食べたい名物と注文のコツ"},
+ {id:"spots",t:"研修・観光スポット",d:"訪問先6か所の要点"},
+ {id:"airport",t:"空港・荷物ルール",d:"出国→到着→帰国の流れ"},
+ {id:"safety",t:"安全・健康",d:"ひったくり・道路・デング熱"},
+ {id:"phrases",t:"ベトナム語",d:"すぐ使えるフレーズ"},
+ {id:"sources",t:"出典",d:"調べたWebサイト一覧"}
+];
+
+/* ---------- checklist data: [id,name,note,pages,tags,sources] ---------- */
+var CATS=[
+{id:"pre",title:"出発前にやること",desc:"しおり「事前の確認事項」ほか",items:[
+ ["pre-evisa","電子渡航認証（ベトナム）を取得","許可レター（PDF）が届いたら1枚印刷して手荷物へ",[4]],
+ ["pre-cash","現地通貨の準備","小額紙幣も混ぜる。現地バス内で1万円パックの両替あり",[4]],
+ ["pre-card","クレジット／デビットカードの準備","安全のため現金だけにしない",[4]],
+ ["pre-med","薬・英文処方箋／薬剤情報証明書","持参者のみ。市販薬は未開封で",[4,18],["opt"]],
+ ["pre-phone","スマホのローミング設定を確認","放置すると高額請求の恐れ",[4]],
+ ["pre-volt","変圧器（100V専用家電を使う人だけ）","INPUT: 100-240V 表記なら不要",[4,9],["opt"]],
+ ["pre-tabireg","たびレジに登録","外務省の安全情報を日本語で受信",[5],[],["tabireg"]],
+ ["pre-vjw","Visit Japan Web に登録","帰国時の入国・税関申告をQRで",[21]],
+ ["pre-pack","スーツケースと手荷物を分ける","預けたスーツケースは到着まで開けられない",[12]]
+]},
+{id:"must",title:"☆ 必需品",desc:"しおり「参考：持ち物リスト」",items:[
+ ["m-passport","パスポート（コピーも1部）","出国審査ではカバーを外す",[6,13],["carry"]],
+ ["m-key","スーツケースの鍵・予備の鍵","予備はスーツケースに入れず別保管",[6,19]],
+ ["m-ticket","航空券（Eチケット）","当日、添乗員から受け取り",[6],["carry"]],
+ ["m-money","現地通貨・日本円・クレジットカード","",[6],["carry"]],
+ ["m-ins","海外旅行保険証","学校一括加入以外。現地受診時は診断書・領収書",[6,18],["carry"]],
+ ["m-phone","スマートフォン・充電器","電子機器は必ず手荷物",[6],["carry"]],
+ ["m-evisa","電子渡航認証（印刷／データ）","",[6],["carry"]],
+ ["m-shiori","しおり","",[6],["carry"]],
+ ["m-plug","変換プラグ → 不要","念のための話は下の「Webで追加」参照",[6],["opt"]]
+]},
+{id:"daily",title:"☆ 日用品など",desc:"しおり「参考：持ち物リスト」と注意書き",items:[
+ ["d-pen","筆記用具・ノート","",[6]],
+ ["d-clothes","衣類（動きやすい・調節しやすい）","",[6]],
+ ["d-change","着替え・下着・靴下・パジャマ","4泊分",[6]],
+ ["d-contact","コンタクトレンズ","",[6],["opt"]],
+ ["d-shoes","靴（歩きやすく履きなれたもの）","",[6]],
+ ["d-clock","目覚まし時計・腕時計","遅刻厳禁",[6,19]],
+ ["d-slipper","室内履き","機内でも使える（エコノミーはスリッパが出ないことが多い）",[6],[],["mfSlip"]],
+ ["d-med","常備薬（風邪・胃腸・酔い止め・絆創膏）","市販薬は未開封。入国時は申告対象",[6,11]],
+ ["d-tissue","ハンカチ・ティッシュ・ウェットティッシュ","",[6]],
+ ["d-light","薄手の羽織れるもの","",[6]],
+ ["d-sleeve","長袖の上着（機内用）","機内は冷える",[6],["carry"]],
+ ["d-rain","雨具（折り畳み傘・防水アウター）","",[6]],
+ ["d-bath","シャンプー等お風呂用品","海外製品が合わない人",[6],["opt"]],
+ ["d-bag","バッグ（リュック等）","",[6]],
+ ["d-cos","化粧品・日焼け止め","",[6]],
+ ["d-bottle","マイボトル","",[6,16]],
+ ["d-hat","帽子・サングラス","",[6]],
+ ["d-vinyl","ビニール袋・圧縮袋","",[6]],
+ ["d-mask","アイマスク・耳栓","帰りは0:20発の深夜便",[6],["carry"]],
+ ["d-thermo","体温計・マスク数枚","発熱すると搭乗できない場合あり",[6,12]],
+ ["d-belt","スーツケースベルト","",[6]],
+ ["d-dryer","海外対応ドライヤー","必要な人のみ",[6],["opt"]],
+ ["d-battery","モバイルバッテリー","預け不可・必ず機内へ。160Wh超は持込も不可",[6,9],["carry"]],
+ ["d-zip","1L以下の透明ジッパー袋（液体用）","100ml以下の容器のみ・1人1袋",[10],["carry"]],
+ ["d-memo","備忘録を記入（緊急連絡先など）","",[22]]
+]},
+{id:"research",title:"🔍 しおりにない物（Webで追加）",research:true,desc:"11月のホーチミンの気候・治安・衛生から追加",items:[
+ ["r-bug","虫除け（ディート／イカリジン）","デング熱は蚊が媒介。日焼け止め→虫除けの順",[],[],["mhlw","ichi"]],
+ ["r-strap","スマホストラップ（斜めがけ）","バイクからのひったくりが典型的な手口",[],["alert"],["cons","ascii"]],
+ ["r-grab","Grabアプリを入れて登録","乗る前に料金確定。SMS認証は日本で",[],[],["grab","grab2"]],
+ ["r-plugC","変換プラグCタイプ（念のため）","A・C複合が主流だがC専用もまれにある",[],["opt"],["plug","newtPlug"]],
+ ["r-tap","延長コード／電源タップ","",[],["opt"],["holaP"]],
+ ["r-tooth","歯ブラシ・歯磨き粉","しおりのリストには記載なし",[],[],["saily"]],
+ ["r-sanit","手指消毒液・除菌シート","屋台・市場で食べる前に",[],[],["saily"]],
+ ["r-uv","UVカットの薄手長袖","日差し対策＋蚊対策",[],[],["newt11","mhlw"]],
+ ["r-tissue","ポケットティッシュ多め","紙がないトイレが多い。紙はゴミ箱へ",[],[],["rurubu"]],
+ ["r-pass6","パスポート残存6か月以上を確認","",[],["alert"],["holaL","newtL"]]
+]},
+{id:"cabin",title:"✈ 機内・あると便利（Webで追加）",research:true,desc:"往路6時間・復路は深夜便。機内と現地で役立つもの",items:[
+ ["c-pillow","ネックピロー","深夜便（0:20発）で眠るために",[],["carry"],["aruP","jalL"]],
+ ["c-socks","着圧ソックス","座りっぱなしのむくみやエコノミークラス症候群の予防に",[],["carry"],["trvl"]],
+ ["c-ear","イヤホン（ノイズキャンセリングなら快適）","機内の映画や、エンジン音を減らすのに",[],["carry"],["trvl"]],
+ ["c-pen","ボールペン（手荷物に）","帰りの機内で携帯品・別送品申告書を書くときに使う",[20],["carry"],["jalL","docomo"]],
+ ["c-lip","リップ・保湿クリーム・目薬","機内はとても乾燥する",[],["carry"],["trvl2","aaDry"]],
+ ["c-dl","動画・音楽を事前にダウンロード","機内やWi-Fiのない場所での暇つぶしに",[],[],["jalL"]],
+ ["c-map","Googleマップでホーチミンの地図をオフライン保存","通信できなくても地図と徒歩ナビが使える",[],[],["gmap"]],
+ ["c-photo","パスポートの写真をスマホに保存","紛失したときの再発行がスムーズになる",[6],[],["trifaP"]],
+ ["c-wallet","サブ財布（現地用の小さい財布）","ドン用に分けておけば、出す金額も見られにくい",[19],[],["docomo"]],
+ ["c-eco","折り畳みエコバッグ","市場やスーパーでの買い物とお土産に",[],[],["native","docomo"]],
+ ["c-pouch","座席に吊るせる小物ポーチ","イヤホン・目薬・リップをまとめて手元に",[],["opt","carry"],["aruP"]],
+ ["c-homekey","家の鍵","帰国は朝8:30解散。忘れると家に入れない",[],[],["jalKey"]]
+]},
+{id:"never",title:"🚫 持って行かない・入れる場所注意",never:true,desc:"チェック＝入っていないことを確認",items:[
+ ["n-vape","加熱式・電子タバコ（本体・リキッド・充電器）","ベトナムでは持込・所持が禁止",[11],["alert"]],
+ ["n-food","果物・野菜・生肉・ハム・干しシイタケ等","無申告は罰金",[11],["alert"]],
+ ["n-cbd","CBDオイル・グミ等","ベトナムでは違法",[11],["alert"]],
+ ["n-knife","刃物・尖った物は機内NG→預け荷物へ","",[13]],
+ ["n-liquid","100ml超の容器の液体を手荷物に入れない","",[10]],
+ ["n-valuable","スーツケースに貴重品・こわれ物を入れない","",[12,13]],
+ ["n-lighter","ライター・マッチは1人いずれか1つ","",[13],["opt"]]
+]}
+];
+
+/* ---------- state (db per-person + localStorage) ---------- */
+var OFFLINE=!!window.__OFFLINE__;
+var LS=OFFLINE?"vn-guide-2026-offline":"vn-guide-2026";
+var state={checked:{},custom:[],hidden:{},updated:0};
+try{var sd=document.getElementById("seed");if(OFFLINE&&sd){var sv=JSON.parse(sd.textContent);if(sv&&sv.checked)state=sv}}catch(e){}
+try{var l=JSON.parse(localStorage.getItem(LS)||"null");if(l&&l.checked&&(l.updated||0)>=(state.updated||0))state=l}catch(e){}
+if(!state.hidden)state.hidden={};if(!state.custom)state.custom=[];
+var ui={filter:"all"};try{ui.filter=localStorage.getItem(LS+"-filter")||"all"}catch(e){}
+var dbRef=null,saveT=null,saveMsg="この端末に保存",saveOk=true;
+function setSave(m,ok){saveMsg=m;saveOk=ok;var e=document.getElementById("save");if(e){e.textContent=m;e.className="save"+(ok?" ok":"")}}
+function persist(){
+ state.updated=Date.now();
+ try{localStorage.setItem(LS,JSON.stringify(state))}catch(e){}
+ if(!dbRef){setSave("この端末に保存済み",true);return}
+ setSave("保存中…",false);clearTimeout(saveT);
+ saveT=setTimeout(function(){
+  Promise.resolve(dbRef.set({checked:state.checked,custom:state.custom,hidden:state.hidden,updated:state.updated})).then(function(){setSave("保存済み（アカウントに同期）",true)}).catch(function(){setSave("この端末に保存済み",true)});
+ },600);
+}
+function initDb(){
+ if(OFFLINE||!(window.claude&&window.claude.use))return;
+ Promise.all([window.claude.use("db"),window.claude.use("user")]).then(function(r){
+  var db=r[0],user=r[1];if(!db||!user)return;
+  return Promise.resolve(user.id()).then(function(id){
+   if(!id)return;
+   dbRef=db.collection("data/users/"+id).doc("checker");
+   var timer=setTimeout(function(){},10000);
+   return Promise.resolve(dbRef.get()).then(function(snap){
+    clearTimeout(timer);
+    var d=snap&&typeof snap.data==="function"?snap.data():(snap&&snap.data!==undefined&&snap.checked===undefined?snap.data:snap);
+    if(d&&d.checked&&(d.updated||0)>=(state.updated||0)){state.checked=d.checked||{};state.custom=d.custom||[];state.hidden=d.hidden||{};state.updated=d.updated||0;try{localStorage.setItem(LS,JSON.stringify(state))}catch(e){}if(cur==="checklist")renderView("checklist");else updateBadge()}
+    else if(state.updated){persist()}
+    setSave("保存済み（アカウントに同期）",true);
+   });
+  });
+ }).catch(function(){});
+}
+function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]})}
+function allIds(){var a=[];CATS.forEach(function(c){c.items.forEach(function(i){a.push(i[0])})});state.custom.forEach(function(x){a.push(x.id)});return a.filter(function(i){return !state.hidden[i]})}
+function progress(){var ids=allIds(),c=ids.filter(function(i){return state.checked[i]}).length;return{n:ids.length,c:c,p:ids.length?Math.round(c/ids.length*100):0}}
+
+/* ---------- renderers ---------- */
+function vh(t,lead,pages){var vi=VIEWS.map(function(v){return v.id}).indexOf(cur);return '<div class="vh">'+(vi>0?'<div class="num">'+String(vi).padStart(2,"0")+' / '+String(VIEWS.length-1).padStart(2,"0")+'</div>':'')+'<h1>'+t+'</h1><div class="lead">'+(lead||"")+(pages?' &nbsp;しおり '+pgs(pages):"")+'</div></div>'}
+var R={};
+var NEXT=[["2026-11-10T10:50:00+09:00","11/10（火）10:50","集合：JR岐阜駅 じゅうろくプラザ前","②は11:20 岐阜高専 噴水周辺"],["2026-11-10T13:00:00+09:00","11/10 13:00","出光興産 愛知事業所 視察",""],["2026-11-10T16:00:00+09:00","11/10 16:00","常滑やきもの散歩道",""],["2026-11-10T17:30:00+09:00","11/10 17:30","ホテルチェックイン","夕食は各自"],["2026-11-11T06:30:00+09:00","11/11 6:30","徒歩で中部国際空港へ",""],["2026-11-11T09:00:00+09:00","11/11 9:00","VN343便で出発",""],["2026-11-11T13:15:00+07:00","11/11 13:15（現地）","ホーチミン到着","時計を2時間戻す"],["2026-11-12T08:00:00+07:00","11/12 終日","カオタン技術短期大学で研修","昼・夕は自分で"],["2026-11-13T08:30:00+07:00","11/13 午前","企業研修（ブラザー工業予定）",""],["2026-11-13T13:30:00+07:00","11/13 午後","中央郵便局・大教会・ベンタン市場",""],["2026-11-14T00:20:00+07:00","11/14 0:20（現地）","VN342便で出発","機中泊"],["2026-11-14T07:35:00+09:00","11/14 7:35","中部国際空港 到着",""],["2026-11-14T08:30:00+09:00","11/14 8:30","解散","おつかれさまでした"]];
+function nextEv(){var now=Date.now();for(var i=0;i<NEXT.length;i++){if(new Date(NEXT[i][0]).getTime()>now-30*60000)return NEXT[i]}return null}
+function untilTxt(iso){var ms=new Date(iso)-Date.now();if(ms<=0)return "まもなく / 進行中";var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return "あと "+(d?d+"日 ":"")+(d<2?h+"時間 ":"")+(d?"":m+"分")}
+R.home=function(){
+ var p=progress(),nx=nextEv();
+ var h='<section class="hero"><div><div class="eb">GIFU KOSEN · ELECTRICAL &amp; INFORMATION ENG.</div><h1>ベトナム研修<br>完全ガイド</h1><div class="sub">2026.11.10（火）→ 11.14（土）　名古屋 ⇄ ホーチミン<br>しおりの内容と、Webで調べた現地情報をひとつに。</div></div><div class="facts">'+
+ '<div class="f"><b>10:50</b><span>集合 JR岐阜駅じゅうろくプラザ前</span></div>'+
+ '<div class="f"><b>−2h</b><span>時差（日本の方が2時間進んでいる）</span></div>'+
+ '<div class="f"><b>≈'+rate()+'₫</b><span>1円あたり（タップで換算）</span></div>'+
+ '<div class="f"><b>'+p.p+'%</b><span>持ち物チェック済み</span></div></div></section>';
+ if(nx)h+='<div class="next"><span class="lab">NEXT</span><span class="when">'+nx[1]+'</span><span class="what">'+esc(nx[2])+(nx[3]?' <span class="muted">· '+esc(nx[3])+'</span>':'')+'</span><span class="rest">'+untilTxt(nx[0])+'</span></div>';
+ if(window.__PWA__&&!(matchMedia("(display-mode: standalone)").matches||navigator.standalone)){h+='<div class="card" style="border:2px solid var(--red)"><h2><span class="k">INSTALL</span>ホーム画面に追加しよう</h2><p><b>iPhone（Safari）</b>：下の共有ボタン <b>□↑</b> →「ホーム画面に追加」</p><p><b>Android（Chrome）</b>：右上の <b>⋮</b> →「ホーム画面に追加」または「アプリをインストール」</p><p class="muted">追加すると、ネットがなくてもアプリとして開けます。チェックはこの端末に保存されます。</p></div>'}
+ h+='<div class="homegrid"><div class="toc">';
+ VIEWS.forEach(function(v,i){if(v.id==="home")return;h+='<a href="#'+v.id+'"><span class="n">'+String(i).padStart(2,"0")+'</span><span class="t">'+v.t+'</span><span class="d">'+v.d+'</span></a>'});
+ h+='</div><div style="display:grid;gap:16px;align-content:start">';
+ h+='<div class="card mini"><h2><span class="k">PACKING</span>持ち物の進み具合</h2><div class="big">'+p.p+'<small>%</small></div><div class="bar'+(p.p===100?' full':'')+'"><i style="width:'+p.p+'%"></i></div><div class="muted">'+p.c+' / '+p.n+' 項目　<a href="#checklist">チェッカーを開く →</a></div></div>';
+ h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="conv">₫⇄¥ 換算</button><button class="btn" data-act="search">🔍 全ページ検索</button><button class="btn" data-act="theme">◐ ダークモード</button></div><p class="muted" style="margin-top:10px">キーボードなら <b>/</b> で検索、<b>Esc</b> で閉じる。</p></div>';
+ h+='<div class="card warn"><h2><span class="k">SOS</span>出発当日の緊急連絡先</h2><p>名鉄観光サービス 岐阜支店 担当者<br><b>電話番号は紙のしおり p.3 を確認</b></p><p>'+pg(3)+'</p></div>';
+ return h+'</div></div>';
+};
+R.schedule=function(){
+ var D=[
+  {d:"11/10",w:"火",city:"岐阜 → 常滑",ev:[["10:50","集合 JR岐阜駅じゅうろくプラザ前","時間厳守（出発10分前）"],["11:00","貸切バス出発",""],["11:20","岐阜高専 噴水周辺で集合・乗車",""],["13:00","出光興産 愛知事業所 視察","知多市南浜町11"],["16:00","常滑やきもの散歩道 散策","〜17:00"],["17:30","ホテルチェックイン","夕食は各自（空港など）"]],m:[["朝","×"],["昼","×"],["夕","各自"]],stay:"東横イン中部国際空港"},
+  {d:"11/11",w:"水",city:"名古屋 → ホーチミン",ev:[["6:30","徒歩で中部国際空港へ","ホテル朝食あり"],["9:00","VN343便で出発","日本時間"],["13:15","ホーチミン到着","現地時間（日本15:15）"],["午後","専用車で市内観光（可能な限り）→ホテル",""],["夜","夕食：ベトナム料理","別紙参照"]],m:[["朝","○"],["昼","機内"],["夕","○"]],stay:"BONG SEN SAIGON"},
+  {d:"11/12",w:"木",city:"ホーチミン",ev:[["朝","ホテルで朝食",""],["終日","カオタン技術短期大学で研修","専用車"]],m:[["朝","○"],["昼","×"],["夕","×"]],stay:"BONG SEN SAIGON",note:"昼・夕は食事なし → 自分で用意"},
+  {d:"11/13",w:"金",city:"ホーチミン",ev:[["午前","企業研修（ブラザー工業予定）",""],["昼","自由食","中華料理$21で手配可"],["午後","中央郵便局・サイゴン大教会・ベンタン市場",""],["夜","夕食：ベトナム料理 → 空港へ","機中泊"]],m:[["朝","○"],["昼","自由"],["夕","○"]],stay:"機中泊"},
+  {d:"11/14",w:"土",city:"ホーチミン → 名古屋",ev:[["0:20","VN342便で出発","現地時間（日本2:20）・飛行5:15"],["7:35","中部国際空港 到着","入国・荷物・税関"],["8:30","解散",""]],m:[["朝","機内"]],stay:"—"}
+ ];
+ var h=vh("行程・時間","時刻はすべてその場所の現地時間です。ベトナムにいる間は日本より2時間遅れています。",[2,3]);
+ h+='<div class="days">';
+ D.forEach(function(x){
+  var td=new Date(Date.now()+9*36e5),tds=(td.getUTCMonth()+1)+"/"+td.getUTCDate();h+='<div class="day'+(tds===x.d?' today':'')+'"><div class="dh"><b>'+x.d+'<small>'+x.w+'</small></b><span>'+x.city+'</span></div>';
+  x.ev.forEach(function(e){h+='<div class="ev"><div class="t">'+e[0]+'</div><div>'+esc(e[1])+(e[2]?'<div class="muted">'+esc(e[2])+'</div>':"")+'</div></div>'});
+  h+='<div class="meal">'+x.m.map(function(m){var c=m[1]==="○"?"y":(m[1]==="×"?"n":"");return '<span class="'+c+'">'+m[0]+' '+m[1]+'</span>'}).join("")+'</div>';
+  if(x.note)h+='<div class="stay alert">⚠ '+x.note+'</div>';
+  h+='<div class="stay">🏨 '+x.stay+'</div></div>';
+ });
+ h+='</div><div class="grid gap">';
+ h+='<div class="card"><h2><span class="k">MEET</span>集合</h2><p><b>11/10（火）</b></p><ul><li>① 10:50 JR岐阜駅 じゅうろくプラザ前 貸切バス乗降場</li><li>② 11:20 岐阜高専 噴水周辺</li></ul><p class="muted">緊急連絡先（当日）：名鉄観光サービス 岐阜支店 担当者 （電話番号はしおり p.3）</p><p>'+pg(3)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">HOTEL</span>ホーチミンのホテル</h2><p><b>Bong Sen Hotel Saigon</b><br>117-123 Dong Khoi St, 1区</p><ul><li>オペラハウスまで約170m、中央郵便局まで約0.7km</li><li>Wi-Fi無料</li></ul>'+src(["hotel"])+'</div>';
+ h+='<div class="card"><h2><span class="k">FLIGHT</span>フライト</h2><table><tr><th>便</th><th>区間</th><th>時刻</th></tr><tr><td class="vn">VN343</td><td>中部 → ホーチミン</td><td>9:00 → 13:15</td></tr><tr><td class="vn">VN342</td><td>ホーチミン → 中部</td><td>0:20 → 7:35</td></tr></table><p class="muted">往路は約6時間15分、復路は約5時間15分</p><p>'+pg(2)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">MEALS</span>自分で食事を用意する回</h2><ul><li>11/10 夕食（空港などで）</li><li>11/12 昼食・夕食</li><li>11/13 昼食（中華$21の手配も可）</li></ul><p class="muted">現金（ドン）を多めに用意しておくと安心です。</p><p>'+pg(2)+'</p></div>';
+ return h+'</div>';
+};
+R.checklist=function(){
+ var p=progress();
+ var h=vh("持ち物チェッカー","黒いタグがしおりのページです。チェックは自動保存されます。");
+ h+='<div class="ck-top"><div class="bar'+(p.p===100?' full':'')+'" id="barW"><i id="barI" style="width:'+p.p+'%"></i></div><div class="pct" id="pct">'+p.p+'%</div><div class="muted" id="cnt">'+p.c+' / '+p.n+'</div><button class="btn" id="resetBtn">リセット</button>'+(OFFLINE?'':'<button class="btn on dl" id="dlBtn" style="display:none">⬇ ダウンロード版</button>')+'<span class="save'+(saveOk?" ok":"")+'" id="save">'+saveMsg+'</span></div>';
+ var hiddenList=[];
+ var FL=[["all","すべて"],["todo","未チェックだけ"],["carry","機内持込"],["alert","要注意"]];
+ h+='<div class="filters">'+FL.map(function(f){return '<button class="chipf'+(ui.filter===f[0]?' on':'')+'" data-flt="'+f[0]+'">'+f[1]+'</button>'}).join("")+'</div>';
+ h+='<div class="cols f-'+ui.filter+'" id="cols">';
+ CATS.forEach(function(c){
+  var items=c.items.map(function(i){return{id:i[0],nm:i[1],nt:i[2],pg:i[3],tg:i[4],src:i[5]}});
+  state.custom.filter(function(x){return x.cat===c.id}).forEach(function(x){items.push({id:x.id,nm:x.name,nt:"自分で追加",custom:true})});
+  items.forEach(function(i){if(state.hidden[i.id])hiddenList.push({id:i.id,nm:i.nm,cat:c.title})});
+  items=items.filter(function(i){return !state.hidden[i.id]});
+  var cc=items.filter(function(i){return state.checked[i.id]}).length;
+  h+='<div class="card'+(c.research?" research":"")+(c.never?" never":"")+'"><div class="ch"><h2>'+c.title+'</h2><span class="n'+(items.length&&cc===items.length?' full':'')+'" data-cn="'+c.id+'">'+cc+'/'+items.length+'</span></div><div class="cd2">'+c.desc+'</div>';
+  items.forEach(function(i){
+   var on=!!state.checked[i.id];
+   var tags=(i.tg||[]).map(function(g){return '<span class="tg '+g+'">'+({carry:"機内持込",opt:"該当者",alert:"要注意"})[g]+'</span>'}).join("");
+   h+='<label class="it'+(on?" done":"")+'" data-tg="'+(i.tg||[]).join(" ")+'"><input type="checkbox" data-id="'+i.id+'" data-cat="'+c.id+'"'+(on?" checked":"")+'><div class="tx"><div class="nm">'+esc(i.nm)+' '+pgs(i.pg)+'</div>'+(i.nt?'<div class="nt">'+esc(i.nt)+'</div>':"")+tags+src(i.src)+'</div>'+(i.custom?'<button class="del" data-del="'+i.id+'" title="削除">×</button>':'<button class="hid" data-hide="'+i.id+'" title="自分には不要なのでリストから外す">外す</button>')+'</label>';
+  });
+  h+='</div>';
+ });
+ if(hiddenList.length){h+='<div class="card hiddenc"><div class="ch"><h2>外した項目</h2><span class="n">'+hiddenList.length+'</span></div><div class="cd2">自分には不要として外した項目です。進み具合の計算には入りません。</div>'+hiddenList.map(function(x){return '<div class="it"><div class="tx"><div class="nm">'+esc(x.nm)+'</div><div class="nt">'+esc(x.cat)+'</div></div><button class="btn" data-unhide="'+x.id+'">戻す</button></div>'}).join("")+'</div>'}
+ h+='<div class="card"><div class="ch"><h2>＋ 項目を追加</h2></div><form class="add" id="addf"><input id="addn" placeholder="例：お土産用のエコバッグ" maxlength="60"><select id="addc">'+CATS.filter(function(c){return !c.never}).map(function(c){return '<option value="'+c.id+'">'+c.title.replace(/^[☆🔍 ]+/,"")+'</option>'}).join("")+'</select><button class="btn on">追加</button></form></div>';
+ return h+'</div>';
+};
+R.basics=function(){
+ var h=vh("ベトナム基本情報","複数のサイトを比べて、結論だけを載せています。");
+ h+='<div class="grid">';
+ h+='<div class="card"><h2><span class="k">TIME</span>時差</h2><div class="big">−2<small>時間</small></div><p>日本12:00 ＝ ベトナム10:00。サマータイムはなし。</p>'+src(["time"])+'</div>';
+ h+='<div class="card"><h2><span class="k">MONEY</span>お金（ドン / VND）</h2><div class="big">1円 ≈ 163<small>₫（11/3時点）</small></div><button class="btn" data-act="conv" style="margin:2px 0 6px">₫⇄¥ 換算ツールを開く</button><p><b>暗算：ドンの下3桁を取って×6</b><br>100,000₫ → 100×6 ≈ <b>600円</b><br>メニューの「50K」は 50,000₫ ≈ 300円</p><p class="muted">日本の空港での両替はレートがかなり悪い（羽田の例で1円＝112〜127₫ほど）。研修ではバス内の1万円パック両替を使うのが無難です。</p><p>'+pg(4)+'</p>'+src(["vietjo","veltraC","hay"])+'</div>';
+ h+='<div class="card"><h2><span class="k">WEATHER</span>11月のホーチミン</h2><div class="big">23–31<small>℃</small></div><p>平均27℃。乾季の入り口ですが、急なスコールはまだあります（月の降水量は約158mm）。日中は日差しが強く、建物や機内は冷房が強めです。</p><p><b>服装：</b>半袖＋薄い長袖、折り畳み傘</p>'+src(["newt11"])+'</div>';
+ h+='<div class="card"><h2><span class="k">POWER</span>電源</h2><div class="big">220<small>V · 50Hz</small></div><p>コンセントはA・C複合型が主流で、日本のプラグがそのまま挿さります。スマホやPCの充電器（100-240V対応）はそのまま使えます。<b>100V専用のドライヤーやヘアアイロンは使えません。</b></p><p>'+pg(4)+' '+pg(9)+'</p>'+src(["plug","holaP"])+'</div>';
+ h+='<div class="card"><h2><span class="k">WATER</span>水・トイレ</h2><ul><li>水道水は飲まない。ペットボトルの水を買う</li><li>氷が心配なら「No Ice」</li><li>炭酸水と間違えないよう注意 '+pg(16)+'</li><li>公衆トイレは少なく紙がないことも。紙は流さずゴミ箱へ</li></ul>'+src(["rurubu"])+'</div>';
+ h+='<div class="card"><h2><span class="k">TIP</span>チップ</h2><div class="big">基本不要</div><p>ベトナムには基本的にチップの習慣はありません。スパやマッサージでは求められることがあります。</p>'+src(["tip"])+'</div>';
+ h+='<div class="card"><h2><span class="k">MOVE</span>移動</h2><p><b>Grab</b>（配車アプリ）を使えば乗る前に料金が決まるので、ぼったくりを避けられます。流しのタクシーやバイクタクシーは避けましょう。</p>'+src(["grab","grab2"])+'</div>';
+ h+='<div class="card span2"><h2><span class="k">WALLET</span>お金の持ち方（目安：合計2.5万〜3.5万円）</h2><table><tr><th>手段</th><th>目安</th><th>使う場面</th></tr><tr><td class="vn">現金（ドン）</td><td>1万円分<br><span class="muted">バス内の両替パック</span></td><td>屋台・ローカル食堂・ベンタン市場・タクシー。自分で用意する3回の食事と水代はこれで足りる。市場で多く買うなら＋1万円</td></tr><tr><td class="vn">現金（日本円）</td><td>5千〜1万円</td><td>11/10の空港での夕食、帰国後の交通費、両替の追加用</td></tr><tr><td class="vn">デビット（Visa/Master）</td><td>1.5万〜2万円</td><td>ホテル・モール・スーパー・レストラン・Grab。お土産と緊急用。海外利用設定と手数料（数％）を確認</td></tr><tr><td class="vn">PayPay</td><td>ベトナムでは使えない</td><td>海外で使えるのは韓国・台湾のみ（2026年11月時点）。日本国内（11/10の空港など）でだけ使う</td></tr></table><p class="muted">お金は1日に必要な分だけ持ち歩き、残りはスーツケースに鍵をかけて保管 '+pg(19)+'</p>'+src(["payO","cardVN","vnPay","pricey"])+'</div>';
+ return h+'</div>';
+};
+/* ---------- food illustrations (original SVG) ---------- */
+function bowl(broth,noodle,tops){
+ return '<ellipse cx="100" cy="62" rx="74" ry="22" fill="'+broth+'"/>'+noodle+tops+
+ '<path d="M26 62 Q30 118 100 120 Q170 118 174 62 Z" fill="#fff" stroke="#1b1b1b" stroke-width="3"/>'+
+ '<path d="M40 86 Q100 98 160 86" stroke="#2c6fb5" stroke-width="4" fill="none"/>'+
+ '<ellipse cx="100" cy="62" rx="74" ry="22" fill="none" stroke="#1b1b1b" stroke-width="3"/><rect x="80" y="120" width="40" height="8" rx="3" fill="#1b1b1b"/>';
+}
+function noodles(c){var s="";for(var i=0;i<6;i++){s+='<path d="M'+(48+i*18)+' 60 q8 -8 16 0 t16 0" stroke="'+c+'" stroke-width="3" fill="none"/>'}return s}
+function herbs(){return '<circle cx="62" cy="54" r="7" fill="#3d9a4b"/><circle cx="72" cy="50" r="6" fill="#57b45f"/><circle cx="140" cy="56" r="6" fill="#3d9a4b"/>'}
+function lime(x,y){return '<circle cx="'+x+'" cy="'+y+'" r="11" fill="#b9d65a" stroke="#1b1b1b" stroke-width="2"/><path d="M'+(x-8)+' '+y+' h16 M'+x+' '+(y-8)+' v16" stroke="#e8f2b9" stroke-width="2"/>'}
+function chili(x,y){return '<path d="M'+x+' '+y+' q10 -4 18 4" stroke="#d6312b" stroke-width="5" stroke-linecap="round" fill="none"/>'}
+var ART={
+ pho:bowl("#e9c98a",noodles("#fff8e6"),'<rect x="88" y="50" width="30" height="9" rx="3" fill="#a5523a"/><rect x="112" y="56" width="26" height="8" rx="3" fill="#b8664b"/>'+herbs()+chili(120,46))+lime(178,40),
+ hutieu:bowl("#efd9a6",noodles("#f4f1ea"),'<path d="M84 52 q8 -10 16 0" stroke="#e8784f" stroke-width="7" fill="none" stroke-linecap="round"/><circle cx="118" cy="55" r="7" fill="#c9875e"/><ellipse cx="136" cy="60" rx="8" ry="5" fill="#f3e6c3" stroke="#d8b86c"/>'+herbs())+lime(178,40),
+ bunbo:bowl("#d9632f",noodles("#fff3e6"),'<rect x="90" y="50" width="28" height="9" rx="3" fill="#7b3b27"/><circle cx="124" cy="56" r="7" fill="#d9a38a"/>'+herbs()+chili(108,46)+chili(70,62))+lime(178,40),
+ comtam:'<ellipse cx="100" cy="92" rx="88" ry="30" fill="#fff" stroke="#1b1b1b" stroke-width="3"/><ellipse cx="78" cy="86" rx="40" ry="18" fill="#fbf6ea" stroke="#e2d8bf"/><path d="M104 70 q30 -10 58 4 q-4 22 -34 22 q-26 0 -24 -26z" fill="#a8532f" stroke="#1b1b1b" stroke-width="2"/><path d="M116 76 l34 4 M114 84 l36 2" stroke="#7a3820" stroke-width="2"/><circle cx="66" cy="78" r="15" fill="#fff" stroke="#e5e0d0"/><circle cx="66" cy="78" r="7" fill="#f2b632"/><rect x="40" y="96" width="24" height="5" rx="2" fill="#5fae5a"/><circle cx="150" cy="104" r="5" fill="#f08b3c"/><circle cx="160" cy="100" r="4" fill="#f08b3c"/><rect x="152" y="40" width="26" height="26" rx="5" fill="#fff" stroke="#1b1b1b" stroke-width="2"/><rect x="156" y="48" width="18" height="14" fill="#e9a94a"/>',
+ banhmi:'<path d="M28 96 Q30 60 100 58 Q172 60 176 92 Q172 112 100 112 Q30 112 28 96z" fill="#e2a35a" stroke="#1b1b1b" stroke-width="3"/><path d="M40 90 Q100 70 166 88" stroke="#1b1b1b" stroke-width="3" fill="none"/><path d="M46 88 Q100 74 160 86 L158 92 Q100 82 48 94z" fill="#c75b44"/><path d="M52 86 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0 q10 -8 20 0" stroke="#4fa64e" stroke-width="5" fill="none"/><path d="M60 82 l10 -6 M90 78 l12 -6 M120 78 l10 -6" stroke="#f08b3c" stroke-width="3"/><path d="M70 70 q30 -6 60 0" stroke="#f6d6a4" stroke-width="3" fill="none"/><rect x="62" y="104" width="80" height="16" rx="3" fill="#fff" stroke="#1b1b1b" stroke-width="2"/>',
+ banhxeo:'<ellipse cx="100" cy="94" rx="88" ry="28" fill="#fff" stroke="#1b1b1b" stroke-width="3"/><path d="M30 92 A70 44 0 0 1 170 92 Z" fill="#f1b93a" stroke="#1b1b1b" stroke-width="3"/><path d="M48 80 q16 -18 34 -22 M90 60 q20 -2 40 8 M140 72 q12 6 18 16" stroke="#d9901f" stroke-width="3" fill="none"/><circle cx="76" cy="84" r="6" fill="#f08b74"/><circle cx="118" cy="80" r="6" fill="#f08b74"/><path d="M60 92 h80" stroke="#f9e7a6" stroke-width="4"/><path d="M150 40 q20 4 26 26 q-20 4 -26 -26z" fill="#5fae5a" stroke="#1b1b1b" stroke-width="2"/><path d="M24 50 q16 -6 30 8 q-18 10 -30 -8z" fill="#4fa64e" stroke="#1b1b1b" stroke-width="2"/>',
+ goicuon:'<ellipse cx="100" cy="98" rx="88" ry="24" fill="#fff" stroke="#1b1b1b" stroke-width="3"/>'+[0,1,2].map(function(i){var x=44+i*42;return '<rect x="'+x+'" y="58" width="36" height="46" rx="16" fill="#f4f0e4" fill-opacity=".9" stroke="#1b1b1b" stroke-width="2"/><path d="M'+(x+6)+' 70 q12 -6 24 0" stroke="#f08b74" stroke-width="5" fill="none"/><rect x="'+(x+6)+'" y="80" width="24" height="10" rx="4" fill="#7bc46e"/><path d="M'+(x+8)+' 94 h20" stroke="#fff" stroke-width="3"/>'}).join("")+'<ellipse cx="170" cy="70" rx="16" ry="10" fill="#7a4a2a" stroke="#1b1b1b" stroke-width="2"/><circle cx="166" cy="68" r="2" fill="#f2d48a"/><circle cx="174" cy="71" r="2" fill="#f2d48a"/>',
+ buncha:'<ellipse cx="62" cy="96" rx="50" ry="18" fill="#fff" stroke="#1b1b1b" stroke-width="3"/>'+noodles("#f6f1e4").replace(/M(\d+) 60/g,function(m,a){return "M"+(a*0.55+10)+" 92"})+'<path d="M112 72 Q114 116 152 116 Q190 116 192 72 Z" fill="#fff" stroke="#1b1b1b" stroke-width="3"/><ellipse cx="152" cy="72" rx="40" ry="11" fill="#e5a964" stroke="#1b1b1b" stroke-width="3"/><circle cx="140" cy="70" r="7" fill="#7a3820"/><rect x="152" y="64" width="22" height="9" rx="3" fill="#8c4426"/><circle cx="130" cy="74" r="3" fill="#f08b3c"/><path d="M30 46 q12 -12 24 0 q12 -12 24 0" stroke="#4fa64e" stroke-width="7" fill="none" stroke-linecap="round"/>',
+ che:'<path d="M70 30 L80 124 L120 124 L130 30 Z" fill="#fff" fill-opacity=".6" stroke="#1b1b1b" stroke-width="3"/><path d="M78 104 L80 124 L120 124 L122 104Z" fill="#7b3a5a"/><path d="M76 82 L78 104 L122 104 L124 82Z" fill="#f3e3b5"/><path d="M73 58 L76 82 L124 82 L127 58Z" fill="#7cc26b"/><path d="M71 40 L73 58 L127 58 L129 40Z" fill="#f8f3ea"/><circle cx="90" cy="48" r="3" fill="#cfe8f4"/><circle cx="108" cy="46" r="3" fill="#cfe8f4"/><rect x="112" y="10" width="5" height="44" fill="#d6312b" transform="rotate(12 114 30)"/>',
+ sinhto:'<path d="M64 36 L76 124 L124 124 L136 36 Z" fill="#f7a63a" stroke="#1b1b1b" stroke-width="3"/><path d="M64 36 L136 36" stroke="#1b1b1b" stroke-width="3"/><path d="M68 50 h64" stroke="#fbd28c" stroke-width="4"/><rect x="106" y="6" width="6" height="50" fill="#2c6fb5" transform="rotate(14 109 30)"/><path d="M128 30 q20 -10 30 6 q-16 12 -30 -6z" fill="#f6c63b" stroke="#1b1b1b" stroke-width="2"/>',
+ cafe:'<path d="M70 66 L78 124 L122 124 L130 66 Z" fill="#fff" fill-opacity=".6" stroke="#1b1b1b" stroke-width="3"/><path d="M73 88 L78 124 L122 124 L127 88Z" fill="#6b3d22"/><path d="M76 110 L78 124 L122 124 L124 110Z" fill="#f4e6c8"/><rect x="84" y="80" width="12" height="12" rx="2" fill="#dff1f8" stroke="#9cc"/><rect x="100" y="76" width="12" height="12" rx="2" fill="#dff1f8" stroke="#9cc"/><rect x="74" y="40" width="52" height="24" rx="3" fill="#c9c9c9" stroke="#1b1b1b" stroke-width="3"/><path d="M68 64 h64" stroke="#1b1b1b" stroke-width="4"/><path d="M82 34 h36" stroke="#1b1b1b" stroke-width="4"/>'
+};
+function art(k){return '<svg viewBox="0 0 200 130" role="img" aria-label="イラスト"><rect width="200" height="130" fill="none"/>'+ART[k]+'</svg>'}
+var FOODC={"pho": ["Andy Li", "CC0", "https://commons.wikimedia.org/wiki/File%3ABeef_Pho_%28M%29_-_Milk_No_Sugar.jpg"], "hutieu": ["Tonbi ko", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AH%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg"], "comtam": ["Kham Tran", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File%3ACom-Tam-2008.jpg"], "banhmi": ["Bahnfrend", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3ATraditional_Viet_Pork_Sausage_B%C3%A1nh_M%C3%AC%2C_B%C3%A1nh_M%C3%AC_B%C3%A1nh_M%C3%AC_Westfield_Carousel%2C_2026_%2801%29.jpg"], "banhxeo": ["Ser Amantio di Nicolao", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AB%C3%A1nh_x%C3%A8o_with_pork_sausage_and_shrimp_served_with_various_garnishes.jpg"], "goicuon": ["N509FZ", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AG%E1%BB%8Fi_cu%E1%BB%91n_at_a_Vietnamese-style_restaurant_in_Beijing_%2820180103175625%29.jpg"], "buncha": ["Weetjesman", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3ABun_cha_Hanoi.jpg"], "bunbo": ["TarnishedPath", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AB%C3%BAn_b%C3%B2_Hu%E1%BA%BF-Feb_2025.jpg"], "che": ["Mạnh An", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File%3ACh%C3%A8_xo%C3%A0i.jpg"], "sinhto": ["Hoangkid", "Public domain", "https://commons.wikimedia.org/wiki/File%3ASinh_t%E1%BB%91_b%C6%A1.jpg"], "cafe": ["Clarin", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File%3ACa_Phe_Sua_Da.jpg"]};
+function fimg(k){return (window.__FOOD__&&window.__FOOD__[k])||("food/"+k+".jpg")}
+function gimg(q){return "https://www.google.com/search?tbm=isch&q="+encodeURIComponent(q)}
+R.food=function(){
+ var F=[
+  {k:"pho",cat:"麺",jp:"フォー",vn:"Phở",price:"6万〜9万₫（約370〜550円）",taste:"あっさり",d:"米粉の平たい麺を、長時間煮込んだスープで食べる。<b>牛（bò ボー）</b>と<b>鶏（gà ガー）</b>が定番。テーブルの香草・もやし・ライム・唐辛子で味を自分で調整するのが本場流。",how:"注文：「Phở bò（フォー ボー）」",src:["aruF","aruM"]},
+  {k:"hutieu",cat:"麺",jp:"フーティウ",vn:"Hủ tiếu",price:"5万〜7万₫（約300〜430円）",taste:"やさしい甘み",d:"<b>ホーチミンの人が朝によく食べる南部の麺</b>。豚骨と干し海鮮のすっきり甘いスープに、コシのある細麺。エビ・豚・ウズラ卵などがのる。汁なし（khô コー）も選べる。",how:"フォーと食べ比べると南部らしさがわかる",src:["hutieu","gendaiN"]},
+  {k:"comtam",cat:"ごはん",jp:"コムタム",vn:"Cơm tấm",price:"屋台 2.5万〜5万₫ / 店 6万〜9万₫",taste:"甘辛",d:"<b>ホーチミン発祥</b>の砕き米ごはん。甘いタレで焼いた骨付き豚、目玉焼き、なますをのせ、甘いヌックマム（魚醤）をかけて食べる。日本人に一番なじみやすい味。",how:"迷ったらこれ。朝・昼・夜いつでも",src:["food","food2","vtBud"]},
+  {k:"banhmi",cat:"軽食",jp:"バインミー",vn:"Bánh mì",price:"2.5万〜5万₫（約150〜300円）",taste:"香ばしい",d:"軽いフランスパンに、チャーシュー・パテ・バター・なます・香草・唐辛子を挟むサンドイッチ。屋台で作ってもらい、そのまま食べ歩きできる。",how:"辛いのが苦手なら「Không ớt（コン オッ）＝唐辛子なし」",src:["food2","aruM"]},
+  {k:"banhxeo",cat:"料理",jp:"バインセオ",vn:"Bánh xèo",price:"約9万₫（約550円）",taste:"カリカリ",d:"ベトナム風お好み焼き。米粉の薄い生地でエビ・豚・もやしを包んで焼く。<b>切ってレタスや香草で巻き、甘酸っぱいタレにつけて手で食べる</b>。1枚が大きいので2人でシェアがおすすめ。",how:"名店：46A Bánh Xèo（1区）",src:["aruF"]},
+  {k:"goicuon",cat:"前菜",jp:"生春巻き",vn:"Gỏi cuốn",price:"1本 1万〜2万₫ 前後",taste:"さっぱり",d:"エビ・豚・米麺・野菜をライスペーパーで巻いたもの。ピーナッツ味噌のタレをつける。生野菜が入るので、胃腸が心配な人はお店選びに気をつけて。",how:"揚げ春巻き（Chả giò チャーゾー）もおいしい",src:["sky"]},
+  {k:"buncha",cat:"麺",jp:"ブンチャー",vn:"Bún chả",price:"5万〜8万₫",taste:"甘酸っぱい",d:"ハノイ発祥のつけ麺。炭火焼きの豚つくね・豚バラが入った甘酸っぱいタレに、細い米麺（ブン）と香草をつけて食べる。ホーチミンでも食べられる。",how:"麺を少しずつタレにくぐらせる",src:["tvt"]},
+  {k:"bunbo",cat:"麺",jp:"ブンボーフエ",vn:"Bún bò Huế",price:"5万〜7万₫",taste:"ピリ辛",d:"古都フエの名物で、レモングラスが香る牛骨の赤いスープに太めの米麺。ほかの麺より辛めでパンチがある。",how:"辛いのが好きな人向け",src:["tvt","gendaiN"]},
+  {k:"che",cat:"甘味",jp:"チェー",vn:"Chè",price:"2万〜4万₫",taste:"甘い",d:"豆・タピオカ・ゼリー・ココナッツミルクなどを重ねたベトナムのパフェ。種類がとても多く、指さしで選べる店も多い。",how:"氷入りが多いので、体調と相談して",src:["food"]},
+  {k:"sinhto",cat:"飲み物",jp:"シントー",vn:"Sinh tố",price:"3万〜5万₫",taste:"フルーティー",d:"フルーツ・練乳・氷をミキサーにかけたスムージー。マンゴー（xoài ソアイ）とアボカド（bơ ボー）が人気。",how:"氷が心配なら、ホテルやきれいなカフェで",src:["veltraF"]},
+  {k:"cafe",cat:"飲み物",jp:"カフェスアダー",vn:"Cà phê sữa đá",price:"2万〜5万₫",taste:"濃くて甘い",d:"アルミのフィルター（フィン）でゆっくり淹れた濃いコーヒーに、練乳と氷を入れたもの。かなり甘くて濃いので、少しずつ飲もう。",how:"ブラックは「Cà phê đen（カフェ デン）」",src:["vnaCath"]}
+ ];
+ var h=vh("ベトナム料理","南部（ホーチミン）は砂糖を使った甘めでしっかりした味が特徴。値段は1円≈163₫で計算した目安です。",[2]);
+ h+='<div class="card" style="margin-bottom:16px"><h2><span class="k">PLAN</span>自分で食事を選ぶ回と、おすすめの組み合わせ</h2><div class="grid g4" style="gap:10px"><div><b>11/11 夜・11/13 夜</b><br><span class="muted">ベトナム料理の食事付き（別紙参照）。いろいろな料理が少しずつ出ることが多いので、ここで味見できる。</span></div><div><b>11/12 昼</b>（研修日）<br><span class="muted">研修先の近くで手早く：<b>コムタム</b>か<b>バインミー</b></span></div><div><b>11/12 夜</b>（自由）<br><span class="muted">ホテル周辺で：<b>フォー</b>または<b>バインセオ</b>をシェア</span></div><div><b>11/13 昼</b>（自由）<br><span class="muted">観光の前に：<b>フーティウ</b>で南部の味を。中華$21の手配もあり</span></div></div></div>';
+ h+='<div class="grid food">';
+ F.forEach(function(f){
+  var fc=FOODC[f.k];h+='<div class="card dish"><div class="ill photo"><img loading="lazy" src="'+fimg(f.k)+'" alt="'+f.jp+'（'+f.vn+'）の写真"><span class="cat">'+f.cat+'</span></div>'+(fc?'<div class="credit">写真：<a href="'+fc[2]+'" target="_blank" rel="noopener">'+esc(fc[0])+'</a> / '+fc[1]+' / Wikimedia Commons</div>':'')+'<div class="vnn">'+f.vn+'</div><h2>'+f.jp+'</h2><div class="meta"><span>💰 '+f.price+'</span><span>👅 '+f.taste+'</span></div><p>'+f.d+'</p><p class="muted">→ '+f.how+'</p><div class="src"><a href="'+gimg(f.vn+" "+f.jp)+'" target="_blank" rel="noopener">写真を見る</a>'+src(f.src).replace('<div class="src">','').replace(/<\/div>$/,'')+'</div></div>';
+ });
+ h+='</div><div class="grid gap">';
+ h+='<div class="card"><h2><span class="k">TABLE</span>テーブルの調味料・食べ方</h2><ul><li><b>ライム・唐辛子・香草・もやし</b>は自由に入れて自分好みの味にする</li><li><b>ヌックマム</b>（魚醤）は甘いタレとして多くの料理にかける</li><li>テーブルに置いてある<b>揚げパンやバナナなどは、食べた分が会計に入る</b></li><li>屋台では箸・タレ・ナプキンを自分で取るセルフ式が多い</li><li>店員はあまりテーブルに来ないので、用があるときは手を挙げて呼ぶ</li></ul>'+src(["aruF","vtOrd"])+'</div>';
+ h+='<div class="card"><h2><span class="k">ORDER</span>注文で使える言葉</h2><table><tr><td class="vn">Cho tôi cái này</td><td class="kana">チョー トイ カイ ナイ</td><td>これをください</td></tr><tr><td class="vn">Không rau mùi</td><td class="kana">コン ザウ ムイ</td><td>パクチー抜き</td></tr><tr><td class="vn">Không ớt</td><td class="kana">コン オッ</td><td>唐辛子なし</td></tr><tr><td class="vn">Không đá</td><td class="kana">コン ダー</td><td>氷なし</td></tr><tr><td class="vn">Tính tiền</td><td class="kana">ティン ティエン</td><td>お会計</td></tr><tr><td class="vn">Ngon quá!</td><td class="kana">ンゴン クア</td><td>おいしい！</td></tr></table>'+src(["phr","trv","vtOrd"])+'</div>';
+ h+='<div class="card"><h2><span class="k">SAFE</span>お腹を守るコツ</h2><ul><li>人が多く回転の速い店を選ぶ</li><li>火の通った料理や温かい飲み物は安心</li><li>カットフルーツ・生野菜・氷は控えめに</li><li>食べる前に除菌シートで手を拭く</li><li>水はペットボトルを買う</li></ul>'+src(["trv","rurubu"])+'</div>';
+ h+='<div class="card"><h2><span class="k">MANNER</span>マナー</h2><ul><li>物を渡すときは右手か両手で</li><li>大皿料理をみんなで取り分けるのが普通</li><li>人を指でさしたり、頭をさわったりしない</li><li>チップは基本不要（サービス料が伝票に入っていることもある）</li></ul>'+src(["vnEt","tip"])+'</div>';
+ h+='<div class="card"><h2><span class="k">BRING</span>持ち込めない食べ物</h2><p>果物・肉加工品（ハム、ソーセージ）・干しシイタケなどはベトナムへの持ち込みが禁止されています。お菓子程度にしておきましょう。</p><p>'+pg(11)+'</p></div>';
+ h+='</div><p class="muted" style="margin-top:10px">※料理の写真はWikimedia Commonsの自由ライセンス写真です（撮影者とライセンスは各写真の下に記載）。お店や地域によって見た目は変わります。</p>';
+ return h;
+};
+
+R.spots=function(){
+ var h=vh("研修・観光スポット","訪問順に並べています。",[2]);
+ h+='<div class="grid">';
+ h+='<div class="card"><div class="muted">11/10 13:00 · 知多市</div><h2>出光興産 愛知事業所</h2><p>出光興産の事業所の視察です。住所は愛知県知多市南浜町11番地。</p><p>'+pg(2)+'</p></div>';
+ h+='<div class="card"><div class="muted">11/10 16:00–17:00 · 常滑市</div><h2>常滑やきもの散歩道</h2><ul><li><b>土管坂</b>：壁に土管と焼酎瓶が並ぶ、散歩道を象徴する坂</li><li><b>登窯（陶榮窯）</b>：国の重要有形民俗文化財</li><li><b>とこにゃん</b>：高さ3.8mの巨大招き猫</li></ul><p class="muted">坂道や石畳が多いので歩きやすい靴で。</p>'+src(["toko","toko2"])+'</div>';
+ h+='<div class="card"><div class="muted">11/12 終日 · 1区</div><h2>カオタン技術短期大学</h2><p>1906年創立の技術系カレッジで、2025年に119年目を迎えた南部屈指の伝統校です。若い頃のホー・チ・ミンも学んだとされます。住所は65 Huỳnh Thúc Kháng, 1区。</p><p>'+pg(2)+'</p>'+src(["ct","ct2","ct3"])+'</div>';
+ h+='<div class="card"><div class="muted">11/13 午前</div><h2>企業研修（ブラザー工業 予定）</h2><p>ホーチミン市内での企業研修です。訪問先は変更になる可能性があります。</p><p>'+pg(2)+'</p></div>';
+ h+='<div class="card"><div class="muted">11/13 午後</div><h2>サイゴン中央郵便局</h2><p>19世紀末に建てられたフランス植民地様式の、今も使われている郵便局です。高いアーチ天井、ホー・チ・ミンの肖像画、木製の電話ボックスが見どころ。<b>ここから絵はがきを出せます。</b>入場無料・7:30〜18:00。</p>'+src(["post","post2"])+'</div>';
+ h+='<div class="card warn"><div class="muted">11/13 午後 · 郵便局の向かい</div><h2>サイゴン大教会</h2><p>1880年完成のゴシック様式の聖堂です。<b>長期の修復工事中で、観光客は中に入れません。</b>2026年1月の口コミでも工事中で、外観と聖母マリア像を見る程度と考えてください。</p>'+src(["cath","cath2"])+'</div>';
+ h+='<div class="card"><div class="muted">11/13 午後 · 1区</div><h2>ベンタン市場</h2><ul><li>約2,000店が集まるホーチミン最大級の市場。朝4時〜19時ごろ</li><li>観光客向けで値段は高め。<b>値段交渉が前提</b></li><li>同じ品物でも店によって値段が違うので見比べる</li><li>コーヒー、お茶、刺繍雑貨がお土産の定番</li><li>人混みではスリに注意</li></ul>'+src(["ben","ben2"])+'</div>';
+ return h+'</div>';
+};
+R.airport=function(){
+ var h=vh("空港・荷物ルール","しおりの空港・荷物のページを要約しています。");
+ h+='<div class="grid">';
+ h+='<div class="card"><h2><span class="k">BAG</span>荷物の上限</h2><table><tr><th></th><th>個数</th><th>サイズ・重さ</th></tr><tr><td>預け</td><td>1個</td><td>23kgまで・3辺合計158cmまで</td></tr><tr><td>機内</td><td>2個</td><td>3辺合計85cm以内と115cm以内を各1個、合計10kgまで</td></tr></table><p>'+pg(7)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">LIQUID</span>機内に持ち込む液体</h2><ul><li>100ml以下の容器に入れる（容器が100ml超ならNG）</li><li>1L以下の透明ジッパー袋に入れる。1人1袋まで</li><li>歯磨き粉・ジェル・スプレーも液体扱い</li><li>保安検査では袋を別に出す</li></ul><p>'+pg(10)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">BATTERY</span>リチウム電池</h2><ul><li>モバイルバッテリーは<b>預け荷物NG</b>。必ず機内へ</li><li>100Wh以下なら持ち込みOK。100〜160Whは2個まで。160Wh超は不可</li><li>Wh＝3.7×mAh÷1000（10000mAhなら37Wh）</li><li>電池が取り外せないコードレスのヘアアイロンは持ち込みも預けも不可</li></ul><p>'+pg(8)+' '+pg(9)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">DEPART</span>出発の流れ</h2><ol><li>チェックイン（スーツケースを預ける。予備の鍵は中に入れない）</li><li>保安検査（ライター・マッチは1人1つまで）</li><li>税関（100万円相当以上の現金などは申告）</li><li>出国審査（パスポートのカバーを外す）</li><li>搭乗（ゲートは当日決まる）</li></ol><p>'+pg(13)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">ARRIVE</span>ベトナム到着時</h2><ol><li>入国審査（旅行目的・日数・滞在先を英語で聞かれることがある）</li><li>ターンテーブルで荷物を受け取り、壊れていないか確認</li><li>税関：申告なしは緑、申告ありは赤</li><li>到着ロビーで現地係員と合流</li></ol><p class="muted">しおりのスマートゲートのページ（p.15）はオーストラリア向けの説明なので、今回は関係ありません。</p><p>'+pg(14)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">VN</span>ベトナムの免税範囲</h2><ul><li>お土産などの個人物品は合計1,000万VND（約6万円）まで</li><li>薬は申告の対象。市販薬は未開封で</li><li>電子タバコ・CBD・果物・肉加工品は持ち込めない</li></ul><p>'+pg(11)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">RETURN</span>帰国時</h2><ol><li>ホーチミンで出国手続き</li><li>機内で「携帯品・別送品申告書」を書く（<b>Visit Japan Web</b>を登録していればQRで済む）</li><li>日本の入国審査（日本人はほぼ素通り）</li><li>荷物の受け取り</li><li>税関：免税範囲内なら緑の検査台</li></ol><p>'+pg(20)+' '+pg(21)+'</p>'+src(["customs"])+'</div>';
+ return h+'</div>';
+};
+R.safety=function(){
+ var h=vh("安全・健康","しおりの危機管理ページと、総領事館・厚労省の情報をまとめています。",[17,18,19]);
+ h+='<div class="grid">';
+ h+='<div class="card warn"><h2><span class="k">THEFT</span>ひったくり・スリ</h2><p>ホーチミンで典型的なのは、<b>バイクで後ろから近づき、追い越しざまにバッグやスマホを奪う</b>手口です。</p><ul><li>スマホはストラップを付けて斜めがけにし、車道側で持たない</li><li>バッグは体の前に持つ</li><li>お金は1日に必要な分だけ持ち歩き、財布は体から離さない '+pg(19)+'</li><li>1人で行動しない</li></ul>'+src(["cons","ascii"])+'</div>';
+ h+='<div class="card"><h2><span class="k">ROAD</span>道路の渡り方</h2><p>バイクは止まってくれません。<b>一定のゆっくりしたペースで歩き続ける</b>のがコツで、バイクのほうが避けてくれます。急に走る・立ち止まる・戻るのが一番危険です。地元の人の横について渡るのも手です。</p><p>'+pg(19)+'</p>'+src(["cross"])+'</div>';
+ h+='<div class="card"><h2><span class="k">HEALTH</span>デング熱・体調</h2><ul><li>デング熱は蚊が媒介し、予防接種はありません。<b>刺されないことが一番の予防</b></li><li>長袖を着て、肌の出ている部分に虫除けを使う</li><li>帰国後2〜14日以内に高熱が出たら、ベトナムに行っていたことを医師に伝える</li><li>体調が悪いときは必ず先生・現地スタッフに伝える '+pg(18)+'</li></ul>'+src(["mhlw","ichi"])+'</div>';
+ h+='<div class="card"><h2><span class="k">TROUBLE</span>困ったとき</h2><ul><li>盗難に遭ったら警察でポリスレポートをもらう（保険の請求に必要）</li><li>カードを盗まれたら、すぐにカード会社に連絡して止める</li><li>現地のクリニックでは診断書と領収書を必ずもらう</li><li>保険証書は必ず持っていく</li></ul><p>'+pg(17)+' '+pg(18)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">RULES</span>現地での約束</h2><ul><li>時間厳守・遅刻厳禁</li><li>パスポートはスーツケースに鍵をかけて保管</li><li>派手な服装やブランド品は身につけない</li><li>大麻などの誘いには乗らず、はっきりNOと言う</li></ul><p>'+pg(17)+' '+pg(19)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">SOS</span>連絡先</h2><p><b>出発当日の緊急連絡先</b><br>名鉄観光サービス 岐阜支店 担当者<br>（電話番号はしおり p.3）</p><p class="muted">たびレジに登録しておくと、外務省の安全情報が届きます。</p><p>'+pg(3)+' '+pg(5)+'</p>'+src(["tabireg"])+'</div>';
+ return h+'</div>';
+};
+R.phrases=function(){
+ var P=[["こんにちは","Xin chào","シン チャオ"],["ありがとう","Cảm ơn","カム オン"],["すみません","Xin lỗi","シン ロイ"],["はい / いいえ","Vâng / Không","ヴァン / コン"],["いくらですか？","Bao nhiêu tiền?","バオ ニュウ ティエン"],["高すぎます","Đắt quá","ダッ クア"],["これをください","Ok, tôi lấy","オーケー トイ レイ"],["わかりません","Tôi không hiểu","トイ コン ヒュウ"],["パクチー抜きで","Không rau mùi","コン ザウ ムイ"],["さようなら","Tạm biệt","タム ビエッ"]];
+ var h=vh("ベトナム語フレーズ","ベトナム語には声調があるので、カタカナは目安です。笑顔で言えば十分伝わります。");
+ h+='<div class="grid"><div class="card span2"><table><tr><th>日本語</th><th>ベトナム語</th><th>読み</th></tr>';
+ P.forEach(function(p){h+='<tr><td>'+p[0]+'</td><td class="vn">'+p[1]+'</td><td class="kana">'+p[2]+'</td></tr>'});
+ h+='</table>'+src(["phr","trv"])+'</div><div class="card"><h2><span class="k">TIP</span>通じないとき</h2><ul><li>ホテルや観光地では英語がだいたい通じる</li><li>値段はスマホの電卓に打ってもらう</li><li>市場の店員は「10」で10,000₫の意味のことがある</li></ul>'+src(["veltraC"])+'</div></div>';
+ return h;
+};
+R.pdf=function(){
+ var h=vh("しおりPDF","");
+ h+='<div class="vbar"><button class="btn" id="pv">← 前</button><span class="lbl" id="plbl"></span><button class="btn" id="pn">次 →</button>'+(OFFLINE?'':'<a class="btn" href="shiori.pdf" target="_blank" rel="noopener" id="popen">PDFを別タブで開く ↗</a>')+'</div>';
+ h+='<div class="pdfwrap"><div class="thumbs" id="thumbs">';
+ for(var i=1;i<=NPAGES;i++){h+='<button data-p="'+i+'"><span>'+i+'</span><img loading="lazy" src="'+pimgSrc(i)+'" alt="p.'+i+'"></button>'}
+ h+='</div><div class="viewer" id="viewer"><img id="pimg" alt=""></div></div>';
+ return h;
+};
+R.sources=function(){
+ var h=vh("出典","このガイドで参照したWebサイトです（2026年11月6日に確認）。");
+ h+='<div class="card"><ul class="srclist">';
+ Object.keys(S).forEach(function(k){h+='<li><a href="'+S[k][1]+'" target="_blank" rel="noopener">'+S[k][0]+'</a></li>'});
+ h+='</ul></div><footer>しおり（名鉄観光サービス作成）の内容をもとに作っています。現地の事情で変更があった場合は、先生や添乗員の指示に従ってください。</footer>';
+ return h;
+};
+
+/* ---------- router ---------- */
+var cur="home",curPage=1;
+function nav(){
+ var t="",d="";
+ VIEWS.forEach(function(v,i){t+='<a href="#'+v.id+'" data-v="'+v.id+'">'+v.t+'</a>';d+='<a href="#'+v.id+'" data-v="'+v.id+'"><span class="no">'+String(i).padStart(2,"0")+'</span><span>'+v.t+'<span class="ds">'+v.d+'</span></span></a>'});
+ document.getElementById("tabs").innerHTML=t;document.getElementById("dnav").innerHTML=d;
+}
+function mark(){document.querySelectorAll("[data-v]").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-v")===cur)});var on=document.querySelector(".tabs a.on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest",inline:"center"})}
+function renderView(id){if(id==="checklist")SIDX=null;
+ cur=id;var m=document.getElementById("main");
+ m.innerHTML='<div class="view on">'+R[id]()+'</div>';
+ mark();bindView();if(pendingJump)doJump();else window.scrollTo(0,0);
+}
+function routeTo(h){h=String(h||"").replace("#","");if(window.__NOPDF__&&/^pdf/.test(h))h="home";var p=null;var mm=h.match(/^pdf-p(\d+)$/);if(mm){p=+mm[1];h="pdf"}if(!R[h])h="home";if(p)curPage=p;if(h!==cur||h==="pdf"||!document.querySelector(".view"))renderView(h);closeDrawer()}
+var lastHash=null;
+function route(){var h=(location.hash||"").replace("#","");if(h===lastHash&&document.querySelector(".view"))return;lastHash=h;routeTo(h)}
+function go(id){lastHash=id;if(location.hash!=="#"+id){try{history.pushState(null,"","#"+id)}catch(e){}}routeTo(id)}
+document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;var id=a.getAttribute("href").slice(1);if(!id)return;e.preventDefault();go(id)});
+function openPage(n){curPage=n;go("pdf-p"+n)}
+function updateBadge(){}
+/* drawer */
+function openDrawer(){document.getElementById("drawer").classList.add("show");document.getElementById("scrim").classList.add("show")}
+function closeDrawer(){document.getElementById("drawer").classList.remove("show");document.getElementById("scrim").classList.remove("show")}
+document.getElementById("burger").onclick=openDrawer;
+document.getElementById("scrim").onclick=closeDrawer;
+document.getElementById("dclose").onclick=closeDrawer;
+document.addEventListener("keydown",function(e){
+ var so=document.getElementById("sov").classList.contains("show");
+ if(so){if(e.key==="ArrowDown"){e.preventDefault();moveSel(1)}else if(e.key==="ArrowUp"){e.preventDefault();moveSel(-1)}else if(e.key==="Enter"){e.preventDefault();goHit(sSel)}else if(e.key==="Escape"){closeSearch()}return}
+ var typing=/INPUT|TEXTAREA|SELECT/.test((document.activeElement||{}).tagName||"");
+ if((e.key==="k"&&(e.metaKey||e.ctrlKey))||(e.key==="/"&&!typing)){e.preventDefault();openSearch();return}
+ if(e.key==="Escape"){closeDrawer();closeConv()}
+ if(typing)return;if(cur==="pdf"){if(e.key==="ArrowRight")showPage(curPage+1);if(e.key==="ArrowLeft")showPage(curPage-1)}});
+document.addEventListener("click",function(e){var t=e.target.closest&&e.target.closest(".pg:not(.nolink)");if(t){e.preventDefault();e.stopPropagation();openPage(+t.getAttribute("data-pg"))}},true);
+
+function pimgSrc(n){var k=String(n).padStart(2,"0");return (window.__PAGES__&&window.__PAGES__[k])||("pages/p-"+k+".jpg")}
+function showPage(n){
+ if(n<1||n>NPAGES)return;curPage=n;
+ var img=document.getElementById("pimg");if(!img)return;
+ img.src=pimgSrc(n);img.alt="しおり p."+n;
+ document.getElementById("plbl").textContent="p."+n+" / "+NPAGES;
+ var po=document.getElementById("popen");if(po)po.href="shiori.pdf#page="+n;
+ document.querySelectorAll("#thumbs button").forEach(function(b){var on=+b.getAttribute("data-p")===n;b.classList.toggle("on",on);if(on&&b.scrollIntoView)b.scrollIntoView({block:"nearest",inline:"nearest"})});
+ document.getElementById("viewer").scrollTop=0;
+}
+function bindView(){
+ var b0=document.getElementById("dlBtn");if(b0&&dlNS)b0.style.display="";
+ if(cur==="pdf"){
+  document.querySelectorAll("#thumbs button").forEach(function(b){b.onclick=function(){showPage(+b.getAttribute("data-p"))}});
+  document.getElementById("pv").onclick=function(){showPage(curPage-1)};
+  document.getElementById("pn").onclick=function(){showPage(curPage+1)};
+  showPage(curPage);
+ }
+ if(cur==="checklist"){
+  document.querySelectorAll(".it input").forEach(function(cb){cb.onchange=function(){
+   var id=cb.getAttribute("data-id");if(cb.checked)state.checked[id]=true;else delete state.checked[id];
+   cb.closest(".it").classList.toggle("done",cb.checked);refreshCounts();persist();
+  }});
+  document.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(e){e.preventDefault();var id=b.getAttribute("data-del");state.custom=state.custom.filter(function(x){return x.id!==id});delete state.checked[id];persist();renderView("checklist")}});
+  document.querySelectorAll("[data-hide]").forEach(function(b){b.onclick=function(e){e.preventDefault();e.stopPropagation();state.hidden[b.getAttribute("data-hide")]=true;persist();renderView("checklist")}});
+  document.querySelectorAll("[data-unhide]").forEach(function(b){b.onclick=function(e){e.preventDefault();delete state.hidden[b.getAttribute("data-unhide")];persist();renderView("checklist")}});
+  var db2=document.getElementById("dlBtn");if(db2)db2.onclick=downloadOffline;
+  document.querySelectorAll("[data-flt]").forEach(function(b){b.onclick=function(){ui.filter=b.getAttribute("data-flt");try{localStorage.setItem(LS+"-filter",ui.filter)}catch(e){}document.querySelectorAll("[data-flt]").forEach(function(x){x.classList.toggle("on",x===b)});document.getElementById("cols").className="cols f-"+ui.filter}});
+  var m=document.getElementById("modal");
+  document.getElementById("resetBtn").onclick=function(){m.classList.add("show")};
+  document.getElementById("mno").onclick=function(){m.classList.remove("show")};
+  document.getElementById("myes").onclick=function(){state.checked={};state.custom=[];state.hidden={};m.classList.remove("show");persist();renderView("checklist")};
+  document.getElementById("addf").onsubmit=function(e){e.preventDefault();var v=document.getElementById("addn").value.trim();if(!v)return;state.custom.push({id:"c-"+Date.now(),name:v,cat:document.getElementById("addc").value});persist();renderView("checklist")};
+ }
+}
+var dlNS=null;
+function downloadOffline(){
+ if(!dlNS)return;
+ setSave("ダウンロード版を準備中…",false);
+ fetch("offline.html").then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(t){
+  var seed=JSON.stringify(state).replace(/</g,"\\u003c");
+  t=t.replace('<script id="seed" type="application/json">{}</'+'script>','<script id="seed" type="application/json">'+seed+'</'+'script>');
+  return dlNS.save({filename:"ベトナム研修ガイド.html",data:new Blob([t],{type:"text/html"})});
+ }).then(function(){setSave("ダウンロードしました",true)}).catch(function(e){setSave(e&&e.code==="declined"?"ダウンロードをキャンセルしました":"ダウンロードできませんでした",false)});
+}
+function initDl(){if(OFFLINE||!(window.claude&&window.claude.use))return;window.claude.use("downloads").then(function(d){dlNS=d;var b=document.getElementById("dlBtn");if(d&&b)b.style.display=""}).catch(function(){})}
+function refreshCounts(){
+ var p=progress();document.getElementById("barI").style.width=p.p+"%";document.getElementById("pct").textContent=p.p+"%";document.getElementById("cnt").textContent=p.c+" / "+p.n;
+ document.querySelectorAll("[data-cn]").forEach(function(el){var card=el.closest(".card");var b=card.querySelectorAll(".it input"),k=0;b.forEach(function(x){if(x.checked)k++});el.textContent=k+"/"+b.length;el.classList.toggle("full",b.length>0&&k===b.length)});
+ var bw=document.getElementById("barW");if(bw)bw.classList.toggle("full",p.p===100);if(p.p===100&&p.n)toast("全部そろいました！ よい研修を ✈");
+}
+/* ---------- toast ---------- */
+var tT=null;function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(tT);tT=setTimeout(function(){t.classList.remove("show")},2200)}
+/* ---------- theme ---------- */
+function curTheme(){return document.documentElement.getAttribute("data-theme")||"light"}
+function setThemeIcon(){var d=curTheme()==="dark";document.getElementById("tIcon").textContent=d?"☀":"☾";document.getElementById("tBtn").title=d?"ライトモードに切替":"ダークモードに切替"}
+function toggleTheme(){var n=curTheme()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("vn-guide-theme",n)}catch(e){}setThemeIcon();toast(n==="dark"?"ダークモード":"ライトモード")}
+/* ---------- converter ---------- */
+var RATE_DEF=163;
+function rate(){try{var r=parseFloat(localStorage.getItem("vn-guide-rate"));if(r>50&&r<400)return r}catch(e){}return RATE_DEF}
+function fmt(n){return Math.round(n).toLocaleString("ja-JP")}
+function num(v){return parseFloat(String(v).replace(/[^0-9.]/g,""))||0}
+function convHint(vnd){var k=Math.floor(vnd/1000);return vnd?("暗算なら "+fmt(k)+" × 6 ≈ "+fmt(k*6)+" 円"):""}
+function fromV(){var v=num(cvV.value);cvY.value=v?fmt(v/rate()):"";cvV.value=v?fmt(v):"";document.getElementById("cvHint").textContent=convHint(v)}
+function fromY(){var y=num(cvY.value);cvV.value=y?fmt(y*rate()):"";cvY.value=y?fmt(y):"";document.getElementById("cvHint").textContent=convHint(y*rate())}
+var cvV,cvY;
+function openConv(){closeDrawer();closeSearch();var c=document.getElementById("conv");c.classList.add("show");document.getElementById("cvR").value=rate();setTimeout(function(){cvV.focus()},50)}
+function closeConv(){document.getElementById("conv").classList.remove("show")}
+/* ---------- search ---------- */
+var SIDX=null,sSel=0,sHits=[];
+var SEL={checklist:".it",schedule:".day,.card"};
+function selFor(v){return SEL[v]||".card,.day"}
+function buildIndex(){
+ SIDX=[];var keep=cur;var tmp=document.createElement("div");
+ VIEWS.forEach(function(v){if(v.id==="home"||v.id==="pdf")return;cur=v.id;tmp.innerHTML=R[v.id]();
+  tmp.querySelectorAll(selFor(v.id)).forEach(function(el,i){
+   var t=el.querySelector("h2,.nm,.dh b");var title=t?t.textContent.replace(/^[A-Z]{2,}\s*/,""):"";
+   if(v.id==="schedule"&&el.classList.contains("day"))title=el.querySelector(".dh").textContent;
+   var cl=el.cloneNode(true);cl.querySelectorAll(".hid,.src,.del,button,.ill").forEach(function(x){x.remove()});var txt=cl.textContent.replace(/\s+/g," ").trim();
+   SIDX.push({v:v.id,vt:v.t,sel:selFor(v.id),i:i,title:title.trim(),text:txt,lo:txt.toLowerCase()});
+  });
+ });
+ if(!window.__NOPDF__)for(var n=1;n<=NPAGES;n++)SIDX.push({v:"pdf",vt:"しおりPDF",page:n,title:"しおり p."+n,text:"しおり p."+n+" のページを開く",lo:("しおり p."+n+" p"+n+" ページ").toLowerCase()});
+ cur=keep;
+}
+function hl(t,terms){var e=esc(t);terms.forEach(function(q){if(!q)return;e=e.replace(new RegExp("("+q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")+")","gi"),"<mark>$1</mark>")});return e}
+function doSearch(){
+ var q=document.getElementById("sq").value.trim().toLowerCase(),box=document.getElementById("sres");
+ if(!SIDX)buildIndex();
+ if(!q){box.innerHTML='<div class="sempty">よく探されるキーワード</div><div class="shint">'+["両替","Wi-Fi","デビット","集合","フォー","液体","モバイルバッテリー","p.6","ひったくり","Grab"].map(function(k){return '<button class="chipf" data-q="'+k+'">'+k+'</button>'}).join("")+'</div>';box.querySelectorAll("[data-q]").forEach(function(b){b.onclick=function(){document.getElementById("sq").value=b.getAttribute("data-q");doSearch()}});sHits=[];return}
+ var terms=q.split(/\s+/).filter(Boolean);
+ sHits=SIDX.map(function(e){var ok=terms.every(function(t){return e.lo.indexOf(t)>=0});if(!ok)return null;var sc=0;terms.forEach(function(t){if(e.title.toLowerCase().indexOf(t)>=0)sc+=5;sc+=1});if(e.v==="pdf")sc-=3;return{e:e,sc:sc}}).filter(Boolean).sort(function(a,b){return b.sc-a.sc}).slice(0,40);
+ sSel=0;
+ if(!sHits.length){box.innerHTML='<div class="sempty">「'+esc(q)+'」は見つかりませんでした</div>';return}
+ box.innerHTML=sHits.map(function(h,k){var e=h.e,pos=e.lo.indexOf(terms[0]),st=Math.max(0,pos-34),sn=(st?"…":"")+e.text.slice(st,st+120);return '<button class="sr'+(k===0?' sel':'')+'" data-k="'+k+'"><div class="sv">'+esc(e.vt)+'</div><div class="st">'+hl(e.title||e.vt,terms)+'</div><div class="ss">'+hl(sn,terms)+'</div></button>'}).join("");
+ box.querySelectorAll(".sr").forEach(function(b){b.onclick=function(){goHit(+b.getAttribute("data-k"))}});
+}
+function goHit(k){var h=sHits[k];if(!h)return;var e=h.e;closeSearch();
+ if(e.v==="pdf"){openPage(e.page);return}
+ if(e.v==="checklist"&&ui.filter!=="all"){ui.filter="all"}
+ pendingJump={sel:e.sel,i:e.i};if(cur===e.v){renderView(e.v)}else{go(e.v)}}
+var pendingJump=null;
+function doJump(){if(!pendingJump)return;var j=pendingJump;pendingJump=null;var els=document.querySelectorAll("#main "+j.sel.split(",").join(",#main "));var el=els[j.i];if(!el)return;setTimeout(function(){el.scrollIntoView({behavior:"smooth",block:"center"});el.classList.remove("flash");void el.offsetWidth;el.classList.add("flash")},60)}
+function openSearch(){closeDrawer();closeConv();var o=document.getElementById("sov");o.classList.add("show");var i=document.getElementById("sq");i.value="";doSearch();setTimeout(function(){i.focus()},30)}
+function closeSearch(){document.getElementById("sov").classList.remove("show")}
+function moveSel(d){var b=document.querySelectorAll("#sres .sr");if(!b.length)return;sSel=(sSel+d+b.length)%b.length;b.forEach(function(x,k){x.classList.toggle("sel",k===sSel)});b[sSel].scrollIntoView({block:"nearest"})}
+function countdown(){var ms=new Date("2026-11-10T10:50:00+09:00")-new Date();var el=document.getElementById("cd");if(ms<=0){el.textContent="研修中 / 出発済み";return}var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5);el.textContent="出発まで "+d+"日 "+h+"時間"}
+cvV=document.getElementById("cvV");cvY=document.getElementById("cvY");
+cvV.oninput=fromV;cvY.oninput=fromY;
+document.getElementById("cvSw").onclick=function(){var a=cvV.value;cvV.value=cvY.value;fromV()};
+document.querySelectorAll("#cvQ [data-v]").forEach(function(b){b.onclick=function(){cvV.value=b.getAttribute("data-v");fromV()}});
+document.getElementById("cvR").oninput=function(){var r=num(this.value);if(r>50&&r<400){try{localStorage.setItem("vn-guide-rate",r)}catch(e){}if(cvV.value)fromV()}};
+document.getElementById("cvRR").onclick=function(){try{localStorage.removeItem("vn-guide-rate")}catch(e){}document.getElementById("cvR").value=RATE_DEF;if(cvV.value)fromV()};
+document.getElementById("cClose").onclick=closeConv;
+document.getElementById("cBtn").onclick=function(){document.getElementById("conv").classList.contains("show")?closeConv():openConv()};
+document.getElementById("sBtn").onclick=openSearch;document.getElementById("dS").onclick=openSearch;document.getElementById("dC").onclick=openConv;
+document.getElementById("tBtn").onclick=toggleTheme;document.getElementById("dT").onclick=toggleTheme;setThemeIcon();
+document.getElementById("sov").onclick=function(e){if(e.target===this)closeSearch()};
+document.getElementById("sq").oninput=doSearch;
+document.addEventListener("click",function(e){var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv],.hero .f"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme()}if(e.target.closest&&e.target.closest(".hero .f:nth-child(3)"))openConv()});
+var tt=document.getElementById("totop");window.addEventListener("scroll",function(){tt.classList.toggle("show",scrollY>700)},{passive:true});tt.onclick=function(){scrollTo({top:0,behavior:"smooth"})};
+nav();window.addEventListener("hashchange",route);window.addEventListener("popstate",route);route();countdown();setInterval(countdown,60000);
+initDb();initDl();
+})();
+</script>
+<script>
+if("serviceWorker" in navigator){window.addEventListener("load",function(){navigator.serviceWorker.register("sw.js").then(function(r){navigator.serviceWorker.ready.then(function(){var t=document.getElementById("toast");if(t&&!localStorage.getItem("vn-offline-ready")){try{localStorage.setItem("vn-offline-ready","1")}catch(e){}t.textContent="オフラインでも使えるようになりました ✓";t.classList.add("show");setTimeout(function(){t.classList.remove("show")},2600)}})}).catch(function(){})})}
+</script>
+</body>
+</html>
