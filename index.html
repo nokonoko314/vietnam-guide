@@ -15,7 +15,7 @@
 <title>ベトナム研修 完全ガイド</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;800&family=Shippori+Mincho+B1:wght@500;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <script>try{var t=localStorage.getItem("vn-guide-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 :root{--bg:#f4f4f1;--panel:#fff;--panel2:#f8f8f6;--ink:#141414;--sub:#6a6a66;--line:#e6e5e0;--line2:#d4d3cd;--red:#d6312b;--yel:#f2c230;--blue:#1f5fbf;--ok:#128a5e;--chip:#f2f2ef;--top:#111;--hero:#121212;--never:#fff7f5;--neverl:#f2d6d1;--sh:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.04);--tgc-b:#e6eefb;--tgc-c:#1f4f8f;--tgo-b:#f3eee3;--tgo-c:#7a6440;--tga-b:#fde6e1;--tga-c:#a8361a;--my:#e6f5ee;--myl:#bfe3d2;--myc:#0b6b48;--mn:#fff0ee;--mnl:#f3cbc6;--mnc:#a12620;--ill:#f3f1ea;--mark:#ffe58a;color-scheme:light}
@@ -256,6 +256,61 @@ mark{background:var(--mark);color:inherit;border-radius:3px;padding:0 1px}
 footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--panel);padding:9px 16px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:50}
 .toast.show{opacity:1;transform:translateX(-50%)}
+
+/* ===== VIVANT風モード：砂漠 × 極秘ファイル ===== */
+[data-theme=vivan]{--bg:#100d09;--panel:#1a150e;--panel2:#221b12;--ink:#ecdfc2;--sub:#a99877;--line:#3a3022;--line2:#57472f;--red:#c0362c;--yel:#d1a95a;--blue:#e0b866;--ok:#9fbf6a;--chip:#241d13;--top:#0b0906;--hero:#16110a;--never:#231310;--neverl:#4a2219;--sh:0 1px 0 rgba(209,169,90,.06),0 10px 30px rgba(0,0,0,.35);--tgc-b:#2a2416;--tgc-c:#e6c27a;--tgo-b:#2a2218;--tgo-c:#c9b28a;--tga-b:#3a1712;--tga-c:#ff9b86;--my:#1f2414;--myl:#3d4a25;--myc:#c9e09a;--mn:#2c1410;--mnl:#5a2419;--mnc:#ff9e8c;--ill:#2a2216;--mark:#7a5a1c;color-scheme:dark}
+[data-theme=vivan] body{font-family:"Shippori Mincho B1","Cormorant Garamond",serif;font-size:15px;letter-spacing:.02em;background-color:var(--bg);background-image:radial-gradient(rgba(209,169,90,.05) 1px,transparent 1px),radial-gradient(rgba(0,0,0,.25) 1px,transparent 1px);background-size:3px 3px,5px 5px;background-position:0 0,1px 2px}
+[data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .it .nm,[data-theme=vivan] .next .what{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.06em}
+[data-theme=vivan] .big,[data-theme=vivan] .pct,[data-theme=vivan] .ev .t,[data-theme=vivan] .next .when,[data-theme=vivan] .hero .f b,[data-theme=vivan] .day .dh b,[data-theme=vivan] .cd,[data-theme=vivan] .vbar .lbl,[data-theme=vivan] .cv input,[data-theme=vivan] .next .rest{font-family:"Courier Prime","Courier New",monospace;letter-spacing:.04em}
+[data-theme=vivan] .brand{font-family:"Courier Prime",monospace;letter-spacing:.28em;font-size:13px}
+[data-theme=vivan] .brand b{color:var(--red)}
+[data-theme=vivan] .card h2 .k,[data-theme=vivan] .hero .eb,[data-theme=vivan] .vh .num,[data-theme=vivan] .toc .n,[data-theme=vivan] .next .lab,[data-theme=vivan] .drawer h3,[data-theme=vivan] .food .vnn{font-family:"Courier Prime",monospace;letter-spacing:.2em}
+[data-theme=vivan] .card h2 .k{color:var(--red);border:1.5px solid var(--red);border-radius:3px;padding:1px 6px 0;transform:rotate(-3deg);font-size:10px;opacity:.9}
+[data-theme=vivan] .card,[data-theme=vivan] .toc a,[data-theme=vivan] .day,[data-theme=vivan] .next,[data-theme=vivan] .ck-top{border-radius:6px;background-image:linear-gradient(180deg,rgba(209,169,90,.035),transparent 40%)}
+[data-theme=vivan] .card h2{border-bottom:1px dashed var(--line2);padding-bottom:8px}
+[data-theme=vivan] .cols .card .ch h2{border-bottom:none;padding-bottom:0}
+[data-theme=vivan] .vh{border-bottom:1px solid var(--line2)}
+[data-theme=vivan] .vh h1{font-size:30px;letter-spacing:.1em}
+[data-theme=vivan] .vh .num{color:var(--yel)}
+[data-theme=vivan] .toc .n{color:var(--yel)}
+[data-theme=vivan] .toc a:hover,[data-theme=vivan] .card:hover{border-color:var(--yel)}
+[data-theme=vivan] .top{border-bottom:1px solid #2a2216}
+[data-theme=vivan] .tabs a{font-family:"Shippori Mincho B1",serif;letter-spacing:.06em}
+[data-theme=vivan] .tabs a.on{background:var(--yel);color:#120e08}
+[data-theme=vivan] .tb{border-color:#3a3022;background:#16120c}
+[data-theme=vivan] .btn.on,[data-theme=vivan] .chipf.on{background:var(--yel);border-color:var(--yel);color:#120e08}
+[data-theme=vivan] .pg{background:var(--yel);color:#120e08;font-family:"Courier Prime",monospace}
+[data-theme=vivan] .it input:checked{background:var(--yel);border-color:var(--yel)}
+[data-theme=vivan] .it input:checked:after{border-color:#120e08}
+[data-theme=vivan] .bar i{background:linear-gradient(90deg,#8a6a2e,var(--yel))}
+[data-theme=vivan] .card.research{border:1.5px solid var(--yel)}
+[data-theme=vivan] .warn{border-left:3px solid var(--red)}
+/* hero: 夕暮れの砂丘 */
+[data-theme=vivan] .hero{border-radius:8px;border:1px solid #3a3022;background:
+ radial-gradient(circle at 47% 66%,rgba(240,190,100,.95) 0 40px,rgba(240,170,80,.3) 41px 84px,transparent 85px),
+ linear-gradient(175deg,transparent 58%,#3a2814 58.4% 64%,transparent 64.4%),
+ linear-gradient(185deg,transparent 66%,#2a1d0f 66.4% 76%,transparent 76.4%),
+ linear-gradient(172deg,transparent 74%,#1a120a 74.4%),
+ linear-gradient(180deg,#140f0a 0%,#3b2614 52%,#7a4a1e 70%,#1a120a 100%)}
+[data-theme=vivan] .hero:after{content:"";display:none}
+[data-theme=vivan] .hero{padding-top:56px}
+[data-theme=vivan] .hero:before{content:"MISSION FILE · 2026.11";position:absolute;right:26px;top:16px;z-index:3;font:700 11px "Courier Prime",monospace;letter-spacing:.24em;color:var(--red);border:2px solid var(--red);padding:4px 10px;transform:rotate(4deg);opacity:.85;background:rgba(16,13,9,.4)}
+[data-theme=vivan] .hero h1{font-size:38px;letter-spacing:.14em;text-shadow:0 2px 18px rgba(0,0,0,.6)}
+[data-theme=vivan] .hero .eb{color:var(--yel)}
+[data-theme=vivan] .hero .f{background:rgba(14,11,7,.72);border-color:rgba(209,169,90,.25);backdrop-filter:blur(2px)}
+[data-theme=vivan] .hero .f b{color:#f3e2bb}
+/* photos & images */
+[data-theme=vivan] .dish .ill.photo img{filter:sepia(.28) saturate(.9) contrast(1.06)}
+[data-theme=vivan] .dish .cat{background:var(--red)}
+[data-theme=vivan] .drawer{background:#0b0906;border-right:1px solid #2a2216}
+[data-theme=vivan] .drawer nav a{font-family:"Shippori Mincho B1",serif;letter-spacing:.05em}
+[data-theme=vivan] .drawer nav a.on{box-shadow:inset 3px 0 0 var(--yel)}
+[data-theme=vivan] .sbox,[data-theme=vivan] .conv,[data-theme=vivan] .modal .box{border-radius:8px;border-color:var(--line2)}
+[data-theme=vivan] mark{color:#fff}
+[data-theme=vivan] ::selection{background:var(--red);color:#fff}
+[data-theme=vivan] .src a{font-family:"Inter","IBM Plex Sans JP",sans-serif;letter-spacing:0}
+@media(max-width:860px){[data-theme=vivan] .hero{padding-top:24px;padding-bottom:58px}[data-theme=vivan] .hero:before{top:auto!important;bottom:16px;right:16px;font-size:9.5px;transform:rotate(-3deg)}[data-theme=vivan] .hero{background-position:0 0}}
+
 @media print{.top,.drawer,.scrim,.totop,.conv,.sov,.ck-top button{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
 </style>
 </head>
@@ -267,7 +322,7 @@ footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid va
  <div class="tools">
   <button class="tb" id="sBtn" title="ページ内検索（/ または ⌘K）"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><span class="lb">検索</span><kbd>/</kbd></button>
   <button class="tb" id="cBtn" title="ドン⇄円 換算"><b style="font:800 12px Inter">₫⇄¥</b><span class="lb">換算</span></button>
-  <button class="tb" id="tBtn" title="ダークモード切替" aria-label="ダークモード切替"><span id="tIcon">◐</span></button>
+  <button class="tb" id="tBtn" title="テーマ切替" aria-label="テーマ切替（ライト・ダーク・VIVANT風）"><span id="tIcon">☀</span></button>
   <div class="cd" id="cd"></div>
  </div>
 </header>
@@ -530,7 +585,7 @@ R.home=function(){
  VIEWS.forEach(function(v,i){if(v.id==="home")return;h+='<a href="#'+v.id+'"><span class="n">'+String(i).padStart(2,"0")+'</span><span class="t">'+v.t+'</span><span class="d">'+v.d+'</span></a>'});
  h+='</div><div style="display:grid;gap:16px;align-content:start">';
  h+='<div class="card mini"><h2><span class="k">PACKING</span>持ち物の進み具合</h2><div class="big">'+p.p+'<small>%</small></div><div class="bar'+(p.p===100?' full':'')+'"><i style="width:'+p.p+'%"></i></div><div class="muted">'+p.c+' / '+p.n+' 項目　<a href="#checklist">チェッカーを開く →</a></div></div>';
- h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="conv">₫⇄¥ 換算</button><button class="btn" data-act="search">🔍 全ページ検索</button><button class="btn" data-act="theme">◐ ダークモード</button></div><p class="muted" style="margin-top:10px">キーボードなら <b>/</b> で検索、<b>Esc</b> で閉じる。</p></div>';
+ h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="conv">₫⇄¥ 換算</button><button class="btn" data-act="search">🔍 全ページ検索</button><button class="btn" data-act="theme">◎ テーマ切替（ライト→ダーク→VIVANT風）</button></div><p class="muted" style="margin-top:10px">キーボードなら <b>/</b> で検索、<b>Esc</b> で閉じる。</p></div>';
  h+='<div class="card warn"><h2><span class="k">SOS</span>出発当日の緊急連絡先</h2><p>名鉄観光サービス 岐阜支店 担当者<br><b>電話番号はしおり p.3（タップで表示）</b></p><p>'+pg(3)+'</p></div>';
  return h+'</div></div>';
 };
@@ -872,8 +927,9 @@ function importShiori(file){
 var tT=null;function toast(m){var t=document.getElementById("toast");t.textContent=m;t.classList.add("show");clearTimeout(tT);tT=setTimeout(function(){t.classList.remove("show")},2200)}
 /* ---------- theme ---------- */
 function curTheme(){return document.documentElement.getAttribute("data-theme")||"light"}
-function setThemeIcon(){var d=curTheme()==="dark";document.getElementById("tIcon").textContent=d?"☀":"☾";document.getElementById("tBtn").title=d?"ライトモードに切替":"ダークモードに切替"}
-function toggleTheme(){var n=curTheme()==="dark"?"light":"dark";document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("vn-guide-theme",n)}catch(e){}setThemeIcon();toast(n==="dark"?"ダークモード":"ライトモード")}
+var THEMES=["light","dark","vivan"],TNAME={light:"ライトモード",dark:"ダークモード",vivan:"VIVANT風モード"},TICON={light:"☀",dark:"☾",vivan:"◎"};
+function setThemeIcon(){var t=curTheme(),nx=THEMES[(THEMES.indexOf(t)+1)%THEMES.length];document.getElementById("tIcon").textContent=TICON[t]||"☀";document.getElementById("tBtn").title="今："+TNAME[t]+"（押すと"+TNAME[nx]+"）";try{var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#111111":(t==="vivan"?"#0b0906":"#090909"))}catch(e){}}
+function toggleTheme(){var t=curTheme(),n=THEMES[(THEMES.indexOf(t)+1)%THEMES.length];document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("vn-guide-theme",n)}catch(e){}setThemeIcon();toast(TNAME[n])}
 /* ---------- converter ---------- */
 var RATE_DEF=163;
 function rate(){try{var r=parseFloat(localStorage.getItem("vn-guide-rate"));if(r>50&&r<400)return r}catch(e){}return RATE_DEF}
