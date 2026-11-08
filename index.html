@@ -408,7 +408,7 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 .ingt thead th:not(:first-child){text-align:center}
 .iv-y{color:var(--ink)}.iv-m{color:var(--sub)}.iv-s{font-size:13px;color:var(--ink)}.iv-n{color:var(--line2);font-weight:400}
 .gap2{margin-bottom:24px}
-.says{display:grid;gap:8px}
+.says{display:grid;gap:8px;grid-template-columns:minmax(0,1fr)}
 .sayb{display:grid;grid-template-columns:1fr auto;gap:0 12px;text-align:left;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;font:inherit}
 .sayb:hover{border-color:var(--ink)}
 .sayb .vn{font-size:16px;font-weight:700}
@@ -448,13 +448,39 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 .pt .ja small{display:block;font-size:12.5px;color:var(--sub)}
 .shw{flex:none;border:1px solid var(--line);background:none;color:var(--sub);font:inherit;font-size:12px;border-radius:6px;padding:3px 8px;cursor:pointer}
 .shw:hover{border-color:var(--ink);color:var(--ink)}
-.sayr{display:flex;gap:8px;align-items:stretch}
-.sayr .sayb{flex:1}
+.sayr{display:flex;gap:8px;align-items:stretch;min-width:0}
+.sayr .sayb{flex:1;min-width:0;width:100%}
+.sayb>span{min-width:0;overflow-wrap:anywhere}
 .sayr .play{align-self:center}
 .sayb.speaking{border-color:var(--red)}
 .sayp{margin-top:26px;font-size:16px;padding:12px 22px;background:#111;color:#fff;border-color:#111;align-self:center}
 @media(max-width:760px){.phw{columns:1}.phr{padding:11px 18px}.phh{padding:0 18px 10px}.pt .vn{font-size:17px}}
 [data-theme=vivan] .phr.speaking{background:rgba(210,58,47,.12)}
+/* スマホ対応 */
+.nw1 td:first-child{white-space:nowrap}
+.bnav{display:none}
+@media(max-width:760px){
+ .bnav{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:25;background:var(--top);border-top:1px solid #ffffff1a;padding:4px 4px calc(4px + env(safe-area-inset-bottom))}
+ .bnav a{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 4px;color:#9a9a96;font-size:11px;border-radius:10px;text-decoration:none}
+ .bnav a svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+ .bnav a.on{color:#fff}
+ .bnav a.on svg{stroke:var(--yel)}
+ main{padding-bottom:calc(110px + env(safe-area-inset-bottom))}
+ .totop{bottom:calc(76px + env(safe-area-inset-bottom));right:14px}
+ .toast{bottom:calc(80px + env(safe-area-inset-bottom))}
+ .vtx{bottom:calc(78px + env(safe-area-inset-bottom))}
+ .days{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;scroll-snap-type:none;padding:0}
+ .stack tr:first-child{display:none}
+ .stack tr{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;padding:12px 0;border-bottom:1px solid var(--line)}
+ .stack tr:last-child{border-bottom:none}
+ .stack td{border:none;padding:0}
+ .stack td:nth-child(2){font-weight:600;text-align:right}
+ .stack td:nth-child(2) .muted{display:block;font-weight:400;font-size:12.5px}
+ .stack td:nth-child(3){grid-column:1/-1;color:var(--sub);font-size:14px}
+ .ck-top{top:58px;padding:10px 14px}
+ .tabs{display:none}
+}
+[data-theme=vivan] .bnav a{color:#8f8a82}[data-theme=vivan] .bnav a.on{color:#fff}[data-theme=vivan] .bnav a.on svg{stroke:var(--red)}
 [data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
 [data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
 [data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
@@ -574,6 +600,7 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 <div class="lbx t"></div><div class="lbx b"></div>
 <div class="vtx" id="tx" role="status" aria-live="polite"><div class="hd"><i></i>INCOMING TRANSMISSION<span id="txt"></span></div><div class="bd" id="txb"></div><button class="x" id="txx" aria-label="閉じる">×</button></div>
 <div class="boot out" id="boot"></div>
+<nav class="bnav" aria-label="よく使うページ"><a href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5v-6H9v6H4z"/></svg><span>目次</span></a><a href="#schedule"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 8h16M5 5h14v15H5z"/></svg><span>行程</span></a><a href="#checklist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg><span>持ち物</span></a><a href="#food"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8a2 2 0 0 0 4 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg><span>料理</span></a><a href="#phrases"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z M8 10h8"/></svg><span>会話</span></a></nav>
 <button class="totop" id="totop" aria-label="ページ上部へ">↑</button>
 <div class="toast" id="toast"></div>
 <div class="sayov" id="sayov" role="dialog" aria-label="お店の人に見せる"><button class="x" id="sayx" aria-label="閉じる">×</button><p class="lb">お店の人に見せてください</p><p class="big2" id="sayv"></p><p class="ja2" id="sayj"></p><button class="btn sayp" id="sayp">▶ 発音を再生</button></div>
@@ -846,7 +873,7 @@ R.schedule=function(){
  h+='</div><div class="grid gap">';
  h+='<div class="card"><h2><span class="k">MEET</span>集合</h2><p><b>11/10（火）</b></p><ul><li>① 10:50 JR岐阜駅 じゅうろくプラザ前 貸切バス乗降場</li><li>② 11:20 岐阜高専 噴水周辺</li></ul><p class="muted">緊急連絡先（当日）：名鉄観光サービス 岐阜支店 担当者 （電話番号はしおり p.3）</p><p>'+pg(3)+'</p></div>';
  h+='<div class="card"><h2><span class="k">HOTEL</span>ホーチミンのホテル</h2><p><b>Bong Sen Hotel Saigon</b><br>117-123 Dong Khoi St, 1区</p><ul><li>オペラハウスまで約170m、中央郵便局まで約0.7km</li><li>Wi-Fi無料</li></ul>'+src(["hotel"])+'</div>';
- h+='<div class="card"><h2><span class="k">FLIGHT</span>フライト</h2><table><tr><th>便</th><th>区間</th><th>時刻</th></tr><tr><td class="vn">VN343</td><td>中部 → ホーチミン</td><td>9:00 → 13:15</td></tr><tr><td class="vn">VN342</td><td>ホーチミン → 中部</td><td>0:20 → 7:35</td></tr></table><p class="muted">往路は約6時間15分、復路は約5時間15分</p><p>'+pg(2)+'</p></div>';
+ h+='<div class="card"><h2><span class="k">FLIGHT</span>フライト</h2><table class="nw1"><tr><th>便</th><th>区間</th><th>時刻</th></tr><tr><td class="vn">VN343</td><td>中部 → ホーチミン</td><td>9:00 → 13:15</td></tr><tr><td class="vn">VN342</td><td>ホーチミン → 中部</td><td>0:20 → 7:35</td></tr></table><p class="muted">往路は約6時間15分、復路は約5時間15分</p><p>'+pg(2)+'</p></div>';
  h+='<div class="card"><h2><span class="k">MEALS</span>自分で食事を用意する回</h2><ul><li>11/10 夕食（空港などで）</li><li>11/12 昼食・夕食</li><li>11/13 昼食（中華$21の手配も可）</li></ul><p class="muted">現金（ドン）を多めに用意しておくと安心です。</p><p>'+pg(2)+'</p></div>';
  return h+'</div>';
 };
@@ -886,7 +913,7 @@ R.basics=function(){
  h+='<div class="card"><h2><span class="k">WATER</span>水・トイレ</h2><ul><li>水道水は飲まない。ペットボトルの水を買う</li><li>氷が心配なら「No Ice」</li><li>炭酸水と間違えないよう注意 '+pg(16)+'</li><li>公衆トイレは少なく紙がないことも。紙は流さずゴミ箱へ</li></ul>'+src(["rurubu"])+'</div>';
  h+='<div class="card"><h2><span class="k">TIP</span>チップ</h2><div class="big">基本不要</div><p>ベトナムには基本的にチップの習慣はありません。スパやマッサージでは求められることがあります。</p>'+src(["tip"])+'</div>';
  h+='<div class="card"><h2><span class="k">MOVE</span>移動</h2><p><b>Grab</b>（配車アプリ）を使えば乗る前に料金が決まるので、ぼったくりを避けられます。流しのタクシーやバイクタクシーは避けましょう。</p>'+src(["grab","grab2"])+'</div>';
- h+='<div class="card span2"><h2><span class="k">WALLET</span>お金の持ち方（目安：合計2.5万〜3.5万円）</h2><table><tr><th>手段</th><th>目安</th><th>使う場面</th></tr><tr><td class="vn">現金（ドン）</td><td>1万円分<br><span class="muted">バス内の両替パック</span></td><td>屋台・ローカル食堂・ベンタン市場・タクシー。自分で用意する3回の食事と水代はこれで足りる。市場で多く買うなら＋1万円</td></tr><tr><td class="vn">現金（日本円）</td><td>5千〜1万円</td><td>11/10の空港での夕食、帰国後の交通費、両替の追加用</td></tr><tr><td class="vn">デビット（Visa/Master）</td><td>1.5万〜2万円</td><td>ホテル・モール・スーパー・レストラン・Grab。お土産と緊急用。海外利用設定と手数料（数％）を確認</td></tr><tr><td class="vn">PayPay</td><td>ベトナムでは使えない</td><td>海外で使えるのは韓国・台湾のみ（2026年11月時点）。日本国内（11/10の空港など）でだけ使う</td></tr></table><p class="muted">お金は1日に必要な分だけ持ち歩き、残りはスーツケースに鍵をかけて保管 '+pg(19)+'</p>'+src(["payO","cardVN","vnPay","pricey"])+'</div>';
+ h+='<div class="card span2"><h2><span class="k">WALLET</span>お金の持ち方（目安：合計2.5万〜3.5万円）</h2><table class="stack"><tr><th>手段</th><th>目安</th><th>使う場面</th></tr><tr><td class="vn">現金（ドン）</td><td>1万円分<br><span class="muted">バス内の両替パック</span></td><td>屋台・ローカル食堂・ベンタン市場・タクシー。自分で用意する3回の食事と水代はこれで足りる。市場で多く買うなら＋1万円</td></tr><tr><td class="vn">現金（日本円）</td><td>5千〜1万円</td><td>11/10の空港での夕食、帰国後の交通費、両替の追加用</td></tr><tr><td class="vn">デビット（Visa/Master）</td><td>1.5万〜2万円</td><td>ホテル・モール・スーパー・レストラン・Grab。お土産と緊急用。海外利用設定と手数料（数％）を確認</td></tr><tr><td class="vn">PayPay</td><td>ベトナムでは使えない</td><td>海外で使えるのは韓国・台湾のみ（2026年11月時点）。日本国内（11/10の空港など）でだけ使う</td></tr></table><p class="muted">お金は1日に必要な分だけ持ち歩き、残りはスーツケースに鍵をかけて保管 '+pg(19)+'</p>'+src(["payO","cardVN","vnPay","pricey"])+'</div>';
  return h+'</div>';
 };
 /* ---------- food illustrations (original SVG) ---------- */
@@ -941,7 +968,7 @@ R.food=function(){
  h+='<div class="card ingt" id="ingtable"><h2><span class="k">CHECK</span>材料の早見表</h2><p class="muted">●＝入っている　△＝店や注文による　添＝別皿で出るので自分で調整できる　—＝ふつう入っていない</p><p class="shint2">表は横にスクロールできます →</p><div class="tscroll"><table><thead><tr><th>料理</th>'+INGC.map(function(c){return '<th>'+c[0]+'</th>'}).join("")+'</tr></thead><tbody>'+F.map(function(f){var x=ING[f.k];if(!x)return "";return '<tr><th scope="row">'+f.jp+'</th>'+x.f.map(function(v){return '<td class="iv iv-'+(v||"n")+'">'+INGV[v][0]+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table></div><p class="muted">ほとんどの料理の味付けやタレにヌクマム（カタクチイワシの魚醤）が使われています。お店ごとにレシピが違うので、アレルギーがある人は必ずお店の人に確認してください。</p>'+src(["htW","bbh","mapH"])+'</div>';
 h+='<div class="grid gap2"><div class="card"><h2><span class="k">HERB</span>よく出てくる香草</h2><table class="herbt"><tr><td class="vn">Ngò / Rau mùi</td><td><b>パクチー</b>。南部では「ンゴー」。麺の上やバインミーに最初から入っていることが多い</td></tr><tr><td class="vn">Ngò gai</td><td><b>ノコギリコリアンダー</b>。細長いギザギザの葉で、香りはパクチーに似ている。フォーの別皿に</td></tr><tr><td class="vn">Húng quế</td><td><b>タイバジル</b>。茎が紫。フォーや生春巻きに</td></tr><tr><td class="vn">Rau răm</td><td><b>ラウラム</b>。ピリッとした香り。麺類の別皿に</td></tr><tr><td class="vn">Diếp cá</td><td><b>ドクダミ</b>。くせが強い。生春巻きや別皿に</td></tr><tr><td class="vn">Húng lủi</td><td><b>ミント</b>。いちばんよく使われる香草のひとつ</td></tr></table><p class="muted">別皿の香草（ザウ）は無料で、使わなくても大丈夫です。</p>'+src(["mapH"])+'</div>';
 h+='<div class="card"><h2><span class="k">SAUCE</span>見えないところに入っている調味料</h2><ul><li><b>ヌクマム（nước mắm）</b>：カタクチイワシの魚醤。スープ・炒め物・タレのほとんどに使われる。<b>魚アレルギーの人は要注意</b></li><li><b>干しエビ・干しイカ</b>：フーティウなど南部の麺のスープのだし</li><li><b>マムルォック（mắm ruốc）</b>：エビの発酵調味料。ブンボーフエのスープに溶けている</li><li><b>マムトム（mắm tôm）</b>：エビの発酵ペースト。紫色で匂いが強い。ブンダウ（揚げ豆腐と麺）のつけダレ</li><li><b>トゥオンデン（tương đen）</b>：甘い黒味噌。フォーのテーブルや生春巻きのタレに</li><li><b>うま味調味料（bột ngọt）</b>：多くの店で使われている</li></ul>'+src(["mapH","bbh","vtGF"])+'</div>';
-h+='<div class="card allergy"><h2><span class="k">SAY</span>抜いてほしい・アレルギーがあるとき</h2><p class="muted">発音が難しいので、画面をそのままお店の人に見せるのが確実です。▶ で発音を再生、文をタップすると大きく表示されます。</p><div class="says">'+SAYS.map(function(x,i){return '<div class="sayr"><button class="play sayplay" data-sp="'+esc(x[0])+'" aria-label="再生"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><button class="sayb" data-say="'+i+'" data-sp="'+esc(x[0])+'"><span class="vn">'+x[0]+'</span><span class="ja">'+x[2]+'</span><span class="kana">'+x[1]+'</span></button>'}).join("")+'</div></div></div>';
+h+='<div class="card allergy"><h2><span class="k">SAY</span>抜いてほしい・アレルギーがあるとき</h2><p class="muted">発音が難しいので、画面をそのままお店の人に見せるのが確実です。▶ で発音を再生、文をタップすると大きく表示されます。</p><div class="says">'+SAYS.map(function(x,i){return '<div class="sayr"><button class="play sayplay" data-sp="'+esc(x[0])+'" aria-label="再生"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><button class="sayb" data-say="'+i+'" data-sp="'+esc(x[0])+'"><span class="vn">'+x[0]+'</span><span class="ja">'+x[2]+'</span><span class="kana">'+x[1]+'</span></button></div>'}).join("")+'</div></div></div>';
 h+='<div class="grid food">';
  F.forEach(function(f){
   var fc=FOODC[f.k];h+='<div class="card dish"><div class="ill photo"><img loading="lazy" src="'+fimg(f.k)+'" alt="'+f.jp+'（'+f.vn+'）の写真"><span class="cat">'+f.cat+'</span></div>'+(fc?'<div class="credit">写真：<a href="'+fc[2]+'" target="_blank" rel="noopener">'+esc(fc[0])+'</a> / '+fc[1]+' / Wikimedia Commons</div>':'')+'<div class="vnn">'+f.vn+'</div><h2>'+f.jp+'</h2><div class="meta"><span>💰 '+f.price+'</span><span>👅 '+f.taste+'</span></div><p>'+f.d+'</p>'+(ING[f.k]?ingRow(f.k)+'<details class="ingd"><summary>材料をくわしく</summary><p>'+ING[f.k].i+'</p><p class="tip">'+ING[f.k].t+'</p></details>':'')+'<p class="muted">'+f.how+'</p><div class="src"><a href="'+gimg(f.vn+" "+f.jp)+'" target="_blank" rel="noopener">写真を見る</a>'+src(f.src).replace('<div class="src">','').replace(/<\/div>$/,'')+'</div></div>';
@@ -1113,7 +1140,7 @@ function nav(){
 function mark(){document.querySelectorAll("[data-v]").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-v")===cur)});var on=document.querySelector(".tabs a.on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest",inline:"center"})}
 var SCROLL={},prevView=null,pushedBack=false;
 function scrollToY(y){try{window.scrollTo({top:y,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,y)}}
-function renderView(id,opt){opt=opt||{};if(opt.keep===undefined&&typeof ttsStop==="function")ttsStop();if(id==="checklist")SIDX=null;
+function renderView(id,opt){opt=opt||{};document.querySelectorAll(".bnav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});if(opt.keep===undefined&&typeof ttsStop==="function")ttsStop();if(id==="checklist")SIDX=null;
  if(cur&&document.querySelector("#main .view"))SCROLL[cur]=window.scrollY;
  var same=(cur===id);cur=id;var m=document.getElementById("main");
  m.innerHTML='<div class="view'+(same&&opt.keep!==undefined?'':' on')+'">'+R[id]()+'</div>';
