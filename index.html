@@ -15,7 +15,7 @@
 <title>ベトナム研修 完全ガイド</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;800&family=Shippori+Mincho+B1:wght@500;700;800&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@400;500;700&family=Inter:wght@400;600;800&family=Shippori+Mincho+B1:wght@500;700;800&family=Courier+Prime:wght@400;700&family=Playfair+Display:wght@900&display=swap" rel="stylesheet">
 <script>try{var t=localStorage.getItem("vn-guide-theme");if(!t)t=matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light";document.documentElement.setAttribute("data-theme",t)}catch(e){}</script>
 <style>
 :root{--bg:#f4f4f1;--panel:#fff;--panel2:#f8f8f6;--ink:#141414;--sub:#6a6a66;--line:#e6e5e0;--line2:#d4d3cd;--red:#d6312b;--yel:#f2c230;--blue:#1f5fbf;--ok:#128a5e;--chip:#f2f2ef;--top:#111;--hero:#121212;--never:#fff7f5;--neverl:#f2d6d1;--sh:0 1px 2px rgba(0,0,0,.04),0 6px 20px rgba(0,0,0,.04);--tgc-b:#e6eefb;--tgc-c:#1f4f8f;--tgo-b:#f3eee3;--tgo-c:#7a6440;--tga-b:#fde6e1;--tga-c:#a8361a;--my:#e6f5ee;--myl:#bfe3d2;--myc:#0b6b48;--mn:#fff0ee;--mnl:#f3cbc6;--mnc:#a12620;--ill:#f3f1ea;--mark:#ffe58a;color-scheme:light}
@@ -257,59 +257,82 @@ footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid va
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--panel);padding:9px 16px;border-radius:99px;font-size:13px;opacity:0;pointer-events:none;transition:.25s;z-index:50}
 .toast.show{opacity:1;transform:translateX(-50%)}
 
-/* ===== VIVANT風モード：砂漠 × 極秘ファイル ===== */
-[data-theme=vivan]{--bg:#100d09;--panel:#1a150e;--panel2:#221b12;--ink:#ecdfc2;--sub:#a99877;--line:#3a3022;--line2:#57472f;--red:#c0362c;--yel:#d1a95a;--blue:#e0b866;--ok:#9fbf6a;--chip:#241d13;--top:#0b0906;--hero:#16110a;--never:#231310;--neverl:#4a2219;--sh:0 1px 0 rgba(209,169,90,.06),0 10px 30px rgba(0,0,0,.35);--tgc-b:#2a2416;--tgc-c:#e6c27a;--tgo-b:#2a2218;--tgo-c:#c9b28a;--tga-b:#3a1712;--tga-c:#ff9b86;--my:#1f2414;--myl:#3d4a25;--myc:#c9e09a;--mn:#2c1410;--mnl:#5a2419;--mnc:#ff9e8c;--ill:#2a2216;--mark:#7a5a1c;color-scheme:dark}
-[data-theme=vivan] body{font-family:"Shippori Mincho B1","Cormorant Garamond",serif;font-size:15px;letter-spacing:.02em;background-color:var(--bg);background-image:radial-gradient(rgba(209,169,90,.05) 1px,transparent 1px),radial-gradient(rgba(0,0,0,.25) 1px,transparent 1px);background-size:3px 3px,5px 5px;background-position:0 0,1px 2px}
-[data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .it .nm,[data-theme=vivan] .next .what{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.06em}
-[data-theme=vivan] .big,[data-theme=vivan] .pct,[data-theme=vivan] .ev .t,[data-theme=vivan] .next .when,[data-theme=vivan] .hero .f b,[data-theme=vivan] .day .dh b,[data-theme=vivan] .cd,[data-theme=vivan] .vbar .lbl,[data-theme=vivan] .cv input,[data-theme=vivan] .next .rest{font-family:"Courier Prime","Courier New",monospace;letter-spacing:.04em}
-[data-theme=vivan] .brand{font-family:"Courier Prime",monospace;letter-spacing:.28em;font-size:13px}
+/* ===== VIVANT風モード：極秘任務ファイル ===== */
+[data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
+[data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
+[data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
+[data-theme=vivan] .big,[data-theme=vivan] .pct,[data-theme=vivan] .ev .t,[data-theme=vivan] .next .when,[data-theme=vivan] .hero .f b,[data-theme=vivan] .day .dh b,[data-theme=vivan] .cd,[data-theme=vivan] .vbar .lbl,[data-theme=vivan] .cv input,[data-theme=vivan] .next .rest,[data-theme=vivan] .cols .card .ch .n{font-family:"Courier Prime","Courier New",monospace;letter-spacing:.04em}
+[data-theme=vivan] .brand{font-family:"Playfair Display",serif;font-weight:900;letter-spacing:.42em;font-size:15px}
 [data-theme=vivan] .brand b{color:var(--red)}
-[data-theme=vivan] .card h2 .k,[data-theme=vivan] .hero .eb,[data-theme=vivan] .vh .num,[data-theme=vivan] .toc .n,[data-theme=vivan] .next .lab,[data-theme=vivan] .drawer h3,[data-theme=vivan] .food .vnn{font-family:"Courier Prime",monospace;letter-spacing:.2em}
-[data-theme=vivan] .card h2 .k{color:var(--red);border:1.5px solid var(--red);border-radius:3px;padding:1px 6px 0;transform:rotate(-3deg);font-size:10px;opacity:.9}
-[data-theme=vivan] .card,[data-theme=vivan] .toc a,[data-theme=vivan] .day,[data-theme=vivan] .next,[data-theme=vivan] .ck-top{border-radius:6px;background-image:linear-gradient(180deg,rgba(209,169,90,.035),transparent 40%)}
-[data-theme=vivan] .card h2{border-bottom:1px dashed var(--line2);padding-bottom:8px}
+[data-theme=vivan] .card h2 .k,[data-theme=vivan] .hero .eb,[data-theme=vivan] .vh .num,[data-theme=vivan] .toc .n,[data-theme=vivan] .next .lab,[data-theme=vivan] .drawer h3,[data-theme=vivan] .food .vnn{font-family:"Courier Prime",monospace;letter-spacing:.22em}
+[data-theme=vivan] .card h2 .k{color:var(--red);border:1.5px solid var(--red);border-radius:2px;padding:1px 6px 0;transform:rotate(-3deg);font-size:10px}
+[data-theme=vivan] .card,[data-theme=vivan] .toc a,[data-theme=vivan] .day,[data-theme=vivan] .next,[data-theme=vivan] .ck-top{border-radius:4px}
+[data-theme=vivan] .card h2{border-bottom:1px solid var(--line2);padding-bottom:9px}
 [data-theme=vivan] .cols .card .ch h2{border-bottom:none;padding-bottom:0}
-[data-theme=vivan] .vh{border-bottom:1px solid var(--line2)}
-[data-theme=vivan] .vh h1{font-size:30px;letter-spacing:.1em}
-[data-theme=vivan] .vh .num{color:var(--yel)}
-[data-theme=vivan] .toc .n{color:var(--yel)}
-[data-theme=vivan] .toc a:hover,[data-theme=vivan] .card:hover{border-color:var(--yel)}
-[data-theme=vivan] .top{border-bottom:1px solid #2a2216}
-[data-theme=vivan] .tabs a{font-family:"Shippori Mincho B1",serif;letter-spacing:.06em}
-[data-theme=vivan] .tabs a.on{background:var(--yel);color:#120e08}
-[data-theme=vivan] .tb{border-color:#3a3022;background:#16120c}
-[data-theme=vivan] .btn.on,[data-theme=vivan] .chipf.on{background:var(--yel);border-color:var(--yel);color:#120e08}
-[data-theme=vivan] .pg{background:var(--yel);color:#120e08;font-family:"Courier Prime",monospace}
-[data-theme=vivan] .it input:checked{background:var(--yel);border-color:var(--yel)}
-[data-theme=vivan] .it input:checked:after{border-color:#120e08}
-[data-theme=vivan] .bar i{background:linear-gradient(90deg,#8a6a2e,var(--yel))}
-[data-theme=vivan] .card.research{border:1.5px solid var(--yel)}
-[data-theme=vivan] .warn{border-left:3px solid var(--red)}
-/* hero: 夕暮れの砂丘 */
-[data-theme=vivan] .hero{border-radius:8px;border:1px solid #3a3022;background:
- radial-gradient(circle at 47% 66%,rgba(240,190,100,.95) 0 40px,rgba(240,170,80,.3) 41px 84px,transparent 85px),
- linear-gradient(175deg,transparent 58%,#3a2814 58.4% 64%,transparent 64.4%),
- linear-gradient(185deg,transparent 66%,#2a1d0f 66.4% 76%,transparent 76.4%),
- linear-gradient(172deg,transparent 74%,#1a120a 74.4%),
- linear-gradient(180deg,#140f0a 0%,#3b2614 52%,#7a4a1e 70%,#1a120a 100%)}
+[data-theme=vivan] .vh{border-bottom:2px solid var(--red)}
+[data-theme=vivan] .vh h1{font-size:31px;letter-spacing:.14em}
+[data-theme=vivan] .vh .num,[data-theme=vivan] .toc .n{color:var(--red)}
+[data-theme=vivan] .toc a{position:relative;overflow:hidden}
+[data-theme=vivan] .toc a:after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--red);transform:scaleY(0);transform-origin:top;transition:transform .25s}
+[data-theme=vivan] .toc a:hover:after{transform:scaleY(1)}
+[data-theme=vivan] .toc a:hover,[data-theme=vivan] .card:hover{border-color:#5a5a5a}
+[data-theme=vivan] .tabs a.on{background:var(--red);color:#fff}
+[data-theme=vivan] .tb{border-color:#2c2c2c;background:#121212}
+[data-theme=vivan] .btn.on,[data-theme=vivan] .chipf.on{background:var(--red);border-color:var(--red);color:#fff}
+[data-theme=vivan] .pg{background:#e9e4da;color:#111;font-family:"Courier Prime",monospace}
+[data-theme=vivan] .pg:hover{background:var(--red);color:#fff}
+[data-theme=vivan] .it input:checked{background:var(--red);border-color:var(--red)}
+[data-theme=vivan] .it input:checked:after{border-color:#fff}
+[data-theme=vivan] .bar i{background:var(--red)}
+[data-theme=vivan] .bar.full i{background:var(--ok)}
+[data-theme=vivan] .card.research{border:1px solid var(--red)}
+[data-theme=vivan] a{color:#e8c27e}
+/* hero：夜の砂漠と赤い月 */
+[data-theme=vivan] .hero{border-radius:4px;border:1px solid #2a2a2a;padding-top:58px;background:
+ radial-gradient(circle at 50% 74%,rgba(210,58,47,.9) 0 30px,rgba(210,58,47,.18) 31px 70px,transparent 71px),
+ linear-gradient(176deg,transparent 64%,#1b130e 64.3% 72%,transparent 72.3%),
+ linear-gradient(184deg,transparent 70%,#120d0a 70.3%),
+ linear-gradient(180deg,#060606 0%,#0e0c0b 55%,#2a1612 76%,#0b0909 100%)}
 [data-theme=vivan] .hero:after{content:"";display:none}
-[data-theme=vivan] .hero{padding-top:56px}
-[data-theme=vivan] .hero:before{content:"MISSION FILE · 2026.11";position:absolute;right:26px;top:16px;z-index:3;font:700 11px "Courier Prime",monospace;letter-spacing:.24em;color:var(--red);border:2px solid var(--red);padding:4px 10px;transform:rotate(4deg);opacity:.85;background:rgba(16,13,9,.4)}
-[data-theme=vivan] .hero h1{font-size:38px;letter-spacing:.14em;text-shadow:0 2px 18px rgba(0,0,0,.6)}
-[data-theme=vivan] .hero .eb{color:var(--yel)}
-[data-theme=vivan] .hero .f{background:rgba(14,11,7,.72);border-color:rgba(209,169,90,.25);backdrop-filter:blur(2px)}
-[data-theme=vivan] .hero .f b{color:#f3e2bb}
-/* photos & images */
-[data-theme=vivan] .dish .ill.photo img{filter:sepia(.28) saturate(.9) contrast(1.06)}
+[data-theme=vivan] .hero:before{content:"MISSION FILE · 2026.11 · CONFIDENTIAL";position:absolute;right:26px;top:16px;z-index:3;font:700 11px "Courier Prime",monospace;letter-spacing:.22em;color:var(--red);border:2px solid var(--red);padding:4px 10px;transform:rotate(3deg);background:rgba(10,10,10,.5);animation:vstamp .7s cubic-bezier(.2,1.4,.4,1) .35s both}
+[data-theme=vivan] .hero h1{font-size:40px;letter-spacing:.16em;text-shadow:0 2px 20px rgba(0,0,0,.8)}
+[data-theme=vivan] .hero .eb{color:#bdb6aa}
+[data-theme=vivan] .hero .sub{color:#c9c3b8}
+[data-theme=vivan] .hero .f{background:rgba(10,10,10,.78);border-color:#2f2f2f}
+[data-theme=vivan] .hero .f b{color:#fff}
+[data-theme=vivan] .dish .ill.photo img{filter:contrast(1.08) saturate(.92)}
 [data-theme=vivan] .dish .cat{background:var(--red)}
-[data-theme=vivan] .drawer{background:#0b0906;border-right:1px solid #2a2216}
-[data-theme=vivan] .drawer nav a{font-family:"Shippori Mincho B1",serif;letter-spacing:.05em}
-[data-theme=vivan] .drawer nav a.on{box-shadow:inset 3px 0 0 var(--yel)}
-[data-theme=vivan] .sbox,[data-theme=vivan] .conv,[data-theme=vivan] .modal .box{border-radius:8px;border-color:var(--line2)}
+[data-theme=vivan] .drawer{background:#070707;border-right:1px solid #222}
+[data-theme=vivan] .drawer nav a{font-family:"Shippori Mincho B1",serif;letter-spacing:.06em}
+[data-theme=vivan] .drawer nav a.on{box-shadow:inset 3px 0 0 var(--red)}
+[data-theme=vivan] .sbox,[data-theme=vivan] .conv,[data-theme=vivan] .modal .box{border-radius:4px;border-color:var(--line2)}
 [data-theme=vivan] mark{color:#fff}
 [data-theme=vivan] ::selection{background:var(--red);color:#fff}
-[data-theme=vivan] .src a{font-family:"Inter","IBM Plex Sans JP",sans-serif;letter-spacing:0}
-@media(max-width:860px){[data-theme=vivan] .hero{padding-top:24px;padding-bottom:58px}[data-theme=vivan] .hero:before{top:auto!important;bottom:16px;right:16px;font-size:9.5px;transform:rotate(-3deg)}[data-theme=vivan] .hero{background-position:0 0}}
+@keyframes vstamp{0%{opacity:0;transform:rotate(3deg) scale(2.6)}60%{opacity:1}100%{opacity:1;transform:rotate(3deg) scale(1)}}
+@media(max-width:860px){[data-theme=vivan] .hero{padding-top:24px;padding-bottom:58px}[data-theme=vivan] .hero:before{top:auto!important;bottom:16px;right:12px;font-size:9px;letter-spacing:.14em}[data-theme=vivan] .hero h1{font-size:32px}}
+/* --- 演出：レターボックス / 解読 / 通信 / 起動 --- */
+.lbx{position:fixed;left:0;right:0;height:0;background:#000;z-index:60;pointer-events:none}
+.lbx.t{top:0}.lbx.b{bottom:0}
+.lbx.run{animation:lbx .8s cubic-bezier(.7,0,.2,1)}
+@keyframes lbx{0%{height:0}35%,55%{height:13vh}100%{height:0}}
+.scr{font-family:"Courier Prime",monospace!important;color:var(--red)}
+.vtx{position:fixed;left:16px;bottom:18px;z-index:55;width:min(380px,calc(100vw - 32px));background:rgba(8,8,8,.96);border:1px solid #3a3a3a;border-left:3px solid var(--red);color:#efece6;padding:12px 14px 14px;font-family:"Shippori Mincho B1",serif;box-shadow:0 20px 50px rgba(0,0,0,.6);transform:translateY(20px);opacity:0;transition:.35s;pointer-events:none}
+.vtx.show{transform:none;opacity:1;pointer-events:auto}
+.vtx .hd{font:700 10px "Courier Prime",monospace;letter-spacing:.24em;color:var(--red);display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.vtx .hd i{width:7px;height:7px;border-radius:99px;background:var(--red);animation:blink 1s steps(2) infinite}
+.vtx .hd span{margin-left:auto;color:#777;letter-spacing:.1em}
+.vtx .bd{font-size:16px;font-weight:800;letter-spacing:.06em;line-height:1.55;min-height:1.5em}
+.vtx .bd:after{content:"▍";color:var(--red);animation:blink .8s steps(2) infinite;margin-left:2px}
+.vtx .bd.done:after{content:""}
+.vtx .x{position:absolute;right:8px;top:6px;background:none;border:none;color:#777;cursor:pointer;font-size:16px}
+@keyframes blink{50%{opacity:0}}
+.boot{position:fixed;inset:0;z-index:70;background:#050505;color:#d8d2c6;display:flex;flex-direction:column;justify-content:center;padding:0 10vw;font:700 14px "Courier Prime",monospace;letter-spacing:.14em;opacity:1;transition:opacity .5s}
+.boot p{margin:4px 0;white-space:pre}
+.boot .ok{color:#8fcf8a}.boot .rd{color:#d23a2f}
+.boot.out{opacity:0;pointer-events:none}
+.it.vchk{animation:vchk .5s}
+@keyframes vchk{0%{box-shadow:inset 3px 0 0 transparent}30%{box-shadow:inset 3px 0 0 #d23a2f;background:rgba(210,58,47,.08)}100%{box-shadow:inset 3px 0 0 transparent}}
+@media(prefers-reduced-motion:reduce){.lbx.run,.tx,.boot{animation:none!important;transition:none!important}}
 
 @media print{.top,.drawer,.scrim,.totop,.conv,.sov,.ck-top button{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
 </style>
@@ -340,6 +363,9 @@ footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid va
  <div class="rate">レート 1円 = <input id="cvR" inputmode="decimal"> ₫ <button class="btn" id="cvRR" style="padding:2px 8px">163に戻す</button></div>
  <div class="muted" style="margin-top:6px">初期値は2026/11/3時点の約163₫。両替所のレートに合わせて変えられます。暗算は「下3桁を取って×6」。</div>
 </div>
+<div class="lbx t"></div><div class="lbx b"></div>
+<div class="vtx" id="tx" role="status" aria-live="polite"><div class="hd"><i></i>INCOMING TRANSMISSION<span id="txt"></span></div><div class="bd" id="txb"></div><button class="x" id="txx" aria-label="閉じる">×</button></div>
+<div class="boot out" id="boot"></div>
 <button class="totop" id="totop" aria-label="ページ上部へ">↑</button>
 <div class="toast" id="toast"></div>
 <div class="modal" id="modal2"><div class="box"><div>このスマホに保存したしおりを削除しますか？（チェックリストは消えません）</div><div class="acts"><button class="btn" id="m2no">やめる</button><button class="btn on" id="m2yes">削除</button></div></div></div>
@@ -585,7 +611,7 @@ R.home=function(){
  VIEWS.forEach(function(v,i){if(v.id==="home")return;h+='<a href="#'+v.id+'"><span class="n">'+String(i).padStart(2,"0")+'</span><span class="t">'+v.t+'</span><span class="d">'+v.d+'</span></a>'});
  h+='</div><div style="display:grid;gap:16px;align-content:start">';
  h+='<div class="card mini"><h2><span class="k">PACKING</span>持ち物の進み具合</h2><div class="big">'+p.p+'<small>%</small></div><div class="bar'+(p.p===100?' full':'')+'"><i style="width:'+p.p+'%"></i></div><div class="muted">'+p.c+' / '+p.n+' 項目　<a href="#checklist">チェッカーを開く →</a></div></div>';
- h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="conv">₫⇄¥ 換算</button><button class="btn" data-act="search">🔍 全ページ検索</button><button class="btn" data-act="theme">◎ テーマ切替（ライト→ダーク→VIVANT風）</button></div><p class="muted" style="margin-top:10px">キーボードなら <b>/</b> で検索、<b>Esc</b> で閉じる。</p></div>';
+ h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="conv">₫⇄¥ 換算</button><button class="btn" data-act="search">🔍 全ページ検索</button><button class="btn" data-act="theme">◎ テーマ切替（ライト→ダーク→VIVANT風）</button>'+(isV()?'<button class="btn" data-act="txtoggle">'+(txOff()?'📡 通信ポップアップ：OFF':'📡 通信ポップアップ：ON')+'</button>':'')+'</div><p class="muted" style="margin-top:10px">キーボードなら <b>/</b> で検索、<b>Esc</b> で閉じる。</p></div>';
  h+='<div class="card warn"><h2><span class="k">SOS</span>出発当日の緊急連絡先</h2><p>名鉄観光サービス 岐阜支店 担当者<br><b>電話番号はしおり p.3（タップで表示）</b></p><p>'+pg(3)+'</p></div>';
  return h+'</div></div>';
 };
@@ -796,6 +822,7 @@ function renderView(id,opt){opt=opt||{};if(id==="checklist")SIDX=null;
  else if(opt.keep!==undefined)scrollToY(opt.keep);
  else if(opt.restore&&SCROLL[id]!=null){var y=SCROLL[id];scrollToY(y);requestAnimationFrame(function(){scrollToY(y)})}
  else scrollToY(0);
+ if(opt.keep===undefined)vfx(id);
 }
 function rerender(){renderView(cur,{keep:window.scrollY})}
 function routeTo(h,restore){h=String(h||"").replace("#","");var p=null;var mm=h.match(/^pdf-p(\d+)$/);if(mm){p=+mm[1];h="pdf"}if(!R[h])h="home";if(p)curPage=p;if(h!==cur||h==="pdf"||!document.querySelector(".view"))renderView(h,restore?{restore:true}:null);closeDrawer()}
@@ -846,7 +873,7 @@ function bindView(){
  if(cur==="checklist"){
   document.querySelectorAll(".it input").forEach(function(cb){cb.onchange=function(){
    var id=cb.getAttribute("data-id");if(cb.checked)state.checked[id]=true;else delete state.checked[id];
-   cb.closest(".it").classList.toggle("done",cb.checked);refreshCounts();persist();
+   var itx=cb.closest(".it");itx.classList.toggle("done",cb.checked);if(cb.checked&&isV()){itx.classList.remove("vchk");void itx.offsetWidth;itx.classList.add("vchk")}refreshCounts();persist();
   }});
   document.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(e){e.preventDefault();var id=b.getAttribute("data-del");state.custom=state.custom.filter(function(x){return x.id!==id});delete state.checked[id];persist();rerender()}});
   document.querySelectorAll("[data-hide]").forEach(function(b){b.onclick=function(e){e.preventDefault();e.stopPropagation();state.hidden[b.getAttribute("data-hide")]=true;persist();rerender()}});
@@ -874,7 +901,7 @@ function initDl(){if(OFFLINE||!(window.claude&&window.claude.use))return;window.
 function refreshCounts(){
  var p=progress();document.getElementById("barI").style.width=p.p+"%";document.getElementById("pct").textContent=p.p+"%";document.getElementById("cnt").textContent=p.c+" / "+p.n;
  document.querySelectorAll("[data-cn]").forEach(function(el){var card=el.closest(".card");var b=card.querySelectorAll(".it input"),k=0;b.forEach(function(x){if(x.checked)k++});el.textContent=k+"/"+b.length;el.classList.toggle("full",b.length>0&&k===b.length)});
- var bw=document.getElementById("barW");if(bw)bw.classList.toggle("full",p.p===100);if(p.p===100&&p.n)toast("全部そろいました！ よい研修を ✈");
+ var bw=document.getElementById("barW");if(bw)bw.classList.toggle("full",p.p===100);if(p.p===100&&p.n){if(isV())transmit("全装備、確認完了。健闘を祈る。",true);else toast("全部そろいました！ よい研修を ✈")}
 }
 
 /* ---------- shiori (per-device, IndexedDB) ---------- */
@@ -929,7 +956,32 @@ var tT=null;function toast(m){var t=document.getElementById("toast");t.textConte
 function curTheme(){return document.documentElement.getAttribute("data-theme")||"light"}
 var THEMES=["light","dark","vivan"],TNAME={light:"ライトモード",dark:"ダークモード",vivan:"VIVANT風モード"},TICON={light:"☀",dark:"☾",vivan:"◎"};
 function setThemeIcon(){var t=curTheme(),nx=THEMES[(THEMES.indexOf(t)+1)%THEMES.length];document.getElementById("tIcon").textContent=TICON[t]||"☀";document.getElementById("tBtn").title="今："+TNAME[t]+"（押すと"+TNAME[nx]+"）";try{var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#111111":(t==="vivan"?"#0b0906":"#090909"))}catch(e){}}
-function toggleTheme(){var t=curTheme(),n=THEMES[(THEMES.indexOf(t)+1)%THEMES.length];document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("vn-guide-theme",n)}catch(e){}setThemeIcon();toast(TNAME[n])}
+function toggleTheme(){var t=curTheme(),n=THEMES[(THEMES.indexOf(t)+1)%THEMES.length];document.documentElement.setAttribute("data-theme",n);try{localStorage.setItem("vn-guide-theme",n)}catch(e){}setThemeIcon();if(n==="vivan"){boot()}else{hideTx();toast(TNAME[n])}}
+/* ---------- VIVANT風 演出 ---------- */
+function isV(){return curTheme()==="vivan"}
+var RMOT=false;try{RMOT=matchMedia("(prefers-reduced-motion: reduce)").matches}catch(e){}
+function txOff(){try{return localStorage.getItem("vn-tx-off")==="1"}catch(e){return false}}
+function letterbox(){if(RMOT)return;document.querySelectorAll(".lbx").forEach(function(e){e.classList.remove("run");void e.offsetWidth;e.classList.add("run")})}
+var SCRCH="アイウエオカキクケコサシスセソタチツテトナニヌネノABCDEFGHJKLMNPQRSTUVWXYZ0123456789#%&*";
+function decode(el){if(RMOT||!el||el.dataset.dec)return;el.dataset.dec="1";var w=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),ns=[],n;while(n=w.nextNode())ns.push([n,n.nodeValue]);var f=0,tot=16;
+ var iv=setInterval(function(){f++;ns.forEach(function(x){var t=x[1],k=Math.floor(t.length*f/tot),o="";for(var i=0;i<t.length;i++){var c=t[i];o+=(i<k||/\s/.test(c))?c:SCRCH[Math.floor(Math.random()*SCRCH.length)]}x[0].nodeValue=o});if(f>=tot){clearInterval(iv);ns.forEach(function(x){x[0].nodeValue=x[1]})}},38)}
+var TXL=["任務開始。忘れ物は、最大の敵だ。","パスポートの所在を、今すぐ確認せよ。","集合は11月10日 10:50。遅刻は許されない。","現地に着いたら、時計を2時間戻せ。","バイクは止まらない。一定の速さで渡れ。","スマホは体から離すな。奴らは背後から来る。","水道水には、手を出すな。","モバイルバッテリーは手荷物へ。例外はない。","通信が途絶えても慌てるな。地図はオフラインに保存しておけ。","両替の暗算：ドンの下3桁を取って×6だ。","敵は乾燥だ。リップと目薬を装備せよ。","帰還便は深夜0時20分。眠る準備を怠るな。","しおりは最重要機密だ。肌身離さず持て。","屋台では、人の多い店を選べ。それが生き残る術だ。","液体は100ml以下。透明な袋に収めよ。","蚊を侮るな。虫除けは標準装備だ。"];
+var TXV={checklist:"装備点検を開始する。一つも見落とすな。",schedule:"作戦行動予定を確認せよ。",food:"腹が減っては、任務は遂行できない。",safety:"ここから先は、警戒レベルを上げろ。",airport:"関門は5つ。落ち着いて突破せよ。",phrases:"現地の言葉は、最強の武器になる。",basics:"現地の情報を、頭に叩き込め。",spots:"潜入先の情報だ。目を通しておけ。",pdf:"機密文書を開示する。"};
+var txTimer=null,txType=null,txLast=0,txIdx=Math.floor(Math.random()*16);
+function transmit(msg,force){if(!isV()||(txOff()&&!force))return;var b=document.getElementById("tx"),bd=document.getElementById("txb");if(!b)return;
+ txLast=Date.now();var d=new Date(Date.now()+9*36e5);document.getElementById("txt").textContent=("0"+d.getUTCHours()).slice(-2)+":"+("0"+d.getUTCMinutes()).slice(-2)+":"+("0"+d.getUTCSeconds()).slice(-2)+" JST";
+ bd.textContent="";bd.classList.remove("done");b.classList.add("show");clearInterval(txType);var i=0;
+ if(RMOT){bd.textContent=msg;bd.classList.add("done")}else txType=setInterval(function(){i++;bd.textContent=msg.slice(0,i);if(i>=msg.length){clearInterval(txType);bd.classList.add("done")}},55);
+ clearTimeout(txTimer);txTimer=setTimeout(hideTx,Math.max(5200,msg.length*55+3600))}
+function hideTx(){var b=document.getElementById("tx");if(b)b.classList.remove("show")}
+function randomTx(){txIdx=(txIdx+1+Math.floor(Math.random()*3))%TXL.length;transmit(TXL[txIdx])}
+function vfx(id){if(!isV())return;letterbox();var h=document.querySelector("#main .vh h1,#main .hero h1");if(h)setTimeout(function(){decode(h)},120);
+ if(TXV[id]&&Date.now()-txLast>8000)setTimeout(function(){transmit(TXV[id])},1100);else if(id==="home"&&Date.now()-txLast>8000)setTimeout(randomTx,1600)}
+function boot(){var o=document.getElementById("boot");if(!o)return;if(RMOT){return}
+ var L=[["> SECURE CHANNEL ............. ",'<span class="ok">OPEN</span>'],["> IDENTITY ................... ",'<span class="ok">VERIFIED</span>'],["> MISSION ...... HO CHI MINH / 2026.11.10",""],["> CLEARANCE .................. ",'<span class="rd">CONFIDENTIAL</span>'],["",'<span class="ok">ACCESS GRANTED</span>']];
+ o.innerHTML="";o.classList.remove("out");var i=0;function step(){if(i>=L.length){setTimeout(function(){o.classList.add("out");setTimeout(function(){vfx(cur)},200)},450);return}var p=document.createElement("p");p.innerHTML=esc(L[i][0])+L[i][1];o.appendChild(p);i++;setTimeout(step,230)}step();
+ o.onclick=function(){o.classList.add("out")}}
+setInterval(function(){if(isV()&&!document.hidden&&!txOff()&&Date.now()-txLast>55000)randomTx()},15000);
 /* ---------- converter ---------- */
 var RATE_DEF=163;
 function rate(){try{var r=parseFloat(localStorage.getItem("vn-guide-rate"));if(r>50&&r<400)return r}catch(e){}return RATE_DEF}
@@ -986,13 +1038,13 @@ document.getElementById("cvSw").onclick=function(){var a=cvV.value;cvV.value=cvY
 document.querySelectorAll("#cvQ [data-v]").forEach(function(b){b.onclick=function(){cvV.value=b.getAttribute("data-v");fromV()}});
 document.getElementById("cvR").oninput=function(){var r=num(this.value);if(r>50&&r<400){try{localStorage.setItem("vn-guide-rate",r)}catch(e){}if(cvV.value)fromV()}};
 document.getElementById("cvRR").onclick=function(){try{localStorage.removeItem("vn-guide-rate")}catch(e){}document.getElementById("cvR").value=RATE_DEF;if(cvV.value)fromV()};
-document.getElementById("cClose").onclick=closeConv;
+document.getElementById("cClose").onclick=closeConv;document.getElementById("txx").onclick=hideTx;
 document.getElementById("cBtn").onclick=function(){document.getElementById("conv").classList.contains("show")?closeConv():openConv()};
 document.getElementById("sBtn").onclick=openSearch;document.getElementById("dS").onclick=openSearch;document.getElementById("dC").onclick=openConv;
 document.getElementById("tBtn").onclick=toggleTheme;document.getElementById("dT").onclick=toggleTheme;setThemeIcon();
 document.getElementById("sov").onclick=function(e){if(e.target===this)closeSearch()};
 document.getElementById("sq").oninput=doSearch;
-document.addEventListener("click",function(e){var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv],.hero .f"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme()}if(e.target.closest&&e.target.closest(".hero .f:nth-child(3)"))openConv()});
+document.addEventListener("click",function(e){var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv],.hero .f"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}if(e.target.closest&&e.target.closest(".hero .f:nth-child(3)"))openConv()});
 var tt=document.getElementById("totop");window.addEventListener("scroll",function(){tt.classList.toggle("show",scrollY>700)},{passive:true});tt.onclick=function(){scrollTo({top:0,behavior:"smooth"})};
 document.getElementById("m2no").onclick=function(){document.getElementById("modal2").classList.remove("show")};
 document.getElementById("m2yes").onclick=function(){document.getElementById("modal2").classList.remove("show");idbClear().then(function(){freeUrls();NPAGES=0;SIDX=null;toast("しおりを削除しました");renderView("pdf")})};
