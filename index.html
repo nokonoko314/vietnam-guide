@@ -499,7 +499,7 @@ function initDb(){
    return Promise.resolve(dbRef.get()).then(function(snap){
     clearTimeout(timer);
     var d=snap&&typeof snap.data==="function"?snap.data():(snap&&snap.data!==undefined&&snap.checked===undefined?snap.data:snap);
-    if(d&&d.checked&&(d.updated||0)>=(state.updated||0)){state.checked=d.checked||{};state.custom=d.custom||[];state.hidden=d.hidden||{};state.updated=d.updated||0;try{localStorage.setItem(LS,JSON.stringify(state))}catch(e){}if(cur==="checklist")renderView("checklist");else updateBadge()}
+    if(d&&d.checked&&(d.updated||0)>=(state.updated||0)){state.checked=d.checked||{};state.custom=d.custom||[];state.hidden=d.hidden||{};state.updated=d.updated||0;try{localStorage.setItem(LS,JSON.stringify(state))}catch(e){}if(cur==="checklist")rerender();else updateBadge()}
     else if(state.updated){persist()}
     setSave("保存済み（アカウントに同期）",true);
    });
@@ -701,12 +701,13 @@ R.phrases=function(){
 R.pdf=function(){
  if(!NPAGES){
   var h=vh("しおりPDF","しおりのPDFをこのアプリに読み込むと、全ページをネットなしで見られます。");
+  if(prevView)h+='<div class="vbar"><button class="btn on" id="pback">← '+esc((VIEWS.filter(function(v){return v.id===prevView})[0]||{t:"前の画面"}).t)+'に戻る</button></div>';
   h+='<div class="grid"><div class="card span2" style="border:2px solid var(--red)"><h2><span class="k">IMPORT</span>しおりのPDFを読み込む</h2>'+(curPageAsked?'<p><b>p.'+curPageAsked+'</b> を見るには、先にしおりを読み込んでください。</p>':'')+'<p>学校から配られたしおりのPDFを選ぶと、ページを画像にして<b>このスマホの中だけ</b>に保存します。インターネット上には送られません。</p><label class="btn on" style="display:inline-block;padding:10px 16px;font-size:14px;cursor:pointer">📄 PDFファイルを選ぶ<input type="file" id="shf" accept="application/pdf,.pdf" style="display:none"></label><div id="shprog" class="muted" style="margin-top:10px"></div></div>';
   h+='<div class="card"><h2><span class="k">TIPS</span>うまくいかないとき</h2><ul><li>PDFはLINEやメールから「ファイルに保存」しておくと選びやすい</li><li>iPhoneでホーム画面に追加した場合は、<b>追加したアプリの中で</b>読み込む（Safariとは保存場所が別）</li><li>読み込みは1回だけでOK。全23ページで数十秒かかります</li></ul></div></div>';
   return h;
  }
  var h=vh("しおりPDF","このスマホに保存されたしおりです。ページ番号のタグからもここに飛べます。");
- h+='<div class="vbar"><button class="btn" id="pv">← 前</button><span class="lbl" id="plbl"></span><button class="btn" id="pn">次 →</button>'+(SH.pdf?'<a class="btn" href="'+SH.pdf+'" target="_blank" rel="noopener" id="popen">PDFで開く ↗</a>':'')+'<button class="btn" id="shdel" style="margin-left:auto">しおりを削除</button></div>';
+ h+='<div class="vbar">'+(prevView?'<button class="btn on" id="pback">← '+esc((VIEWS.filter(function(v){return v.id===prevView})[0]||{t:"前の画面"}).t)+'に戻る</button>':'')+'<button class="btn" id="pv">← 前</button><span class="lbl" id="plbl"></span><button class="btn" id="pn">次 →</button>'+(SH.pdf?'<a class="btn" href="'+SH.pdf+'" target="_blank" rel="noopener" id="popen">PDFで開く ↗</a>':'')+'<button class="btn" id="shdel" style="margin-left:auto">しおりを削除</button></div>';
  h+='<div class="pdfwrap"><div class="thumbs" id="thumbs">';
  for(var i=1;i<=NPAGES;i++){h+='<button data-p="'+i+'"><span>'+i+'</span><img loading="lazy" src="'+pimgSrc(i)+'" alt="p.'+i+'"></button>'}
  h+='</div><div class="viewer" id="viewer"><img id="pimg" alt=""></div></div>';
@@ -728,17 +729,27 @@ function nav(){
  document.getElementById("tabs").innerHTML=t;document.getElementById("dnav").innerHTML=d;
 }
 function mark(){document.querySelectorAll("[data-v]").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-v")===cur)});var on=document.querySelector(".tabs a.on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest",inline:"center"})}
-function renderView(id){if(id==="checklist")SIDX=null;
- cur=id;var m=document.getElementById("main");
- m.innerHTML='<div class="view on">'+R[id]()+'</div>';
- mark();bindView();if(pendingJump)doJump();else window.scrollTo(0,0);
+var SCROLL={},prevView=null,pushedBack=false;
+function scrollToY(y){try{window.scrollTo({top:y,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,y)}}
+function renderView(id,opt){opt=opt||{};if(id==="checklist")SIDX=null;
+ if(cur&&document.querySelector("#main .view"))SCROLL[cur]=window.scrollY;
+ var same=(cur===id);cur=id;var m=document.getElementById("main");
+ m.innerHTML='<div class="view'+(same&&opt.keep!==undefined?'':' on')+'">'+R[id]()+'</div>';
+ if(same&&opt.keep!==undefined)m.firstChild.style.animation="none";
+ mark();bindView();
+ if(pendingJump)doJump();
+ else if(opt.keep!==undefined)scrollToY(opt.keep);
+ else if(opt.restore&&SCROLL[id]!=null){var y=SCROLL[id];scrollToY(y);requestAnimationFrame(function(){scrollToY(y)})}
+ else scrollToY(0);
 }
-function routeTo(h){h=String(h||"").replace("#","");var p=null;var mm=h.match(/^pdf-p(\d+)$/);if(mm){p=+mm[1];h="pdf"}if(!R[h])h="home";if(p)curPage=p;if(h!==cur||h==="pdf"||!document.querySelector(".view"))renderView(h);closeDrawer()}
+function rerender(){renderView(cur,{keep:window.scrollY})}
+function routeTo(h,restore){h=String(h||"").replace("#","");var p=null;var mm=h.match(/^pdf-p(\d+)$/);if(mm){p=+mm[1];h="pdf"}if(!R[h])h="home";if(p)curPage=p;if(h!==cur||h==="pdf"||!document.querySelector(".view"))renderView(h,restore?{restore:true}:null);closeDrawer()}
 var lastHash=null;
-function route(){var h=(location.hash||"").replace("#","");if(h===lastHash&&document.querySelector(".view"))return;lastHash=h;routeTo(h)}
-function go(id){lastHash=id;if(location.hash!=="#"+id){try{history.pushState(null,"","#"+id)}catch(e){}}routeTo(id)}
+function route(){var h=(location.hash||"").replace("#","");if(h===lastHash&&document.querySelector(".view"))return;lastHash=h;routeTo(h,true)}
+function go(id){lastHash=id;pushedBack=false;if(location.hash!=="#"+id){try{history.pushState(null,"","#"+id);pushedBack=true}catch(e){}}routeTo(id)}
+function goBack(){var v=prevView||"home";prevView=null;if(pushedBack&&(location.hash||"").indexOf("#pdf")===0){pushedBack=false;history.back();return}lastHash=v;try{history.replaceState(null,"","#"+v)}catch(e){}routeTo(v,true)}
 document.addEventListener("click",function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;var id=a.getAttribute("href").slice(1);if(!id)return;e.preventDefault();go(id)});
-var curPageAsked=0;function openPage(n){curPageAsked=NPAGES?0:n;curPage=n;go("pdf-p"+n)}
+var curPageAsked=0;function openPage(n){if(cur&&cur!=="pdf")prevView=cur;curPageAsked=NPAGES?0:n;curPage=n;go("pdf-p"+n)}
 function updateBadge(){}
 /* drawer */
 function openDrawer(){document.getElementById("drawer").classList.add("show");document.getElementById("scrim").classList.add("show")}
@@ -767,10 +778,12 @@ function showPage(n){if(!NPAGES)return;if(n>NPAGES)n=NPAGES;
 }
 function bindView(){
  var shf=document.getElementById("shf");if(shf)shf.onchange=function(){if(this.files&&this.files[0])importShiori(this.files[0])};
+ var pb0=document.getElementById("pback");if(pb0)pb0.onclick=goBack;
  var shd=document.getElementById("shdel");if(shd)shd.onclick=function(){document.getElementById("modal2").classList.add("show")};
  var b0=document.getElementById("dlBtn");if(b0&&dlNS)b0.style.display="";
  if(cur==="pdf"&&NPAGES){
   document.querySelectorAll("#thumbs button").forEach(function(b){b.onclick=function(){showPage(+b.getAttribute("data-p"))}});
+  var pb=document.getElementById("pback");if(pb)pb.onclick=goBack;
   document.getElementById("pv").onclick=function(){showPage(curPage-1)};
   document.getElementById("pn").onclick=function(){showPage(curPage+1)};
   showPage(curPage);
@@ -780,16 +793,16 @@ function bindView(){
    var id=cb.getAttribute("data-id");if(cb.checked)state.checked[id]=true;else delete state.checked[id];
    cb.closest(".it").classList.toggle("done",cb.checked);refreshCounts();persist();
   }});
-  document.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(e){e.preventDefault();var id=b.getAttribute("data-del");state.custom=state.custom.filter(function(x){return x.id!==id});delete state.checked[id];persist();renderView("checklist")}});
-  document.querySelectorAll("[data-hide]").forEach(function(b){b.onclick=function(e){e.preventDefault();e.stopPropagation();state.hidden[b.getAttribute("data-hide")]=true;persist();renderView("checklist")}});
-  document.querySelectorAll("[data-unhide]").forEach(function(b){b.onclick=function(e){e.preventDefault();delete state.hidden[b.getAttribute("data-unhide")];persist();renderView("checklist")}});
+  document.querySelectorAll("[data-del]").forEach(function(b){b.onclick=function(e){e.preventDefault();var id=b.getAttribute("data-del");state.custom=state.custom.filter(function(x){return x.id!==id});delete state.checked[id];persist();rerender()}});
+  document.querySelectorAll("[data-hide]").forEach(function(b){b.onclick=function(e){e.preventDefault();e.stopPropagation();state.hidden[b.getAttribute("data-hide")]=true;persist();rerender()}});
+  document.querySelectorAll("[data-unhide]").forEach(function(b){b.onclick=function(e){e.preventDefault();delete state.hidden[b.getAttribute("data-unhide")];persist();rerender()}});
   var db2=document.getElementById("dlBtn");if(db2)db2.onclick=downloadOffline;
   document.querySelectorAll("[data-flt]").forEach(function(b){b.onclick=function(){ui.filter=b.getAttribute("data-flt");try{localStorage.setItem(LS+"-filter",ui.filter)}catch(e){}document.querySelectorAll("[data-flt]").forEach(function(x){x.classList.toggle("on",x===b)});document.getElementById("cols").className="cols f-"+ui.filter}});
   var m=document.getElementById("modal");
   document.getElementById("resetBtn").onclick=function(){m.classList.add("show")};
   document.getElementById("mno").onclick=function(){m.classList.remove("show")};
-  document.getElementById("myes").onclick=function(){state.checked={};state.custom=[];state.hidden={};m.classList.remove("show");persist();renderView("checklist")};
-  document.getElementById("addf").onsubmit=function(e){e.preventDefault();var v=document.getElementById("addn").value.trim();if(!v)return;state.custom.push({id:"c-"+Date.now(),name:v,cat:document.getElementById("addc").value});persist();renderView("checklist")};
+  document.getElementById("myes").onclick=function(){state.checked={};state.custom=[];state.hidden={};m.classList.remove("show");persist();rerender()};
+  document.getElementById("addf").onsubmit=function(e){e.preventDefault();var v=document.getElementById("addn").value.trim();if(!v)return;state.custom.push({id:"c-"+Date.now(),name:v,cat:document.getElementById("addc").value});persist();rerender()};
  }
 }
 var dlNS=null;
