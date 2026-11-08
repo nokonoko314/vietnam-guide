@@ -480,7 +480,28 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
  .ck-top{top:58px;padding:10px 14px}
  .tabs{display:none}
 }
-[data-theme=vivan] .bnav a{color:#8f8a82}[data-theme=vivan] .bnav a.on{color:#fff}[data-theme=vivan] .bnav a.on svg{stroke:var(--red)}
+[data-theme=vivan] .bnav a,[data-theme=vivan] .bnav button{color:#8f8a82}[data-theme=vivan] .bnav a.on{color:#fff}[data-theme=vivan] .bnav a.on svg{stroke:var(--red)}
+/* タブバー設定・通信ポップアップの位置 */
+.bnav button{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:6px 0 4px;color:#9a9a96;font:inherit;font-size:11px;background:none;border:none;border-radius:10px;cursor:pointer}
+.bnav button svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tsbtn{display:none}
+@media(max-width:760px){.tsbtn{display:inline-block}}
+.tsbox{max-width:420px;width:100%}
+.tsbox h3{margin:0 0 4px;font-size:17px}
+.tsl{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:14px 0 6px}
+.tsi{display:flex;align-items:center;gap:8px;border:1px solid var(--line2);border-radius:10px;padding:10px 12px;cursor:pointer;font-size:14px}
+.tsi:has(input:checked){border-color:var(--ink);background:var(--panel2)}
+.tsi input{accent-color:var(--red);width:18px;height:18px;margin:0}
+.tsi svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.tserr{color:var(--mnc);font-size:13px;min-height:1.4em;margin:4px 0 0}
+#tabset .acts{flex-wrap:wrap}
+#tabset .acts #tsreset{margin-right:auto}
+.vtx .hd span{margin-right:22px}
+@media(max-width:760px){
+ .vtx.vtx{top:calc(66px + env(safe-area-inset-top));bottom:auto;left:12px;right:12px;width:auto;transform:translateY(-14px)}
+ .vtx.vtx.show{transform:none}
+ .lbx.b{bottom:0;z-index:24}
+}
 [data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
 [data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
 [data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
@@ -584,7 +605,7 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
  </div>
 </header>
 <div class="scrim" id="scrim"></div>
-<aside class="drawer" id="drawer"><button class="close" id="dclose" aria-label="閉じる">×</button><h3>CONTENTS</h3><nav id="dnav"></nav><div class="dfoot"><button class="tb" id="dS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg> 検索</button><button class="tb" id="dC">₫⇄¥ 換算</button><button class="tb" id="dT">◐ テーマ</button></div></aside>
+<aside class="drawer" id="drawer"><button class="close" id="dclose" aria-label="閉じる">×</button><h3>CONTENTS</h3><nav id="dnav"></nav><div class="dfoot"><button class="tb" data-act="tabset" style="flex-basis:100%">タブバーの項目を変更</button><button class="tb" id="dS"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg> 検索</button><button class="tb" id="dC">₫⇄¥ 換算</button><button class="tb" id="dT">◐ テーマ</button></div></aside>
 <main id="main"></main>
 <script id="seed" type="application/json">{}</script>
 <div class="sov" id="sov"><div class="sbox" role="dialog" aria-label="ページ内検索"><div class="sin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="sq" placeholder="キーワードで全ページを検索（例：両替、Wi-Fi、p.6、フォー）" autocomplete="off"><kbd>Esc</kbd></div><div class="sres" id="sres"></div></div></div>
@@ -600,7 +621,8 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 <div class="lbx t"></div><div class="lbx b"></div>
 <div class="vtx" id="tx" role="status" aria-live="polite"><div class="hd"><i></i>INCOMING TRANSMISSION<span id="txt"></span></div><div class="bd" id="txb"></div><button class="x" id="txx" aria-label="閉じる">×</button></div>
 <div class="boot out" id="boot"></div>
-<nav class="bnav" aria-label="よく使うページ"><a href="#home"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V20h-5v-6H9v6H4z"/></svg><span>目次</span></a><a href="#schedule"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v3M17 3v3M4 8h16M5 5h14v15H5z"/></svg><span>行程</span></a><a href="#checklist"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"/></svg><span>持ち物</span></a><a href="#food"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3v8a2 2 0 0 0 4 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"/></svg><span>料理</span></a><a href="#phrases"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z M8 10h8"/></svg><span>会話</span></a></nav>
+<nav class="bnav" id="bnav" aria-label="よく使うページ"></nav>
+<div class="modal" id="tabset"><div class="box tsbox"><h3>タブバーに表示する項目</h3><p class="muted">スマホの画面下に出すものを2〜5個選んでください。</p><div class="tsl" id="tsl"></div><p class="tserr" id="tserr"></p><div class="acts"><button class="btn" id="tsreset">最初の設定に戻す</button><button class="btn" id="tsno">やめる</button><button class="btn on" id="tsok">保存</button></div></div></div>
 <button class="totop" id="totop" aria-label="ページ上部へ">↑</button>
 <div class="toast" id="toast"></div>
 <div class="sayov" id="sayov" role="dialog" aria-label="お店の人に見せる"><button class="x" id="sayx" aria-label="閉じる">×</button><p class="lb">お店の人に見せてください</p><p class="big2" id="sayv"></p><p class="ja2" id="sayj"></p><button class="btn sayp" id="sayp">▶ 発音を再生</button></div>
@@ -849,7 +871,7 @@ R.home=function(){
  VIEWS.forEach(function(v){if(v.id==="home")return;h+='<a href="#'+v.id+'"><span class="t">'+v.t+'</span><span class="d">'+v.d+'</span></a>'});
  h+='</nav><aside class="side">';
  h+='<div class="card mini"><h2><span class="k">PACKING</span>持ち物の準備</h2><div class="big">'+p.p+'<small>%</small></div><div class="bar'+(p.p===100?' full':'')+'"><i style="width:'+p.p+'%"></i></div><p class="muted">'+p.n+'項目中 '+p.c+'項目チェック済み</p><a class="btn" href="#checklist">チェッカーを開く</a></div>';
- h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div class="acts"><button class="btn" data-act="conv">円とドンを換算</button><button class="btn" data-act="search">全ページを検索</button><button class="btn" data-act="theme">表示を切り替え</button>'+(isV()?'<button class="btn" data-act="txtoggle">'+(txOff()?'📡 通信ポップアップ：OFF':'📡 通信ポップアップ：ON')+'</button>':'')+'</div><p class="muted">表示はライト、ダーク、VIVANT風の順に切り替わります。パソコンでは / キーで検索できます。</p></div>';
+ h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div class="acts"><button class="btn" data-act="conv">円とドンを換算</button><button class="btn" data-act="search">全ページを検索</button><button class="btn" data-act="theme">表示を切り替え</button><button class="btn tsbtn" data-act="tabset">タブバーの項目を変更</button>'+(isV()?'<button class="btn" data-act="txtoggle">'+(txOff()?'📡 通信ポップアップ：OFF':'📡 通信ポップアップ：ON')+'</button>':'')+'</div><p class="muted">表示はライト、ダーク、VIVANT風の順に切り替わります。パソコンでは / キーで検索できます。</p></div>';
  h+='<div class="card warn"><h2><span class="k">SOS</span>出発当日の緊急連絡先</h2><p>名鉄観光サービス 岐阜支店 担当者</p><p class="tel">電話番号はしおり p.3 で確認</p><p class="muted">しおり '+pg(3)+'</p></div>';
  return h+'</aside></div>';
 };
@@ -1140,7 +1162,7 @@ function nav(){
 function mark(){document.querySelectorAll("[data-v]").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-v")===cur)});var on=document.querySelector(".tabs a.on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest",inline:"center"})}
 var SCROLL={},prevView=null,pushedBack=false;
 function scrollToY(y){try{window.scrollTo({top:y,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,y)}}
-function renderView(id,opt){opt=opt||{};document.querySelectorAll(".bnav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});if(opt.keep===undefined&&typeof ttsStop==="function")ttsStop();if(id==="checklist")SIDX=null;
+function renderView(id,opt){opt=opt||{};if(!document.querySelector("#bnav *"))buildBnav();document.querySelectorAll(".bnav a").forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});if(opt.keep===undefined&&typeof ttsStop==="function")ttsStop();if(id==="checklist")SIDX=null;
  if(cur&&document.querySelector("#main .view"))SCROLL[cur]=window.scrollY;
  var same=(cur===id);cur=id;var m=document.getElementById("main");
  m.innerHTML='<div class="view'+(same&&opt.keep!==undefined?'':' on')+'">'+R[id]()+'</div>';
@@ -1342,6 +1364,35 @@ document.addEventListener("click",function(e){
  var rt=e.target.closest("[data-rate]");if(rt){TTS.rate=parseFloat(rt.dataset.rate);try{localStorage.setItem("vn-tts-rate",TTS.rate)}catch(x){}document.querySelectorAll("[data-rate]").forEach(function(b){b.classList.toggle("on",b===rt)});return}
  var pl=e.target.closest(".play,.phr,.sayplay");if(pl){ttsStop();speak(pl.dataset.sp);return}
 },true);
+/* ---------- 下部タブバー（項目を選べる） ---------- */
+var BITEMS=[
+ ["home","目次","M4 10.5 12 4l8 6.5V20h-5v-6H9v6H4z"],
+ ["schedule","行程","M7 3v3M17 3v3M4 8h16M5 5h14v15H5z"],
+ ["checklist","持ち物","M9 6h11M9 12h11M9 18h11M4 6l1 1 2-2M4 12l1 1 2-2M4 18l1 1 2-2"],
+ ["basics","基本情報","M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM12 11v5M12 8h.01"],
+ ["food","料理","M7 3v8a2 2 0 0 0 4 0V3M9 3v18M17 3c-2 2-2 6 0 8v10"],
+ ["spots","スポット","M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"],
+ ["airport","空港","M3 13l8-2 4-7 2 1-2 6 5 1 1 2-6 1-4 6-2-1 1-5-6 0z"],
+ ["safety","安全","M12 3l7 3v5c0 5-3 8.5-7 10-4-1.5-7-5-7-10V6z"],
+ ["phrases","会話","M4 5h16v11H9l-5 4zM8 10h8"],
+ ["pdf","しおり","M6 3h9l4 4v14H6zM14 3v5h5"],
+ ["@conv","換算","M4 8h13l-3-3M20 16H7l3 3"],
+ ["@search","検索","M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14zM20 20l-4-4"]
+];
+var BDEF=["home","schedule","checklist","food","phrases"];
+function bSel(){try{var a=JSON.parse(localStorage.getItem("vn-tabs")||"null");if(Array.isArray(a)){a=a.filter(function(k){return BITEMS.some(function(x){return x[0]===k})});if(a.length>=2&&a.length<=5)return a}}catch(e){}return BDEF.slice()}
+function bIcon(d){return '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="'+d+'"/></svg>'}
+function buildBnav(){var n=document.getElementById("bnav");if(!n)return;var sel=bSel();n.innerHTML=BITEMS.filter(function(x){return sel.indexOf(x[0])>=0}).map(function(x){return x[0].charAt(0)==="@"?'<button type="button" data-act="'+x[0].slice(1)+'">'+bIcon(x[2])+'<span>'+x[1]+'</span></button>':'<a href="#'+x[0]+'"'+(cur===x[0]?' class="on"':'')+'>'+bIcon(x[2])+'<span>'+x[1]+'</span></a>'}).join("");n.style.setProperty("--n",sel.length)}
+function openTabset(){var sel=bSel();document.getElementById("tsl").innerHTML=BITEMS.map(function(x){return '<label class="tsi"><input type="checkbox" value="'+x[0]+'"'+(sel.indexOf(x[0])>=0?' checked':'')+'>'+bIcon(x[2])+'<span>'+x[1]+'</span></label>'}).join("");document.getElementById("tserr").textContent="";document.getElementById("tabset").classList.add("show")}
+function tsVals(){return [].map.call(document.querySelectorAll("#tsl input:checked"),function(i){return i.value})}
+document.addEventListener("change",function(e){if(e.target.closest&&e.target.closest("#tsl")){var v=tsVals(),er=document.getElementById("tserr");if(v.length>5){e.target.checked=false;er.textContent="選べるのは5個までです"}else er.textContent=""}});
+document.addEventListener("click",function(e){if(!e.target.closest)return;
+ if(e.target.closest('[data-act="tabset"]')){closeDrawerSafe();openTabset();return}
+ if(e.target.closest("#tsno")||e.target.id==="tabset"){document.getElementById("tabset").classList.remove("show");return}
+ if(e.target.closest("#tsreset")){try{localStorage.removeItem("vn-tabs")}catch(x){}buildBnav();document.getElementById("tabset").classList.remove("show");toast("タブバーを最初の設定に戻しました");return}
+ if(e.target.closest("#tsok")){var v=tsVals();if(v.length<2){document.getElementById("tserr").textContent="2個以上選んでください";return}try{localStorage.setItem("vn-tabs",JSON.stringify(v))}catch(x){}buildBnav();document.getElementById("tabset").classList.remove("show");toast("タブバーを保存しました");return}
+});
+function closeDrawerSafe(){var d=document.getElementById("drawer"),sc=document.querySelector(".scrim");if(d)d.classList.remove("show");if(sc)sc.classList.remove("show")}
 /* ---------- converter ---------- */
 var RATE_DEF=163;
 function rate(){try{var r=parseFloat(localStorage.getItem("vn-guide-rate"));if(r>50&&r<400)return r}catch(e){}return RATE_DEF}
