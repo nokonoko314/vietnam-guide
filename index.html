@@ -298,7 +298,7 @@ p{margin:0 0 .6em}
 table{font-size:14.5px}
 th,td{padding:11px 10px}
 th{font-size:12.5px;letter-spacing:.02em;white-space:nowrap}
-td:first-child,td:nth-child(2){word-break:keep-all}
+td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 /* ---- トップ：搭乗券 ---- */
 .hero.pass{display:grid;grid-template-columns:1fr 300px;gap:0;padding:0;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:18px;margin-bottom:28px;overflow:visible}
 .hero.pass:after{content:none}
@@ -382,6 +382,45 @@ td:first-child,td:nth-child(2){word-break:keep-all}
 @media(max-width:900px){.hero.pass{grid-template-columns:1fr}.pass .pmain{border-radius:18px 18px 0 0}.pstub{border-left:none;border-top:2px dashed var(--line2);border-radius:0 0 18px 18px}.pstub:before{left:-13px;top:-13px;clip-path:inset(0 0 0 50%)}.pstub:after{left:auto;right:-13px;top:-13px;bottom:auto;clip-path:inset(0 50% 0 0)}.pf{grid-template-columns:1fr 1fr;gap:12px 20px}}
 @media(max-width:760px){:root{--fs:16px}main{padding:22px 16px 90px}.vh h1{font-size:26px}.vh .lead{font-size:14.5px}.card{padding:20px}.toc{grid-template-columns:1fr;padding:4px 20px}.toc a:nth-last-child(2){border-bottom:1px solid var(--line)}.pass .pmain{padding:24px 22px}.pass h1{font-size:25px}.ap b{font-size:40px}.route{gap:12px}.fl span{font-size:11.5px}.pstub{padding:22px}.grid.food{grid-template-columns:1fr}}
 @media(max-width:520px){.toc{grid-template-columns:1fr;gap:0}.toc a{min-height:0;padding:15px 24px 15px 0}.toc .d{font-size:13px}.pf dd{font-size:15px;white-space:normal}}
+/* 料理の材料 */
+.igs{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 10px}
+.ig{font-size:12.5px;line-height:1.5;padding:2px 9px;border-radius:6px;border:1px solid var(--line2)}
+.ig.y{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.ig.m{border-style:dashed;color:var(--sub)}
+.ig.s{color:var(--ink)}
+.ig.n{color:var(--sub)}
+.ingd{margin:0 0 10px;border-top:1px solid var(--line);padding-top:8px}
+.ingd summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink);list-style:none;display:flex;align-items:center;gap:6px}
+.ingd summary::-webkit-details-marker{display:none}
+.ingd summary:before{content:"+";display:inline-grid;place-content:center;width:18px;height:18px;border:1px solid var(--line2);border-radius:4px;font-size:13px;line-height:1}
+.ingd[open] summary:before{content:"−"}
+.ingd p{font-size:14px;line-height:1.8;margin:8px 0 0}
+.ingd .tip{color:var(--sub)}
+.ingt{margin-bottom:24px}
+.herbt td.vn{white-space:nowrap;width:1%}
+.shint2{display:none;font-size:12.5px;color:var(--sub);margin:0 0 4px}
+@media(max-width:760px){.shint2{display:block}}
+.tscroll{overflow-x:auto;margin:6px -6px 10px;padding:0 6px}
+.ingt table{min-width:720px}
+.ingt thead th{font-size:12.5px;white-space:normal;vertical-align:bottom;line-height:1.4}
+.ingt tbody th{font-size:14.5px;color:var(--ink);font-weight:700;letter-spacing:0;position:sticky;left:0;background:var(--panel);white-space:nowrap}
+.iv{text-align:center;font-size:16px;font-weight:700}
+.ingt thead th:not(:first-child){text-align:center}
+.iv-y{color:var(--ink)}.iv-m{color:var(--sub)}.iv-s{font-size:13px;color:var(--ink)}.iv-n{color:var(--line2);font-weight:400}
+.gap2{margin-bottom:24px}
+.says{display:grid;gap:8px}
+.sayb{display:grid;grid-template-columns:1fr auto;gap:0 12px;text-align:left;border:1px solid var(--line);background:var(--panel2);color:var(--ink);border-radius:10px;padding:10px 14px;cursor:pointer;font:inherit}
+.sayb:hover{border-color:var(--ink)}
+.sayb .vn{font-size:16px;font-weight:700}
+.sayb .ja{font-size:13px;color:var(--sub);grid-row:span 2;align-self:center;text-align:right;max-width:14em}
+.sayb .kana{font-size:12.5px;color:var(--sub)}
+.sayov{position:fixed;inset:0;z-index:60;background:#fff;color:#111;display:none;flex-direction:column;justify-content:center;padding:8vw;text-align:center}
+.sayov.show{display:flex}
+.sayov .lb{font-size:15px;color:#666;margin:0 0 20px}
+.sayov .big2{font:700 clamp(34px,8vw,72px)/1.3 Inter,"IBM Plex Sans JP",sans-serif;margin:0 0 20px}
+.sayov .ja2{font-size:18px;color:#444;margin:0}
+.sayov .x{position:absolute;right:16px;top:16px;width:48px;height:48px;border-radius:99px;border:1px solid #ccc;background:#fff;font-size:24px;cursor:pointer}
+@media(max-width:520px){.sayb{grid-template-columns:1fr}.sayb .ja{grid-row:auto;text-align:left;max-width:none}}
 [data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
 [data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
 [data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
@@ -503,6 +542,7 @@ td:first-child,td:nth-child(2){word-break:keep-all}
 <div class="boot out" id="boot"></div>
 <button class="totop" id="totop" aria-label="ページ上部へ">↑</button>
 <div class="toast" id="toast"></div>
+<div class="sayov" id="sayov" role="dialog" aria-label="お店の人に見せる"><button class="x" id="sayx" aria-label="閉じる">×</button><p class="lb">お店の人に見せてください</p><p class="big2" id="sayv"></p><p class="ja2" id="sayj"></p></div>
 <div class="modal" id="modal2"><div class="box"><div>このスマホに保存したしおりを削除しますか？（チェックリストは消えません）</div><div class="acts"><button class="btn" id="m2no">やめる</button><button class="btn on" id="m2yes">削除</button></div></div></div>
 <div class="modal" id="modal"><div class="box"><div>チェック・追加した項目・外した項目をすべて元に戻しますか？</div><div class="acts"><button class="btn" id="mno">やめる</button><button class="btn on" id="myes">リセット</button></div></div></div>
 <script>
@@ -567,6 +607,10 @@ var S={
  aruM:["地球の歩き方 料理10選とマナー","https://www.arukikata.co.jp/webmagazine/378792/"],
  hutieu:["vietnamtourism フーティウ","https://www.vietnamtourism.com/ja/hu-tieu-the-southern-noodle-soup-that-is-not-pho"],
  gendaiN:["現代ビジネス ベトナムの麺","https://gendai.media/articles/-/62076"],
+ htW:["Wikipedia Hủ tiếu","https://en.wikipedia.org/wiki/H%E1%BB%A7_ti%E1%BA%BFu"],
+ bbh:["Silk Path Hue ブンボーフエ","https://silkpathhotel.com/bun-bo-hue-hue-style-beef-noodle-soup/"],
+ mapH:["まっぷる ハーブと調味料","https://www.mapple.net/global/article/7677/"],
+ vtGF:["vietnamtourism アレルギーと食事","https://www.vietnamtourism.com/ja/eating-gluten-free-in-vietnam-a-practical-guide-for-traveler"],
  vtBud:["vietnamtourism 2026年の予算","https://www.vietnamtourism.com/ja/vietnam-on-a-backpacker-budget-costs-routes-and-money-saving"],
  tvt:["テレ東プラス 地域の麺料理","https://www.tv-tokyo.co.jp/plus/gourmet/entry/2020/021042.html"],
  veltraF:["VELTRA 食べ歩きツアー","https://www.veltra.com/jp/asia/vietnam/ho_chi_minh/a/186067"],
@@ -839,6 +883,11 @@ function art(k){return '<svg viewBox="0 0 200 130" role="img" aria-label="イラ
 var FOODC={"pho": ["Andy Li", "CC0", "https://commons.wikimedia.org/wiki/File%3ABeef_Pho_%28M%29_-_Milk_No_Sugar.jpg"], "hutieu": ["Tonbi ko", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AH%E1%BB%A7_ti%E1%BA%BFu_Nam_Vang_S%C3%A0i_G%C3%B2n.jpg"], "comtam": ["Kham Tran", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File%3ACom-Tam-2008.jpg"], "banhmi": ["Bahnfrend", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3ATraditional_Viet_Pork_Sausage_B%C3%A1nh_M%C3%AC%2C_B%C3%A1nh_M%C3%AC_B%C3%A1nh_M%C3%AC_Westfield_Carousel%2C_2026_%2801%29.jpg"], "banhxeo": ["Ser Amantio di Nicolao", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AB%C3%A1nh_x%C3%A8o_with_pork_sausage_and_shrimp_served_with_various_garnishes.jpg"], "goicuon": ["N509FZ", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AG%E1%BB%8Fi_cu%E1%BB%91n_at_a_Vietnamese-style_restaurant_in_Beijing_%2820180103175625%29.jpg"], "buncha": ["Weetjesman", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3ABun_cha_Hanoi.jpg"], "bunbo": ["TarnishedPath", "CC BY-SA 4.0", "https://commons.wikimedia.org/wiki/File%3AB%C3%BAn_b%C3%B2_Hu%E1%BA%BF-Feb_2025.jpg"], "che": ["Mạnh An", "CC BY-SA 3.0", "https://commons.wikimedia.org/wiki/File%3ACh%C3%A8_xo%C3%A0i.jpg"], "sinhto": ["Hoangkid", "Public domain", "https://commons.wikimedia.org/wiki/File%3ASinh_t%E1%BB%91_b%C6%A1.jpg"], "cafe": ["Clarin", "CC BY 2.5", "https://commons.wikimedia.org/wiki/File%3ACa_Phe_Sua_Da.jpg"]};
 function fimg(k){return (window.__FOOD__&&window.__FOOD__[k])||("food/"+k+".jpg")}
 function gimg(q){return "https://www.google.com/search?tbm=isch&q="+encodeURIComponent(q)}
+var SAYS=[["Không bỏ ngò.","コン ボー ンゴー","パクチーを入れないでください"],["Không cay.","コン カイ","辛くしないでください"],["Không tôm.","コン トム","エビなしで"],["Không đậu phộng.","コン ダウ フォン","ピーナッツなしで"],["Không bột ngọt.","コン ボッ ンゴッ","うま味調味料なしで"],["Không đá.","コン ダー","氷なしで"],["Món này có tôm không?","モン ナイ コー トム コン","この料理にエビは入っていますか？"],["Món này có nước mắm không?","モン ナイ コー ヌックマム コン","この料理に魚醤は入っていますか？"],["Tôi bị dị ứng tôm, cua và hải sản.","トイ ビ ジ ウン トム、クア ヴァ ハイ サン","私はエビ・カニ・魚介のアレルギーです"],["Tôi bị dị ứng đậu phộng.","トイ ビ ジ ウン ダウ フォン","私はピーナッツのアレルギーです"]];
+var ING={"pho": {"f": ["", "y", "y", "", "y", "", "s", "s"], "i": "米粉の平たい麺／牛肉（生の薄切り＝tái か、煮込み＝chín）または鶏／牛骨スープ（ヌクマムで味付け）／上に刻みネギ・パクチー・玉ねぎ。別皿にもやし・タイバジル・ノコギリコリアンダー・ライム・唐辛子", "t": "パクチーは最初から上にのっています。抜くなら「Không ngò（コン ンゴー）」。生っぽい肉が不安なら「Phở bò chín（よく火を通した牛）」"}, "hutieu": {"f": ["y", "y", "m", "y", "", "", "s", "s"], "i": "コシのある米麺／豚骨と<b>干しエビ・干しイカ</b>で取ったスープ／エビ・豚肉・豚レバー・ひき肉・ウズラ卵／ニラ・セロリ・揚げにんにく", "t": "エビは具だけでなく<b>スープにも</b>入っています。エビアレルギーの人は避けてください"}, "comtam": {"f": ["m", "y", "", "y", "", "", "s", "m"], "i": "砕き米／甘いタレで焼いた骨付き豚（スオン）／豚皮の細切り（ビー）／蒸し卵焼き（チャー）／目玉焼き／なます・きゅうり・トマト／ネギ油／甘いヌクマムダレ", "t": "ヌクマムダレはごはんにかけて食べるのが基本。別添えにしたいなら「Nước mắm để riêng（ヌックマム デー ジエン）」"}, "banhmi": {"f": ["", "m", "y", "y", "", "", "y", "y"], "i": "フランスパン／レバーパテ・マヨネーズ／ハム・チャーシュー／大根と人参のなます・きゅうり／パクチー・ネギ／生の唐辛子／醤油系のタレ（店によりヌクマム）", "t": "パクチーも唐辛子も最初から入ります。抜くなら「Không ngò, không ớt（コン ンゴー、コン オッ）」"}, "banhxeo": {"f": ["y", "y", "s", "y", "", "", "s", "s"], "i": "米粉とターメリックの生地（ココナッツミルク入り）／エビ・豚バラ・もやし／包む用のレタス・からし菜・香草／ヌクマムの甘酸っぱいつけダレ", "t": "香草は別皿なので、苦手なものは包まなければOK。エビは生地の中に入っています"}, "goicuon": {"f": ["y", "m", "y", "y", "", "y", "", "y"], "i": "ライスペーパー／ゆでエビ・豚肉／米麺（ブン）／レタス・ミント・ニラなどの香草／<b>ピーナッツ入りの味噌ダレ</b>（店によりヌクマムダレ）", "t": "香草は巻き込まれているので抜けません。ピーナッツが苦手ならタレに注意"}, "buncha": {"f": ["", "y", "s", "y", "", "", "s", "s"], "i": "細い米麺（ブン）／炭火焼きの豚つくね・豚バラ／ヌクマムベースの甘酸っぱいつけダレ（パパイヤ・人参入り）／別皿の香草とレタス", "t": "つけダレそのものがヌクマム。香草は別皿なので自分で調整できます"}, "bunbo": {"f": ["y", "y", "s", "y", "y", "", "y", "s"], "i": "太い丸い米麺／牛すね・豚足・つみれ（チャー）・豚の血を固めたもの（フエット）／レモングラスと唐辛子のスープ／<b>エビの発酵調味料（マムルォック）</b>／別皿にもやし・香草・バナナの花", "t": "スープにエビの調味料が溶けています。血の塊が苦手なら「Không huyết（コン フエット）」"}, "che": {"f": ["", "", "", "", "", "m", "", "y"], "i": "緑豆・小豆・タピオカ・ゼリー・ココナッツミルク・砕いた氷／種類によって炒ったピーナッツやゴマ", "t": "氷が心配なら「Không đá（コン ダー）」。温かいチェー（chè nóng）もあります"}, "sinhto": {"f": ["", "", "", "", "", "", "", "y"], "i": "果物（マンゴー、アボカド、ドリアンなど）・練乳・氷。ヨーグルト入りもある", "t": "甘さ控えめは「Ít đường（イッ ドゥオン）」"}, "cafe": {"f": ["", "", "", "", "", "", "", "y"], "i": "ロブスタ種の深煎りコーヒー・練乳・氷", "t": "かなり濃いので、カフェインに弱い人は少しずつ。氷なしは「Không đá」"}};
+var INGC=[["エビ・魚介","shrimp"],["ヌクマム（魚醤）","fish"],["パクチー・香草","herb"],["豚","pork"],["牛","beef"],["ピーナッツ","nut"],["辛さ","hot"],["生野菜・氷","raw"]];
+var INGV={y:["●","入っている"],m:["△","店や注文による"],s:["添","別皿で出る（自分で入れる）"],"":["—","ふつう入っていない"]};
+function ingRow(k){var x=ING[k];if(!x)return "";var out=[];INGC.forEach(function(c,i){var v=x.f[i];if(v)out.push('<span class="ig '+v+'">'+(c[1]==="hot"?(v==="y"?"辛い":v==="s"?"唐辛子は別添え":"辛さは店による"):c[0].replace(/（.*）/,"")+(v==="m"?"（店による）":v==="s"?"（別皿）":""))+'</span>')});return '<div class="igs">'+(out.length?out.join(""):'<span class="ig n">気になる材料なし</span>')+'</div>'}
 R.food=function(){
  var F=[
   {k:"pho",cat:"麺",jp:"フォー",vn:"Phở",price:"6万〜9万₫（約370〜550円）",taste:"あっさり",d:"米粉の平たい麺を、長時間煮込んだスープで食べる。<b>牛（bò ボー）</b>と<b>鶏（gà ガー）</b>が定番。テーブルの香草・もやし・ライム・唐辛子で味を自分で調整するのが本場流。",how:"注文：「Phở bò（フォー ボー）」",src:["aruF","aruM"]},
@@ -855,9 +904,13 @@ R.food=function(){
  ];
  var h=vh("ベトナム料理","南部（ホーチミン）は砂糖を使った甘めでしっかりした味が特徴。値段は1円≈163₫で計算した目安です。",[2]);
  h+='<div class="card" style="margin-bottom:16px"><h2><span class="k">PLAN</span>自分で食事を選ぶ回と、おすすめの組み合わせ</h2><div class="grid g4" style="gap:10px"><div><b>11/11 夜・11/13 夜</b><br><span class="muted">ベトナム料理の食事付き（別紙参照）。いろいろな料理が少しずつ出ることが多いので、ここで味見できる。</span></div><div><b>11/12 昼</b>（研修日）<br><span class="muted">研修先の近くで手早く：<b>コムタム</b>か<b>バインミー</b></span></div><div><b>11/12 夜</b>（自由）<br><span class="muted">ホテル周辺で：<b>フォー</b>または<b>バインセオ</b>をシェア</span></div><div><b>11/13 昼</b>（自由）<br><span class="muted">観光の前に：<b>フーティウ</b>で南部の味を。中華$21の手配もあり</span></div></div></div>';
- h+='<div class="grid food">';
+ h+='<div class="card ingt" id="ingtable"><h2><span class="k">CHECK</span>材料の早見表</h2><p class="muted">●＝入っている　△＝店や注文による　添＝別皿で出るので自分で調整できる　—＝ふつう入っていない</p><p class="shint2">表は横にスクロールできます →</p><div class="tscroll"><table><thead><tr><th>料理</th>'+INGC.map(function(c){return '<th>'+c[0]+'</th>'}).join("")+'</tr></thead><tbody>'+F.map(function(f){var x=ING[f.k];if(!x)return "";return '<tr><th scope="row">'+f.jp+'</th>'+x.f.map(function(v){return '<td class="iv iv-'+(v||"n")+'">'+INGV[v][0]+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table></div><p class="muted">ほとんどの料理の味付けやタレにヌクマム（カタクチイワシの魚醤）が使われています。お店ごとにレシピが違うので、アレルギーがある人は必ずお店の人に確認してください。</p>'+src(["htW","bbh","mapH"])+'</div>';
+h+='<div class="grid gap2"><div class="card"><h2><span class="k">HERB</span>よく出てくる香草</h2><table class="herbt"><tr><td class="vn">Ngò / Rau mùi</td><td><b>パクチー</b>。南部では「ンゴー」。麺の上やバインミーに最初から入っていることが多い</td></tr><tr><td class="vn">Ngò gai</td><td><b>ノコギリコリアンダー</b>。細長いギザギザの葉で、香りはパクチーに似ている。フォーの別皿に</td></tr><tr><td class="vn">Húng quế</td><td><b>タイバジル</b>。茎が紫。フォーや生春巻きに</td></tr><tr><td class="vn">Rau răm</td><td><b>ラウラム</b>。ピリッとした香り。麺類の別皿に</td></tr><tr><td class="vn">Diếp cá</td><td><b>ドクダミ</b>。くせが強い。生春巻きや別皿に</td></tr><tr><td class="vn">Húng lủi</td><td><b>ミント</b>。いちばんよく使われる香草のひとつ</td></tr></table><p class="muted">別皿の香草（ザウ）は無料で、使わなくても大丈夫です。</p>'+src(["mapH"])+'</div>';
+h+='<div class="card"><h2><span class="k">SAUCE</span>見えないところに入っている調味料</h2><ul><li><b>ヌクマム（nước mắm）</b>：カタクチイワシの魚醤。スープ・炒め物・タレのほとんどに使われる。<b>魚アレルギーの人は要注意</b></li><li><b>干しエビ・干しイカ</b>：フーティウなど南部の麺のスープのだし</li><li><b>マムルォック（mắm ruốc）</b>：エビの発酵調味料。ブンボーフエのスープに溶けている</li><li><b>マムトム（mắm tôm）</b>：エビの発酵ペースト。紫色で匂いが強い。ブンダウ（揚げ豆腐と麺）のつけダレ</li><li><b>トゥオンデン（tương đen）</b>：甘い黒味噌。フォーのテーブルや生春巻きのタレに</li><li><b>うま味調味料（bột ngọt）</b>：多くの店で使われている</li></ul>'+src(["mapH","bbh","vtGF"])+'</div>';
+h+='<div class="card allergy"><h2><span class="k">SAY</span>抜いてほしい・アレルギーがあるとき</h2><p class="muted">発音が難しいので、画面をそのままお店の人に見せるのが確実です。ベトナム語をタップすると大きく表示されます。</p><div class="says">'+SAYS.map(function(x,i){return '<button class="sayb" data-say="'+i+'"><span class="vn">'+x[0]+'</span><span class="ja">'+x[2]+'</span><span class="kana">'+x[1]+'</span></button>'}).join("")+'</div></div></div>';
+h+='<div class="grid food">';
  F.forEach(function(f){
-  var fc=FOODC[f.k];h+='<div class="card dish"><div class="ill photo"><img loading="lazy" src="'+fimg(f.k)+'" alt="'+f.jp+'（'+f.vn+'）の写真"><span class="cat">'+f.cat+'</span></div>'+(fc?'<div class="credit">写真：<a href="'+fc[2]+'" target="_blank" rel="noopener">'+esc(fc[0])+'</a> / '+fc[1]+' / Wikimedia Commons</div>':'')+'<div class="vnn">'+f.vn+'</div><h2>'+f.jp+'</h2><div class="meta"><span>💰 '+f.price+'</span><span>👅 '+f.taste+'</span></div><p>'+f.d+'</p><p class="muted">→ '+f.how+'</p><div class="src"><a href="'+gimg(f.vn+" "+f.jp)+'" target="_blank" rel="noopener">写真を見る</a>'+src(f.src).replace('<div class="src">','').replace(/<\/div>$/,'')+'</div></div>';
+  var fc=FOODC[f.k];h+='<div class="card dish"><div class="ill photo"><img loading="lazy" src="'+fimg(f.k)+'" alt="'+f.jp+'（'+f.vn+'）の写真"><span class="cat">'+f.cat+'</span></div>'+(fc?'<div class="credit">写真：<a href="'+fc[2]+'" target="_blank" rel="noopener">'+esc(fc[0])+'</a> / '+fc[1]+' / Wikimedia Commons</div>':'')+'<div class="vnn">'+f.vn+'</div><h2>'+f.jp+'</h2><div class="meta"><span>💰 '+f.price+'</span><span>👅 '+f.taste+'</span></div><p>'+f.d+'</p>'+(ING[f.k]?ingRow(f.k)+'<details class="ingd"><summary>材料をくわしく</summary><p>'+ING[f.k].i+'</p><p class="tip">'+ING[f.k].t+'</p></details>':'')+'<p class="muted">'+f.how+'</p><div class="src"><a href="'+gimg(f.vn+" "+f.jp)+'" target="_blank" rel="noopener">写真を見る</a>'+src(f.src).replace('<div class="src">','').replace(/<\/div>$/,'')+'</div></div>';
  });
  h+='</div><div class="grid gap">';
  h+='<div class="card"><h2><span class="k">TABLE</span>テーブルの調味料・食べ方</h2><ul><li><b>ライム・唐辛子・香草・もやし</b>は自由に入れて自分好みの味にする</li><li><b>ヌックマム</b>（魚醤）は甘いタレとして多くの料理にかける</li><li>テーブルに置いてある<b>揚げパンやバナナなどは、食べた分が会計に入る</b></li><li>屋台では箸・タレ・ナプキンを自分で取るセルフ式が多い</li><li>店員はあまりテーブルに来ないので、用があるときは手を挙げて呼ぶ</li></ul>'+src(["aruF","vtOrd"])+'</div>';
@@ -1177,7 +1230,8 @@ document.getElementById("sBtn").onclick=openSearch;document.getElementById("dS")
 document.getElementById("tBtn").onclick=toggleTheme;document.getElementById("dT").onclick=toggleTheme;setThemeIcon();
 document.getElementById("sov").onclick=function(e){if(e.target===this)closeSearch()};
 document.getElementById("sq").oninput=doSearch;
-document.addEventListener("click",function(e){var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv]"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")document.getElementById("sayov").classList.remove("show")});
+document.addEventListener("click",function(e){var sb=e.target.closest&&e.target.closest(".sayb");if(sb){var x=SAYS[+sb.dataset.say];document.getElementById("sayv").textContent=x[0];document.getElementById("sayj").textContent=x[2];document.getElementById("sayov").classList.add("show");return}if(e.target.closest&&e.target.closest("#sayx,#sayov")){document.getElementById("sayov").classList.remove("show")}var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv]"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}});
 var tt=document.getElementById("totop");window.addEventListener("scroll",function(){tt.classList.toggle("show",scrollY>700)},{passive:true});tt.onclick=function(){scrollTo({top:0,behavior:"smooth"})};
 document.getElementById("m2no").onclick=function(){document.getElementById("modal2").classList.remove("show")};
 document.getElementById("m2yes").onclick=function(){document.getElementById("modal2").classList.remove("show");idbClear().then(function(){freeUrls();NPAGES=0;SIDX=null;toast("しおりを削除しました");renderView("pdf")})};
