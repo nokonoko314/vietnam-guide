@@ -421,6 +421,40 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 .sayov .ja2{font-size:18px;color:#444;margin:0}
 .sayov .x{position:absolute;right:16px;top:16px;width:48px;height:48px;border-radius:99px;border:1px solid #ccc;background:#fff;font-size:24px;cursor:pointer}
 @media(max-width:520px){.sayb{grid-template-columns:1fr}.sayb .ja{grid-row:auto;text-align:left;max-width:none}}
+/* フレーズ・発音 */
+.ttsbar{display:flex;flex-wrap:wrap;align-items:center;gap:10px 14px;margin:-8px 0 22px}
+.ttsbar .lb{font-size:13.5px;color:var(--sub)}
+.seg{display:flex;gap:6px}
+.ttsst{font-size:13px;color:var(--sub)}.ttsst.ok{color:var(--ok)}.ttsst.w{color:var(--mnc)}
+.phw{columns:2 460px;column-gap:20px}
+.phc{break-inside:avoid;margin-bottom:20px;padding:20px 0 8px}
+.phh{display:flex;align-items:center;gap:12px;padding:0 22px 10px;border-bottom:1px solid var(--line)}
+.phh h2{margin:0;flex:1}
+.pall{font-size:13px;padding:6px 12px}
+.card .phl{list-style:none;margin:0;padding:0}
+.card .phl li{margin:0}
+.phr{display:flex;align-items:center;gap:12px;padding:11px 22px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .12s}
+.phr:last-child{border-bottom:none}
+.phr:hover{background:var(--panel2)}
+.phr.speaking{background:color-mix(in srgb,var(--red) 9%,var(--panel))}
+.play{flex:none;width:40px;height:40px;border-radius:99px;border:1.5px solid var(--line2);background:var(--panel);color:var(--ink);display:grid;place-content:center;cursor:pointer;padding:0;transition:.15s}
+.play svg{width:16px;height:16px;fill:currentColor;margin-left:2px}
+.play:hover,.phr:hover .play{border-color:var(--ink)}
+.speaking .play,.sayr .speaking~.play{background:var(--red);border-color:var(--red);color:#fff}
+.pt{flex:1;min-width:0;display:flex;flex-direction:column}
+.pt .vn{font-size:16.5px;font-weight:700;line-height:1.45}
+.pt .kana{font-size:13px;color:var(--sub);line-height:1.5}
+.pt .ja{font-size:14px;line-height:1.6;margin-top:2px}
+.pt .ja small{display:block;font-size:12.5px;color:var(--sub)}
+.shw{flex:none;border:1px solid var(--line);background:none;color:var(--sub);font:inherit;font-size:12px;border-radius:6px;padding:3px 8px;cursor:pointer}
+.shw:hover{border-color:var(--ink);color:var(--ink)}
+.sayr{display:flex;gap:8px;align-items:stretch}
+.sayr .sayb{flex:1}
+.sayr .play{align-self:center}
+.sayb.speaking{border-color:var(--red)}
+.sayp{margin-top:26px;font-size:16px;padding:12px 22px;background:#111;color:#fff;border-color:#111;align-self:center}
+@media(max-width:760px){.phw{columns:1}.phr{padding:11px 18px}.phh{padding:0 18px 10px}.pt .vn{font-size:17px}}
+[data-theme=vivan] .phr.speaking{background:rgba(210,58,47,.12)}
 [data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
 [data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
 [data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
@@ -542,7 +576,7 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
 <div class="boot out" id="boot"></div>
 <button class="totop" id="totop" aria-label="ページ上部へ">↑</button>
 <div class="toast" id="toast"></div>
-<div class="sayov" id="sayov" role="dialog" aria-label="お店の人に見せる"><button class="x" id="sayx" aria-label="閉じる">×</button><p class="lb">お店の人に見せてください</p><p class="big2" id="sayv"></p><p class="ja2" id="sayj"></p></div>
+<div class="sayov" id="sayov" role="dialog" aria-label="お店の人に見せる"><button class="x" id="sayx" aria-label="閉じる">×</button><p class="lb">お店の人に見せてください</p><p class="big2" id="sayv"></p><p class="ja2" id="sayj"></p><button class="btn sayp" id="sayp">▶ 発音を再生</button></div>
 <div class="modal" id="modal2"><div class="box"><div>このスマホに保存したしおりを削除しますか？（チェックリストは消えません）</div><div class="acts"><button class="btn" id="m2no">やめる</button><button class="btn on" id="m2yes">削除</button></div></div></div>
 <div class="modal" id="modal"><div class="box"><div>チェック・追加した項目・外した項目をすべて元に戻しますか？</div><div class="acts"><button class="btn" id="mno">やめる</button><button class="btn on" id="myes">リセット</button></div></div></div>
 <script>
@@ -907,7 +941,7 @@ R.food=function(){
  h+='<div class="card ingt" id="ingtable"><h2><span class="k">CHECK</span>材料の早見表</h2><p class="muted">●＝入っている　△＝店や注文による　添＝別皿で出るので自分で調整できる　—＝ふつう入っていない</p><p class="shint2">表は横にスクロールできます →</p><div class="tscroll"><table><thead><tr><th>料理</th>'+INGC.map(function(c){return '<th>'+c[0]+'</th>'}).join("")+'</tr></thead><tbody>'+F.map(function(f){var x=ING[f.k];if(!x)return "";return '<tr><th scope="row">'+f.jp+'</th>'+x.f.map(function(v){return '<td class="iv iv-'+(v||"n")+'">'+INGV[v][0]+'</td>'}).join("")+'</tr>'}).join("")+'</tbody></table></div><p class="muted">ほとんどの料理の味付けやタレにヌクマム（カタクチイワシの魚醤）が使われています。お店ごとにレシピが違うので、アレルギーがある人は必ずお店の人に確認してください。</p>'+src(["htW","bbh","mapH"])+'</div>';
 h+='<div class="grid gap2"><div class="card"><h2><span class="k">HERB</span>よく出てくる香草</h2><table class="herbt"><tr><td class="vn">Ngò / Rau mùi</td><td><b>パクチー</b>。南部では「ンゴー」。麺の上やバインミーに最初から入っていることが多い</td></tr><tr><td class="vn">Ngò gai</td><td><b>ノコギリコリアンダー</b>。細長いギザギザの葉で、香りはパクチーに似ている。フォーの別皿に</td></tr><tr><td class="vn">Húng quế</td><td><b>タイバジル</b>。茎が紫。フォーや生春巻きに</td></tr><tr><td class="vn">Rau răm</td><td><b>ラウラム</b>。ピリッとした香り。麺類の別皿に</td></tr><tr><td class="vn">Diếp cá</td><td><b>ドクダミ</b>。くせが強い。生春巻きや別皿に</td></tr><tr><td class="vn">Húng lủi</td><td><b>ミント</b>。いちばんよく使われる香草のひとつ</td></tr></table><p class="muted">別皿の香草（ザウ）は無料で、使わなくても大丈夫です。</p>'+src(["mapH"])+'</div>';
 h+='<div class="card"><h2><span class="k">SAUCE</span>見えないところに入っている調味料</h2><ul><li><b>ヌクマム（nước mắm）</b>：カタクチイワシの魚醤。スープ・炒め物・タレのほとんどに使われる。<b>魚アレルギーの人は要注意</b></li><li><b>干しエビ・干しイカ</b>：フーティウなど南部の麺のスープのだし</li><li><b>マムルォック（mắm ruốc）</b>：エビの発酵調味料。ブンボーフエのスープに溶けている</li><li><b>マムトム（mắm tôm）</b>：エビの発酵ペースト。紫色で匂いが強い。ブンダウ（揚げ豆腐と麺）のつけダレ</li><li><b>トゥオンデン（tương đen）</b>：甘い黒味噌。フォーのテーブルや生春巻きのタレに</li><li><b>うま味調味料（bột ngọt）</b>：多くの店で使われている</li></ul>'+src(["mapH","bbh","vtGF"])+'</div>';
-h+='<div class="card allergy"><h2><span class="k">SAY</span>抜いてほしい・アレルギーがあるとき</h2><p class="muted">発音が難しいので、画面をそのままお店の人に見せるのが確実です。ベトナム語をタップすると大きく表示されます。</p><div class="says">'+SAYS.map(function(x,i){return '<button class="sayb" data-say="'+i+'"><span class="vn">'+x[0]+'</span><span class="ja">'+x[2]+'</span><span class="kana">'+x[1]+'</span></button>'}).join("")+'</div></div></div>';
+h+='<div class="card allergy"><h2><span class="k">SAY</span>抜いてほしい・アレルギーがあるとき</h2><p class="muted">発音が難しいので、画面をそのままお店の人に見せるのが確実です。▶ で発音を再生、文をタップすると大きく表示されます。</p><div class="says">'+SAYS.map(function(x,i){return '<div class="sayr"><button class="play sayplay" data-sp="'+esc(x[0])+'" aria-label="再生"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><button class="sayb" data-say="'+i+'" data-sp="'+esc(x[0])+'"><span class="vn">'+x[0]+'</span><span class="ja">'+x[2]+'</span><span class="kana">'+x[1]+'</span></button>'}).join("")+'</div></div></div>';
 h+='<div class="grid food">';
  F.forEach(function(f){
   var fc=FOODC[f.k];h+='<div class="card dish"><div class="ill photo"><img loading="lazy" src="'+fimg(f.k)+'" alt="'+f.jp+'（'+f.vn+'）の写真"><span class="cat">'+f.cat+'</span></div>'+(fc?'<div class="credit">写真：<a href="'+fc[2]+'" target="_blank" rel="noopener">'+esc(fc[0])+'</a> / '+fc[1]+' / Wikimedia Commons</div>':'')+'<div class="vnn">'+f.vn+'</div><h2>'+f.jp+'</h2><div class="meta"><span>💰 '+f.price+'</span><span>👅 '+f.taste+'</span></div><p>'+f.d+'</p>'+(ING[f.k]?ingRow(f.k)+'<details class="ingd"><summary>材料をくわしく</summary><p>'+ING[f.k].i+'</p><p class="tip">'+ING[f.k].t+'</p></details>':'')+'<p class="muted">'+f.how+'</p><div class="src"><a href="'+gimg(f.vn+" "+f.jp)+'" target="_blank" rel="noopener">写真を見る</a>'+src(f.src).replace('<div class="src">','').replace(/<\/div>$/,'')+'</div></div>';
@@ -957,12 +991,93 @@ R.safety=function(){
  h+='<div class="card"><h2><span class="k">SOS</span>連絡先</h2><p><b>出発当日の緊急連絡先</b><br>名鉄観光サービス 岐阜支店 担当者<br>（電話番号はしおり p.3）</p><p class="muted">たびレジに登録しておくと、外務省の安全情報が届きます。</p><p>'+pg(3)+' '+pg(5)+'</p>'+src(["tabireg"])+'</div>';
  return h+'</div>';
 };
+var PHR=[
+ ["あいさつ・基本",[
+  ["こんにちは","Xin chào.","シン チャオ","朝・昼・夜いつでも使える"],
+  ["ありがとう","Cảm ơn.","カム オン"],
+  ["どうもありがとう","Cảm ơn nhiều.","カム オン ニィウ"],
+  ["すみません／ごめんなさい","Xin lỗi.","シン ロイ","人を呼び止めるときにも使える"],
+  ["大丈夫です／気にしないで","Không sao.","コン サオ"],
+  ["はい","Dạ.","ヤー","南部の丁寧な返事。Vâng（ヴァン）も同じ意味"],
+  ["いいえ","Không.","コン"],
+  ["さようなら","Tạm biệt.","タム ビエッ"],
+  ["また会いましょう","Hẹn gặp lại.","ヘン ガップ ライ"],
+  ["私は日本人です","Tôi là người Nhật.","トイ ラー ングオイ ニャッ"],
+  ["わかりません","Tôi không hiểu.","トイ コン ヒエウ"],
+  ["英語を話せますか？","Bạn nói tiếng Anh được không?","バン ノイ ティエン アイン ドゥオック コン"],
+  ["ゆっくり話してもらえますか？","Nói chậm lại được không?","ノイ チャム ライ ドゥオック コン"],
+  ["もう一度言ってもらえますか？","Nói lại được không?","ノイ ライ ドゥオック コン"]]],
+ ["研修・交流",[
+  ["はじめまして。会えてうれしいです","Rất vui được gặp bạn.","ザッ ヴイ ドゥオック ガップ バン"],
+  ["私の名前は〇〇です","Tôi tên là …","トイ テン ラー …","… のところで自分の名前を言う"],
+  ["日本から来ました","Tôi đến từ Nhật Bản.","トイ デン トゥー ニャッ バン"],
+  ["岐阜高専の学生です","Tôi là sinh viên trường Cao đẳng Kỹ thuật Gifu.","トイ ラー シン ヴィエン チュオン カオ ダン キー トゥアッ ギフ"],
+  ["電気と情報を勉強しています","Tôi học kỹ thuật điện và công nghệ thông tin.","トイ ホック キー トゥアッ ディエン ヴァー コン ゲー トン ティン"],
+  ["何を勉強していますか？","Bạn học ngành gì?","バン ホック ンガイン ジー"],
+  ["写真を撮ってもいいですか？","Tôi chụp ảnh được không?","トイ チュップ アイン ドゥオック コン"],
+  ["一緒に写真を撮りましょう！","Chụp ảnh chung nhé!","チュップ アイン チュン ニェ"],
+  ["お世話になりました","Cảm ơn vì đã giúp đỡ.","カム オン ヴィー ダー ズップ ドー"],
+  ["連絡を取り合おうね","Giữ liên lạc nhé!","ズー リエン ラック ニェ"]]],
+ ["買い物・値段",[
+  ["これはいくらですか？","Cái này bao nhiêu tiền?","カイ ナイ バオ ニュウ ティエン"],
+  ["高すぎます！","Đắt quá!","ダッ クア"],
+  ["安くしてもらえますか？","Bớt đi được không?","ボッ ディー ドゥオック コン","市場での値段交渉に"],
+  ["見ているだけです","Tôi chỉ xem thôi.","トイ チー セム トイ"],
+  ["これをください","Cho tôi cái này.","チョー トイ カイ ナイ"],
+  ["2つください","Cho tôi hai cái.","チョー トイ ハイ カイ"],
+  ["ほかのサイズはありますか？","Có cỡ khác không?","コー コー カック コン"],
+  ["カードで払えますか？","Trả bằng thẻ được không?","チャー バン テー ドゥオック コン"],
+  ["袋はいりません","Không cần túi.","コン カン トゥイ"]]],
+ ["食事",[
+  ["メニューを見せてください","Cho tôi xem thực đơn.","チョー トイ セム トゥック ドン"],
+  ["おすすめはどれですか？","Món nào ngon?","モン ナオ ンゴン"],
+  ["これは何ですか？","Cái này là gì?","カイ ナイ ラー ジー"],
+  ["水を1本ください","Cho tôi một chai nước.","チョー トイ モッ チャイ ヌオック"],
+  ["氷なしで","Không đá.","コン ダー"],
+  ["辛くしないでください","Không cay.","コン カイ"],
+  ["パクチーを入れないでください","Không bỏ ngò.","コン ボー ンゴー"],
+  ["持ち帰りで","Mang về.","マン ヴェー"],
+  ["とてもおいしい！","Ngon quá!","ンゴン クア"],
+  ["お会計をお願いします","Tính tiền.","ティン ティエン"],
+  ["乾杯！（1、2、3、ヨー！）","Một, hai, ba, dô!","モッ ハイ バー ヨー","ベトナム式の乾杯の掛け声"]]],
+ ["移動・道",[
+  ["〇〇へ行きたいです","Tôi muốn đi đến …","トイ ムオン ディー デン …"],
+  ["この住所までお願いします","Cho tôi đến địa chỉ này.","チョー トイ デン ディア チー ナイ","スマホの地図を見せながら"],
+  ["ここで止めてください","Dừng ở đây.","ズン オー ダイ"],
+  ["トイレはどこですか？","Nhà vệ sinh ở đâu?","ニャー ヴェー シン オー ダウ"],
+  ["遠いですか？","Có xa không?","コー サー コン"],
+  ["まっすぐ","Đi thẳng.","ディー タン"],
+  ["左に曲がる","Rẽ trái.","ゼー チャイ"],
+  ["右に曲がる","Rẽ phải.","ゼー ファイ"]]],
+ ["困ったとき",[
+  ["助けて！","Cứu tôi với!","クー トイ ヴォイ"],
+  ["警察を呼んでください","Gọi cảnh sát giúp tôi.","ゴイ カイン サッ ズップ トイ"],
+  ["救急車を呼んでください","Gọi xe cấp cứu giúp tôi.","ゴイ セー カップ クー ズップ トイ"],
+  ["気分が悪いです","Tôi thấy không khỏe.","トイ タイ コン コエ"],
+  ["お腹が痛いです","Tôi bị đau bụng.","トイ ビ ダウ ブン"],
+  ["病院はどこですか？","Bệnh viện ở đâu?","ベン ヴィエン オー ダウ"],
+  ["パスポートをなくしました","Tôi bị mất hộ chiếu.","トイ ビ マッ ホー チエウ"],
+  ["財布を盗まれました","Tôi bị mất cắp ví.","トイ ビ マッ カップ ヴィー"],
+  ["道に迷いました","Tôi bị lạc đường.","トイ ビ ラック ドゥオン"]]],
+ ["数字・お金",[
+  ["1","Một.","モッ"],["2","Hai.","ハイ"],["3","Ba.","バー"],["4","Bốn.","ボン"],["5","Năm.","ナム"],
+  ["6","Sáu.","サウ"],["7","Bảy.","バイ"],["8","Tám.","タム"],["9","Chín.","チン"],["10","Mười.","ムオイ"],
+  ["100","Một trăm.","モッ チャム"],
+  ["1,000（南部では ngàn とも言う）","Một nghìn.","モッ ギン"],
+  ["2万ドン（約120円）","Hai mươi nghìn.","ハイ ムオイ ギン","値札の「20K」"],
+  ["5万ドン（約300円）","Năm mươi nghìn.","ナム ムオイ ギン","値札の「50K」"],
+  ["10万ドン（約600円）","Một trăm nghìn.","モッ チャム ギン","値札の「100K」"]]]
+];
 R.phrases=function(){
- var P=[["こんにちは","Xin chào","シン チャオ"],["ありがとう","Cảm ơn","カム オン"],["すみません","Xin lỗi","シン ロイ"],["はい / いいえ","Vâng / Không","ヴァン / コン"],["いくらですか？","Bao nhiêu tiền?","バオ ニュウ ティエン"],["高すぎます","Đắt quá","ダッ クア"],["これをください","Ok, tôi lấy","オーケー トイ レイ"],["わかりません","Tôi không hiểu","トイ コン ヒュウ"],["パクチー抜きで","Không rau mùi","コン ザウ ムイ"],["さようなら","Tạm biệt","タム ビエッ"]];
- var h=vh("ベトナム語フレーズ","ベトナム語には声調があるので、カタカナは目安です。笑顔で言えば十分伝わります。");
- h+='<div class="grid"><div class="card span2"><table><tr><th>日本語</th><th>ベトナム語</th><th>読み</th></tr>';
- P.forEach(function(p){h+='<tr><td>'+p[0]+'</td><td class="vn">'+p[1]+'</td><td class="kana">'+p[2]+'</td></tr>'});
- h+='</table>'+src(["phr","trv"])+'</div><div class="card"><h2><span class="k">TIP</span>通じないとき</h2><ul><li>ホテルや観光地では英語がだいたい通じる</li><li>値段はスマホの電卓に打ってもらう</li><li>市場の店員は「10」で10,000₫の意味のことがある</li></ul>'+src(["veltraC"])+'</div></div>';
+ var h=vh("ベトナム語フレーズ","▶ を押すと発音を再生します。ベトナム語は声調（音の上がり下がり）で意味が変わるので、カタカナより音声をまねするのが近道です。");
+ h+='<div class="ttsbar"><span class="lb">再生の速さ</span><div class="seg" role="group" aria-label="再生の速さ"><button class="chipf'+(TTS.rate<1?'':' on')+'" data-rate="1">ふつう</button><button class="chipf'+(TTS.rate<1?' on':'')+'" data-rate="0.65">ゆっくり</button></div><span class="ttsst" id="ttsst"></span></div>';
+ setTimeout(ttsStatus,0);h+='<div class="phw">';
+ PHR.forEach(function(c,ci){
+  h+='<section class="card phc"><div class="phh"><h2>'+c[0]+'</h2><button class="btn pall" data-all="'+ci+'">▶ すべて再生</button></div><ul class="phl">';
+  c[1].forEach(function(x,i){h+='<li class="phr" data-sp="'+esc(x[1])+'"><button class="play" data-sp="'+esc(x[1])+'" aria-label="'+esc(x[0])+'を再生"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg></button><div class="pt"><span class="vn">'+esc(x[1])+'</span><span class="kana">'+esc(x[2])+'</span><span class="ja">'+esc(x[0])+(x[3]?'<small>'+esc(x[3])+'</small>':'')+'</span></div><button class="shw" data-show="'+esc(x[1])+'" data-ja="'+esc(x[0])+'" aria-label="大きく表示">見せる</button></li>'});
+  h+='</ul></section>';
+ });
+ h+='</div><div class="grid gap"><div class="card"><h2><span class="k">TIP</span>通じないとき</h2><ul><li>ホテルや観光地では英語がだいたい通じる</li><li>値段はスマホの電卓に打ってもらう</li><li>市場の店員は「10」で10,000₫の意味のことがある</li><li>「見せる」を押すと、ベトナム語を画面いっぱいに表示できる</li></ul>'+src(["veltraC"])+'</div><div class="card"><h2><span class="k">VOICE</span>音が出ないとき</h2><p>発音はスマホやパソコンに入っている読み上げ機能で再生しています。ベトナム語の声が入っていないと、代わりにGoogle翻訳が開きます（ネットが必要）。</p><ul><li><b>iPhone</b>：設定 → アクセシビリティ → 読み上げコンテンツ → 声 → ベトナム語 で声をダウンロードすると、ネットなしでも再生できます</li><li><b>Android</b>：設定 →「テキスト読み上げ」→ Google 音声サービスの設定 → 音声データをインストール → ベトナム語</li><li>マナーモード（消音）だと鳴らない端末があります</li></ul></div></div>'+src(["phr","trv"]);
  return h;
 };
 R.pdf=function(){
@@ -998,7 +1113,7 @@ function nav(){
 function mark(){document.querySelectorAll("[data-v]").forEach(function(a){a.classList.toggle("on",a.getAttribute("data-v")===cur)});var on=document.querySelector(".tabs a.on");if(on&&on.scrollIntoView)on.scrollIntoView({block:"nearest",inline:"center"})}
 var SCROLL={},prevView=null,pushedBack=false;
 function scrollToY(y){try{window.scrollTo({top:y,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,y)}}
-function renderView(id,opt){opt=opt||{};if(id==="checklist")SIDX=null;
+function renderView(id,opt){opt=opt||{};if(opt.keep===undefined&&typeof ttsStop==="function")ttsStop();if(id==="checklist")SIDX=null;
  if(cur&&document.querySelector("#main .view"))SCROLL[cur]=window.scrollY;
  var same=(cur===id);cur=id;var m=document.getElementById("main");
  m.innerHTML='<div class="view'+(same&&opt.keep!==undefined?'':' on')+'">'+R[id]()+'</div>';
@@ -1168,6 +1283,38 @@ function boot(){var o=document.getElementById("boot");if(!o)return;if(RMOT){retu
  o.innerHTML="";o.classList.remove("out");var i=0;function step(){if(i>=L.length){setTimeout(function(){o.classList.add("out");setTimeout(function(){vfx(cur)},200)},450);return}var p=document.createElement("p");p.innerHTML=esc(L[i][0])+L[i][1];o.appendChild(p);i++;setTimeout(step,230)}step();
  o.onclick=function(){o.classList.add("out")}}
 setInterval(function(){if(isV()&&!document.hidden&&!txOff()&&Date.now()-txLast>55000)randomTx()},15000);
+/* ---------- 発音の再生（端末の読み上げ機能） ---------- */
+var TTS={rate:1,voice:null,run:null};
+try{var tr=parseFloat(localStorage.getItem("vn-tts-rate"));if(tr>0)TTS.rate=tr}catch(e){}
+function ttsHas(){return typeof window.speechSynthesis!=="undefined"&&typeof window.SpeechSynthesisUtterance!=="undefined"}
+function ttsPick(){if(!ttsHas())return null;try{var vs=speechSynthesis.getVoices()||[],vi=vs.filter(function(v){return /^vi/i.test(v.lang)});TTS.voice=vi.filter(function(v){return v.localService})[0]||vi[0]||null;TTS.loaded=vs.length>0}catch(e){}ttsStatus();return TTS.voice}
+function ttsStatus(){var e=document.getElementById("ttsst");if(!e)return;if(!ttsHas()){e.textContent="この端末では読み上げが使えないため、Google翻訳で再生します";e.className="ttsst w";return}if(TTS.voice){e.textContent="声："+TTS.voice.name+(TTS.voice.localService?"（ネットなしで再生できます）":"");e.className="ttsst ok"}else if(TTS.loaded){e.textContent="ベトナム語の声が見つかりません。▶ を押すとGoogle翻訳が開きます（下の「音が出ないとき」を参照）";e.className="ttsst w"}else{e.textContent="";e.className="ttsst"}}
+if(ttsHas()){ttsPick();try{speechSynthesis.addEventListener("voiceschanged",ttsPick)}catch(e){speechSynthesis.onvoiceschanged=ttsPick}}
+function gtUrl(t){return "https://translate.google.com/?sl=vi&tl=ja&op=translate&text="+encodeURIComponent(t)}
+function ttsMark(t,on){document.querySelectorAll('.phr[data-sp="'+t.replace(/"/g,'\\"')+'"],.sayb[data-sp="'+t.replace(/"/g,'\\"')+'"]').forEach(function(el){el.classList.toggle("speaking",on)})}
+function ttsStop(){if(TTS.run){TTS.run.stop=true;var b=document.querySelector('[data-all="'+TTS.run.ci+'"]');if(b)b.textContent="▶ すべて再生";TTS.run=null}if(ttsHas())try{speechSynthesis.cancel()}catch(e){}document.querySelectorAll(".speaking").forEach(function(el){el.classList.remove("speaking")})}
+function speak(t,cb){
+ if(!TTS.voice)ttsPick();
+ if(!ttsHas()||(TTS.loaded&&!TTS.voice)){if(!cb)window.open(gtUrl(t.replace(/…/g,"")),"_blank","noopener");else cb();return}
+ var said=t.replace(/…/g,""),done=false;
+ function fin(){if(done)return;done=true;ttsMark(t,false);if(cb)cb()}
+ try{if(!cb)speechSynthesis.cancel();var u=new SpeechSynthesisUtterance(said);u.lang="vi-VN";if(TTS.voice)try{u.voice=TTS.voice}catch(x){}u.rate=TTS.rate;u.onend=fin;u.onerror=fin;ttsMark(t,true);speechSynthesis.speak(u);
+  setTimeout(fin,(1200+said.length*170)/TTS.rate)}catch(e){fin()}
+}
+function speakAll(ci,btn){
+ if(TTS.run&&TTS.run.ci===ci){ttsStop();return}
+ ttsStop();if(!TTS.voice)ttsPick();
+ if(!ttsHas()||(TTS.loaded&&!TTS.voice)){window.open(gtUrl(PHR[ci][1].map(function(x){return x[1].replace(/…/g,"")}).join("\n")),"_blank","noopener");return}
+ var list=PHR[ci][1].map(function(x){return x[1]}),i=0,run={ci:ci,stop:false};TTS.run=run;btn.textContent="■ 止める";
+ (function next(){if(run.stop)return;if(i>=list.length){TTS.run=null;btn.textContent="▶ すべて再生";return}var t=list[i++];var li=document.querySelector('.phr[data-sp="'+t.replace(/"/g,'\\"')+'"]');if(li&&li.scrollIntoView)li.scrollIntoView({block:"nearest",behavior:"smooth"});speak(t,function(){setTimeout(next,550)})})();
+}
+document.addEventListener("click",function(e){
+ if(!e.target.closest)return;
+ var sh=e.target.closest("[data-show]");if(sh){document.getElementById("sayv").textContent=sh.dataset.show;document.getElementById("sayj").textContent=sh.dataset.ja||"";document.getElementById("sayov").classList.add("show");e.stopPropagation();return}
+ var al=e.target.closest("[data-all]");if(al){speakAll(+al.dataset.all,al);return}
+ var rt=e.target.closest("[data-rate]");if(rt){TTS.rate=parseFloat(rt.dataset.rate);try{localStorage.setItem("vn-tts-rate",TTS.rate)}catch(x){}document.querySelectorAll("[data-rate]").forEach(function(b){b.classList.toggle("on",b===rt)});return}
+ var pl=e.target.closest(".play,.phr,.sayplay");if(pl){ttsStop();speak(pl.dataset.sp);return}
+},true);
 /* ---------- converter ---------- */
 var RATE_DEF=163;
 function rate(){try{var r=parseFloat(localStorage.getItem("vn-guide-rate"));if(r>50&&r<400)return r}catch(e){}return RATE_DEF}
@@ -1231,7 +1378,7 @@ document.getElementById("tBtn").onclick=toggleTheme;document.getElementById("dT"
 document.getElementById("sov").onclick=function(e){if(e.target===this)closeSearch()};
 document.getElementById("sq").oninput=doSearch;
 document.addEventListener("keydown",function(e){if(e.key==="Escape")document.getElementById("sayov").classList.remove("show")});
-document.addEventListener("click",function(e){var sb=e.target.closest&&e.target.closest(".sayb");if(sb){var x=SAYS[+sb.dataset.say];document.getElementById("sayv").textContent=x[0];document.getElementById("sayj").textContent=x[2];document.getElementById("sayov").classList.add("show");return}if(e.target.closest&&e.target.closest("#sayx,#sayov")){document.getElementById("sayov").classList.remove("show")}var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv]"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}});
+document.addEventListener("click",function(e){var sb=e.target.closest&&e.target.closest(".sayb");if(sb){var x=SAYS[+sb.dataset.say];document.getElementById("sayv").textContent=x[0];document.getElementById("sayj").textContent=x[2];document.getElementById("sayov").classList.add("show");return}if(e.target.closest&&e.target.closest("#sayp")){speak(document.getElementById("sayv").textContent);return}if(e.target.closest&&e.target.closest("#sayx,#sayov")){document.getElementById("sayov").classList.remove("show")}var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv]"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}});
 var tt=document.getElementById("totop");window.addEventListener("scroll",function(){tt.classList.toggle("show",scrollY>700)},{passive:true});tt.onclick=function(){scrollTo({top:0,behavior:"smooth"})};
 document.getElementById("m2no").onclick=function(){document.getElementById("modal2").classList.remove("show")};
 document.getElementById("m2yes").onclick=function(){document.getElementById("modal2").classList.remove("show");idbClear().then(function(){freeUrls();NPAGES=0;SIDX=null;toast("しおりを削除しました");renderView("pdf")})};
