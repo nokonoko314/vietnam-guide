@@ -258,6 +258,130 @@ footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid va
 .toast.show{opacity:1;transform:translateX(-50%)}
 
 /* ===== VIVANT風モード：極秘任務ファイル ===== */
+/* ===== 2026-11 リファイン：読みやすさ優先の組版 ===== */
+:root{--bg:#eef0ee;--panel:#fff;--panel2:#f6f7f5;--ink:#16191b;--sub:#565c60;--line:#e1e4e1;--line2:#c9cec9;--red:#c8281f;--yel:#f4c21b;--blue:#1d5bb8;--chip:#f1f3f1;--sh:none;--fs:15.5px}
+[data-theme=dark]{--bg:#111313;--panel:#1a1d1d;--panel2:#202424;--ink:#eceeec;--sub:#a3a9a7;--line:#2a2f2f;--line2:#3b4141;--red:#ff6a5e;--blue:#86b4ff;--chip:#232828;--sh:none}
+body{font-family:"Inter","IBM Plex Sans JP",system-ui,sans-serif;font-size:var(--fs);line-height:1.85;letter-spacing:.01em}
+main{max-width:1280px;padding:34px 32px 96px}
+p{margin:0 0 .6em}
+.muted{font-size:13.5px;line-height:1.75}
+/* ページ見出し：タイトルの下に説明 */
+.vh{display:block;margin-bottom:28px;padding-bottom:20px}
+.vh h1{font-size:32px;font-weight:700;letter-spacing:.02em;line-height:1.3}
+.vh .lead{font-size:15px;line-height:1.8;max-width:42em;margin-top:8px;min-width:0}
+.vh .lp{white-space:nowrap}
+/* カード：影なし・余白多め・小見出しの英字ラベルは使わない */
+.card{border-radius:14px;padding:24px 26px;box-shadow:none}
+.card h2{font-size:18px;font-weight:700;margin:0 0 14px;letter-spacing:.02em;line-height:1.45}
+:root:not([data-theme=vivan]) .card h2 .k{display:none}
+.card p{margin:0 0 .7em}
+.card li{margin:6px 0;line-height:1.75}
+.card ul,.card ol{margin:4px 0 10px;padding-left:1.3em}
+.big{font-size:36px;margin:4px 0 12px}
+.big small{font-size:14px}
+.warn{border-left:4px solid var(--red)}
+/* 中身の量に合わせて詰める（段組み） */
+.grid:not(.food){display:block;columns:3 340px;column-gap:20px}
+.grid:not(.food)>*{break-inside:avoid;margin-bottom:20px;display:block}
+.grid:not(.food)>.span2{column-span:all}
+.grid.food{gap:22px;grid-template-columns:repeat(auto-fill,minmax(330px,1fr))}
+.gap{margin-top:24px}
+/* 出典はチップではなく小さな一行に */
+.src{display:block;margin-top:14px;padding-top:10px;border-top:1px solid var(--line);font-size:12.5px;line-height:1.7;color:var(--sub)}
+.src:before{content:"出典　";color:var(--sub)}
+.src a{background:none;border:none;padding:0;border-radius:0;color:var(--sub);opacity:1;text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:3px}
+.src a:before{content:none}
+.src a+a:before{content:"、";color:var(--sub);text-decoration:none;display:inline-block}
+.src a:hover{color:var(--ink);text-decoration-color:currentColor}
+.it .src{border-top:none;padding-top:0;margin-top:4px}
+/* 表 */
+table{font-size:14.5px}
+th,td{padding:11px 10px}
+th{font-size:12.5px;letter-spacing:.02em;white-space:nowrap}
+td:first-child,td:nth-child(2){word-break:keep-all}
+/* ---- トップ：搭乗券 ---- */
+.hero.pass{display:grid;grid-template-columns:1fr 300px;gap:0;padding:0;background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:18px;margin-bottom:28px;overflow:visible}
+.hero.pass:after{content:none}
+.pass .pmain{padding:30px 34px 28px;border-top:6px solid var(--red);border-radius:18px 0 0 18px}
+.pass .who{font-size:13.5px;color:var(--sub);margin:0 0 4px}
+.pass h1{font-size:30px;font-weight:700;margin:0 0 22px;letter-spacing:.03em;line-height:1.3}
+.route{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.ap b{display:block;font:700 58px/1 Inter;letter-spacing:.02em}
+.ap span{font-size:13.5px;color:var(--sub)}
+.ap.r{text-align:right}
+.fl{flex:1;position:relative;text-align:center;padding-bottom:18px}
+.fl i{display:block;height:2px;background:repeating-linear-gradient(90deg,var(--line2) 0 6px,transparent 6px 12px);position:relative;top:9px}
+.fl i:after{content:"✈";position:absolute;left:50%;top:-13px;transform:translateX(-50%);background:var(--panel);padding:0 8px;font-size:20px;color:var(--red)}
+.fl span{position:absolute;left:0;right:0;top:24px;font-size:12.5px;color:var(--sub);white-space:nowrap}
+.pf{display:grid;grid-template-columns:repeat(4,auto);justify-content:start;gap:8px 40px;margin:0;padding-top:18px;border-top:1px solid var(--line)}
+.pf dt{font-size:12.5px;color:var(--sub)}
+.pf dd{margin:0;font:600 16px/1.5 Inter,"IBM Plex Sans JP";white-space:nowrap}
+.pf .rt{cursor:pointer;border-radius:6px}
+.pf .rt dd{text-decoration:underline;text-decoration-color:var(--line2);text-underline-offset:4px}
+.pf .rt:hover dd{text-decoration-color:var(--ink)}
+.pstub{position:relative;padding:30px 28px;border-left:2px dashed var(--line2);background:var(--panel2);border-radius:0 18px 18px 0;display:flex;flex-direction:column}
+.pstub:before,.pstub:after{content:"";position:absolute;left:-13px;width:24px;height:24px;border-radius:99px;background:var(--bg);border:1px solid var(--line)}
+.pstub:before{top:-13px;clip-path:inset(50% 0 0 0)}
+.pstub:after{bottom:-13px;clip-path:inset(0 0 50% 0)}
+.pstub p{margin:0}
+.pstub .sl{font-size:13px;color:var(--sub)}
+.pstub .sw{font:700 26px/1.3 Inter,"IBM Plex Sans JP";margin:6px 0 10px;letter-spacing:.01em}
+.pstub .sx{font-weight:600;line-height:1.6}
+.pstub .sm{font-size:13.5px;color:var(--sub);margin-top:4px}
+.pstub .su{margin-top:auto;padding-top:16px;font-size:14px;font-weight:600;color:var(--red)}
+.next{display:none}
+/* 目次：しおりの目次のような行 */
+.homegrid{grid-template-columns:minmax(0,1fr) 340px;gap:28px;align-items:start}
+.toc{display:grid;grid-template-columns:1fr 1fr;gap:0 28px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:8px 26px}
+.toc a{background:none;border:none;border-radius:0;box-shadow:none;min-height:0;padding:16px 28px 16px 0;border-bottom:1px solid var(--line);flex-direction:column;gap:2px;position:relative;transform:none!important}
+.toc a:nth-last-child(-n+2){border-bottom:none}
+.toc a:after{content:"›";position:absolute;right:4px;top:50%;transform:translateY(-50%);font-size:22px;color:var(--line2);transition:.15s}
+.toc a:hover{text-decoration:none}
+.toc a:hover:after{color:var(--red);right:0}
+.toc a:hover .t{color:var(--red)}
+.toc .t{font-size:17px;font-weight:700;color:var(--ink);transition:color .15s}
+.toc .d{font-size:13.5px;color:var(--sub)}
+.side{display:grid;gap:20px}
+.side .card{padding:22px 24px}
+.side .acts{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.side .btn{font-size:14px;padding:8px 14px}
+.mini .btn{display:inline-block;margin-top:6px;color:var(--ink)}
+.mini .btn:hover{text-decoration:none}
+.tel{margin:4px 0 6px}
+.tel a{font:700 24px Inter;color:var(--ink);letter-spacing:.02em}
+/* 行程 */
+.days{grid-auto-columns:minmax(290px,1fr);gap:18px}
+.day{box-shadow:none;padding:20px 22px;border-radius:14px}
+.ev{font-size:14.5px;line-height:1.7;padding:10px 0;grid-template-columns:58px 1fr}
+.ev .t{font-size:14px}
+.meal span{font-size:12.5px;padding:3px 10px}
+.stay{font-size:13.5px}
+/* チェックリスト */
+.ck-top{box-shadow:none;top:58px}
+.cols{column-gap:20px}
+.cols .card{margin-bottom:20px}
+.cols .card .ch{padding:18px 20px 4px}
+.cols .card .cd2{padding:0 20px 12px;font-size:13px}
+.it{padding:13px 20px;gap:12px}
+.it .nm{font-size:15px;line-height:1.6}
+.it .nt{font-size:13px;line-height:1.65;margin-top:2px}
+.tg{font-size:11.5px;padding:1px 7px}
+.chipf{font-size:13.5px;padding:6px 14px}
+.btn{font-size:13.5px;padding:8px 14px}
+/* 料理 */
+.dish .ill.photo{height:210px}
+.dish .meta{font-size:12.5px;margin:6px 0 10px}
+.dish .credit{font-size:11.5px}
+.food .vnn{font-size:13px}
+/* 目次ドロワー */
+.toast{white-space:nowrap;font-size:14px;padding:10px 18px}
+.drawer .no{display:none}
+.drawer nav a{font-size:15px;padding:11px 12px}
+.drawer .ds{font-size:12px}
+@media(max-width:1100px){.homegrid{grid-template-columns:1fr}.side{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}}
+@media(max-width:900px){.hero.pass{grid-template-columns:1fr}.pass .pmain{border-radius:18px 18px 0 0}.pstub{border-left:none;border-top:2px dashed var(--line2);border-radius:0 0 18px 18px}.pstub:before{left:-13px;top:-13px;clip-path:inset(0 0 0 50%)}.pstub:after{left:auto;right:-13px;top:-13px;bottom:auto;clip-path:inset(0 50% 0 0)}.pf{grid-template-columns:1fr 1fr;gap:12px 20px}}
+@media(max-width:760px){:root{--fs:16px}main{padding:22px 16px 90px}.vh h1{font-size:26px}.vh .lead{font-size:14.5px}.card{padding:20px}.toc{grid-template-columns:1fr;padding:4px 20px}.toc a:nth-last-child(2){border-bottom:1px solid var(--line)}.pass .pmain{padding:24px 22px}.pass h1{font-size:25px}.ap b{font-size:40px}.route{gap:12px}.fl span{font-size:11.5px}.pstub{padding:22px}.grid.food{grid-template-columns:1fr}}
+@media(max-width:520px){.toc{grid-template-columns:1fr;gap:0}.toc a{min-height:0;padding:15px 24px 15px 0}.toc .d{font-size:13px}.pf dd{font-size:15px;white-space:normal}}
 [data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
 [data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
 [data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
@@ -308,6 +432,17 @@ footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid va
 [data-theme=vivan] .sbox,[data-theme=vivan] .conv,[data-theme=vivan] .modal .box{border-radius:4px;border-color:var(--line2)}
 [data-theme=vivan] mark{color:#fff}
 [data-theme=vivan] ::selection{background:var(--red);color:#fff}
+[data-theme=vivan] .hero.pass{padding:0;border-radius:4px}
+[data-theme=vivan] .pass .pmain{border-top:none;padding-top:58px;border-radius:0}
+[data-theme=vivan] .pstub{background:rgba(12,12,12,.82);border-radius:0;border-left-color:#3d3d3d}
+[data-theme=vivan] .fl i:after{background:transparent}
+[data-theme=vivan] .pstub{padding-top:64px}[data-theme=vivan] .pstub .sw{font-size:22px}
+[data-theme=vivan] .ap b,[data-theme=vivan] .pstub .sw{font-family:"Courier Prime",monospace;letter-spacing:.06em;color:#fff}
+[data-theme=vivan] .pass .who{font-family:"Courier Prime","IBM Plex Sans JP",monospace;letter-spacing:.12em;color:#bdb6aa}
+[data-theme=vivan] .toc a:after{content:"›";position:absolute;left:auto;top:50%;bottom:auto;width:auto;background:none;transform:translateY(-50%)}
+[data-theme=vivan] .toc{border-radius:4px}
+@media(max-width:900px){[data-theme=vivan] .pstub{padding-top:26px}[data-theme=vivan] .hero.pass{padding:0 0 58px}[data-theme=vivan] .pass .pmain{padding-top:26px}[data-theme=vivan] .pstub{border-top-color:#3d3d3d}}
+@media(max-width:760px){[data-theme=vivan] .brand{letter-spacing:.2em;font-size:13px}}
 @keyframes vstamp{0%{opacity:0;transform:rotate(3deg) scale(2.6)}60%{opacity:1}100%{opacity:1;transform:rotate(3deg) scale(1)}}
 @media(max-width:860px){[data-theme=vivan] .hero{padding-top:24px;padding-bottom:58px}[data-theme=vivan] .hero:before{top:auto!important;bottom:16px;right:12px;font-size:9px;letter-spacing:.14em}[data-theme=vivan] .hero h1{font-size:32px}}
 /* --- 演出：レターボックス / 解読 / 通信 / 起動 --- */
@@ -332,7 +467,7 @@ footer{color:var(--sub);font-size:11.5px;margin-top:30px;border-top:1px solid va
 .boot.out{opacity:0;pointer-events:none}
 .it.vchk{animation:vchk .5s}
 @keyframes vchk{0%{box-shadow:inset 3px 0 0 transparent}30%{box-shadow:inset 3px 0 0 #d23a2f;background:rgba(210,58,47,.08)}100%{box-shadow:inset 3px 0 0 transparent}}
-@media(prefers-reduced-motion:reduce){.lbx.run,.tx,.boot{animation:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.lbx.run,.vtx,.boot{animation:none!important;transition:none!important}}
 
 @media print{.top,.drawer,.scrim,.totop,.conv,.sov,.ck-top button{display:none!important}body{background:#fff}.card{box-shadow:none;break-inside:avoid}}
 </style>
@@ -592,28 +727,26 @@ function allIds(){var a=[];CATS.forEach(function(c){c.items.forEach(function(i){
 function progress(){var ids=allIds(),c=ids.filter(function(i){return state.checked[i]}).length;return{n:ids.length,c:c,p:ids.length?Math.round(c/ids.length*100):0}}
 
 /* ---------- renderers ---------- */
-function vh(t,lead,pages){var vi=VIEWS.map(function(v){return v.id}).indexOf(cur);return '<div class="vh">'+(vi>0?'<div class="num">'+String(vi).padStart(2,"0")+' / '+String(VIEWS.length-1).padStart(2,"0")+'</div>':'')+'<h1>'+t+'</h1><div class="lead">'+(lead||"")+(pages?' &nbsp;しおり '+pgs(pages):"")+'</div></div>'}
+function vh(t,lead,pages){var vi=VIEWS.map(function(v){return v.id}).indexOf(cur);return '<div class="vh">'+'<h1>'+t+'</h1><div class="lead">'+(lead||"")+(pages?' <span class="lp">しおり '+pgs(pages)+'</span>':"")+'</div></div>'}
 var R={};
 var NEXT=[["2026-11-10T10:50:00+09:00","11/10（火）10:50","集合：JR岐阜駅 じゅうろくプラザ前","②は11:20 岐阜高専 噴水周辺"],["2026-11-10T13:00:00+09:00","11/10 13:00","出光興産 愛知事業所 視察",""],["2026-11-10T16:00:00+09:00","11/10 16:00","常滑やきもの散歩道",""],["2026-11-10T17:30:00+09:00","11/10 17:30","ホテルチェックイン","夕食は各自"],["2026-11-11T06:30:00+09:00","11/11 6:30","徒歩で中部国際空港へ",""],["2026-11-11T09:00:00+09:00","11/11 9:00","VN343便で出発",""],["2026-11-11T13:15:00+07:00","11/11 13:15（現地）","ホーチミン到着","時計を2時間戻す"],["2026-11-12T08:00:00+07:00","11/12 終日","カオタン技術短期大学で研修","昼・夕は自分で"],["2026-11-13T08:30:00+07:00","11/13 午前","企業研修（ブラザー工業予定）",""],["2026-11-13T13:30:00+07:00","11/13 午後","中央郵便局・大教会・ベンタン市場",""],["2026-11-14T00:20:00+07:00","11/14 0:20（現地）","VN342便で出発","機中泊"],["2026-11-14T07:35:00+09:00","11/14 7:35","中部国際空港 到着",""],["2026-11-14T08:30:00+09:00","11/14 8:30","解散","おつかれさまでした"]];
 function nextEv(){var now=Date.now();for(var i=0;i<NEXT.length;i++){if(new Date(NEXT[i][0]).getTime()>now-30*60000)return NEXT[i]}return null}
 function untilTxt(iso){var ms=new Date(iso)-Date.now();if(ms<=0)return "まもなく / 進行中";var d=Math.floor(ms/864e5),h=Math.floor(ms%864e5/36e5),m=Math.floor(ms%36e5/6e4);return "あと "+(d?d+"日 ":"")+(d<2?h+"時間 ":"")+(d?"":m+"分")}
 R.home=function(){
  var p=progress(),nx=nextEv();
- var h='<section class="hero"><div><div class="eb">GIFU KOSEN · ELECTRICAL &amp; INFORMATION ENG.</div><h1>ベトナム研修<br>完全ガイド</h1><div class="sub">2026.11.10（火）→ 11.14（土）　名古屋 ⇄ ホーチミン<br>しおりの内容と、Webで調べた現地情報をひとつに。</div></div><div class="facts">'+
- '<div class="f"><b>10:50</b><span>集合 JR岐阜駅じゅうろくプラザ前</span></div>'+
- '<div class="f"><b>−2h</b><span>時差（日本の方が2時間進んでいる）</span></div>'+
- '<div class="f"><b>≈'+rate()+'₫</b><span>1円あたり（タップで換算）</span></div>'+
- '<div class="f"><b>'+p.p+'%</b><span>持ち物チェック済み</span></div></div></section>';
- if(nx)h+='<div class="next"><span class="lab">NEXT</span><span class="when">'+nx[1]+'</span><span class="what">'+esc(nx[2])+(nx[3]?' <span class="muted">· '+esc(nx[3])+'</span>':'')+'</span><span class="rest">'+untilTxt(nx[0])+'</span></div>';
- if(window.__PWA__&&!(matchMedia("(display-mode: standalone)").matches||navigator.standalone)){h+='<div class="card" style="border:2px solid var(--red);margin-bottom:16px"><h2><span class="k">INSTALL</span>ホーム画面に追加しよう</h2><p><b>iPhone（Safari）</b>：共有ボタン <b>□↑</b> →「ホーム画面に追加」</p><p><b>Android（Chrome）</b>：右上の <b>⋮</b> →「ホーム画面に追加」または「アプリをインストール」</p><p class="muted">追加したアイコンから開けば、ネットがなくても使えます。チェックはこの端末に保存されます。</p></div>'}
- if(!NPAGES){h+='<div class="card" style="margin-bottom:16px"><h2><span class="k">SHIORI</span>しおりPDFを読み込んでおこう</h2><p>しおりのPDFを読み込むと、ページ番号のタグ（<span class="pg">p.6</span> など）から該当ページをすぐ開けます。データはこのスマホの中だけに保存されます。</p><a class="btn on" href="#pdf">読み込む →</a></div>'}
- h+='<div class="homegrid"><div class="toc">';
- VIEWS.forEach(function(v,i){if(v.id==="home")return;h+='<a href="#'+v.id+'"><span class="n">'+String(i).padStart(2,"0")+'</span><span class="t">'+v.t+'</span><span class="d">'+v.d+'</span></a>'});
- h+='</div><div style="display:grid;gap:16px;align-content:start">';
- h+='<div class="card mini"><h2><span class="k">PACKING</span>持ち物の進み具合</h2><div class="big">'+p.p+'<small>%</small></div><div class="bar'+(p.p===100?' full':'')+'"><i style="width:'+p.p+'%"></i></div><div class="muted">'+p.c+' / '+p.n+' 項目　<a href="#checklist">チェッカーを開く →</a></div></div>';
- h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn" data-act="conv">₫⇄¥ 換算</button><button class="btn" data-act="search">🔍 全ページ検索</button><button class="btn" data-act="theme">◎ テーマ切替（ライト→ダーク→VIVANT風）</button>'+(isV()?'<button class="btn" data-act="txtoggle">'+(txOff()?'📡 通信ポップアップ：OFF':'📡 通信ポップアップ：ON')+'</button>':'')+'</div><p class="muted" style="margin-top:10px">キーボードなら <b>/</b> で検索、<b>Esc</b> で閉じる。</p></div>';
- h+='<div class="card warn"><h2><span class="k">SOS</span>出発当日の緊急連絡先</h2><p>名鉄観光サービス 岐阜支店 担当者<br><b>電話番号はしおり p.3（タップで表示）</b></p><p>'+pg(3)+'</p></div>';
- return h+'</div></div>';
+ var h='<section class="hero pass"><div class="pmain"><p class="who">岐阜高専 電気情報工学科4年　海外研修</p><h1>ベトナム研修ガイド</h1>'+
+ '<div class="route"><div class="ap"><b>NGO</b><span>中部国際空港</span></div><div class="fl"><i></i><span>VN343　約6時間15分</span></div><div class="ap r"><b>SGN</b><span>ホーチミン</span></div></div>'+
+ '<dl class="pf"><div><dt>日程</dt><dd>11/10 火 – 11/14 土</dd></div><div><dt>時差</dt><dd>日本より2時間遅い</dd></div><div class="rt" data-act="conv" role="button" tabindex="0"><dt>レート</dt><dd>1円 ≈ '+rate()+'₫</dd></div><div><dt>持ち物</dt><dd>'+p.p+'% 準備済み</dd></div></dl></div>';
+ h+='<div class="pstub">'+(nx?'<p class="sl">次の予定</p><p class="sw">'+nx[1]+'</p><p class="sx">'+esc(nx[2])+'</p>'+(nx[3]?'<p class="sm">'+esc(nx[3])+'</p>':'')+'<p class="su">'+untilTxt(nx[0])+'</p>':'<p class="sl">おかえりなさい</p><p class="sx">研修おつかれさまでした</p>')+'</div></section>';
+ if(window.__PWA__&&!(matchMedia("(display-mode: standalone)").matches||navigator.standalone)){h+='<div class="card" style="border:2px solid var(--red);margin-bottom:24px"><h2><span class="k">INSTALL</span>ホーム画面に追加しよう</h2><p><b>iPhone（Safari）</b>：共有ボタン <b>□↑</b> →「ホーム画面に追加」</p><p><b>Android（Chrome）</b>：右上の <b>⋮</b> →「ホーム画面に追加」または「アプリをインストール」</p><p class="muted">追加したアイコンから開けば、ネットがなくても使えます。チェックはこの端末に保存されます。</p></div>'}
+ if(!NPAGES){h+='<div class="card" style="margin-bottom:24px"><h2><span class="k">SHIORI</span>しおりPDFを読み込んでおこう</h2><p>しおりのPDFを読み込むと、ページ番号のタグ（<span class="pg">p.6</span> など）から該当ページをすぐ開けます。データはこのスマホの中だけに保存されます。</p><a class="btn on" href="#pdf">しおりを読み込む</a></div>'}
+ h+='<div class="homegrid"><nav class="toc" aria-label="目次">';
+ VIEWS.forEach(function(v){if(v.id==="home")return;h+='<a href="#'+v.id+'"><span class="t">'+v.t+'</span><span class="d">'+v.d+'</span></a>'});
+ h+='</nav><aside class="side">';
+ h+='<div class="card mini"><h2><span class="k">PACKING</span>持ち物の準備</h2><div class="big">'+p.p+'<small>%</small></div><div class="bar'+(p.p===100?' full':'')+'"><i style="width:'+p.p+'%"></i></div><p class="muted">'+p.n+'項目中 '+p.c+'項目チェック済み</p><a class="btn" href="#checklist">チェッカーを開く</a></div>';
+ h+='<div class="card"><h2><span class="k">TOOLS</span>便利ツール</h2><div class="acts"><button class="btn" data-act="conv">円とドンを換算</button><button class="btn" data-act="search">全ページを検索</button><button class="btn" data-act="theme">表示を切り替え</button>'+(isV()?'<button class="btn" data-act="txtoggle">'+(txOff()?'📡 通信ポップアップ：OFF':'📡 通信ポップアップ：ON')+'</button>':'')+'</div><p class="muted">表示はライト、ダーク、VIVANT風の順に切り替わります。パソコンでは / キーで検索できます。</p></div>';
+ h+='<div class="card warn"><h2><span class="k">SOS</span>出発当日の緊急連絡先</h2><p>名鉄観光サービス 岐阜支店 担当者</p><p class="tel">電話番号はしおり p.3 で確認</p><p class="muted">しおり '+pg(3)+'</p></div>';
+ return h+'</aside></div>';
 };
 R.schedule=function(){
  var D=[
@@ -1044,7 +1177,7 @@ document.getElementById("sBtn").onclick=openSearch;document.getElementById("dS")
 document.getElementById("tBtn").onclick=toggleTheme;document.getElementById("dT").onclick=toggleTheme;setThemeIcon();
 document.getElementById("sov").onclick=function(e){if(e.target===this)closeSearch()};
 document.getElementById("sq").oninput=doSearch;
-document.addEventListener("click",function(e){var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv],.hero .f"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}if(e.target.closest&&e.target.closest(".hero .f:nth-child(3)"))openConv()});
+document.addEventListener("click",function(e){var c=document.getElementById("conv");if(c.classList.contains("show")&&!c.contains(e.target)&&!e.target.closest("#cBtn,#dC,[data-act=conv]"))closeConv();var a=e.target.closest&&e.target.closest("[data-act]");if(a){var t=a.getAttribute("data-act");if(t==="conv")openConv();if(t==="search")openSearch();if(t==="theme")toggleTheme();if(t==="txtoggle"){var off=!txOff();try{localStorage.setItem("vn-tx-off",off?"1":"0")}catch(e){}a.textContent=off?"📡 通信ポップアップ：OFF":"📡 通信ポップアップ：ON";if(off)hideTx();else{var was=curTheme();transmit("通信を再開する。",true)}}}});
 var tt=document.getElementById("totop");window.addEventListener("scroll",function(){tt.classList.toggle("show",scrollY>700)},{passive:true});tt.onclick=function(){scrollTo({top:0,behavior:"smooth"})};
 document.getElementById("m2no").onclick=function(){document.getElementById("modal2").classList.remove("show")};
 document.getElementById("m2yes").onclick=function(){document.getElementById("modal2").classList.remove("show");idbClear().then(function(){freeUrls();NPAGES=0;SIDX=null;toast("しおりを削除しました");renderView("pdf")})};
