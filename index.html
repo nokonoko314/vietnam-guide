@@ -469,7 +469,7 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
  .totop{bottom:calc(76px + env(safe-area-inset-bottom));right:14px}
  .toast{bottom:calc(80px + env(safe-area-inset-bottom))}
  .vtx{bottom:calc(78px + env(safe-area-inset-bottom))}
- .days{grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;scroll-snap-type:none;padding:0}
+ .days{grid-auto-columns:86%;margin:0 -16px;padding:2px 16px 12px;scroll-padding:0 16px;gap:12px}
  .stack tr:first-child{display:none}
  .stack tr{display:grid;grid-template-columns:auto 1fr;gap:2px 14px;padding:12px 0;border-bottom:1px solid var(--line)}
  .stack tr:last-child{border-bottom:none}
@@ -502,6 +502,19 @@ td:first-child,td:nth-child(2){word-break:keep-all;overflow-wrap:anywhere}
  .vtx.vtx.show{transform:none}
  .lbx.b{bottom:0;z-index:24}
 }
+/* 日付チップ */
+.dchips{display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin:0 0 14px;padding:2px 0}
+.dchips::-webkit-scrollbar{display:none}
+.dchip{flex:none;position:relative;border:1px solid var(--line2);background:var(--panel);color:var(--ink);border-radius:99px;padding:6px 14px;font:600 14px Inter,"IBM Plex Sans JP",sans-serif;cursor:pointer;display:flex;align-items:baseline;gap:3px}
+.dchip small{font-size:11.5px;color:var(--sub);font-weight:500}
+.dchip.on{background:var(--ink);color:var(--panel);border-color:var(--ink)}
+.dchip.on small{color:inherit;opacity:.75}
+.dchip i{font-style:normal;font-size:10.5px;font-weight:700;color:#fff;background:var(--red);border-radius:99px;padding:1px 6px;margin-left:4px}
+.days{scroll-behavior:auto;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+.day{scroll-snap-align:start}
+[data-theme=vivan] .dchip{border-radius:4px}
+[data-theme=vivan] .dchip.on{background:var(--red);border-color:var(--red);color:#fff}
+@media(max-width:760px){.dchips{margin:0 -16px 14px;padding:2px 16px}}
 [data-theme=vivan]{--bg:#0b0b0b;--panel:#141414;--panel2:#1b1b1b;--ink:#efece6;--sub:#a29d94;--line:#2a2a2a;--line2:#3d3d3d;--red:#d23a2f;--yel:#cfa760;--blue:#e8c27e;--ok:#8fcf8a;--chip:#1e1e1e;--top:#070707;--hero:#0e0e0e;--never:#1d1110;--neverl:#4a221d;--sh:0 1px 0 rgba(255,255,255,.03),0 10px 30px rgba(0,0,0,.45);--tgc-b:#1f2633;--tgc-c:#a9c6f2;--tgo-b:#262219;--tgo-c:#d3bf93;--tga-b:#3b1613;--tga-c:#ff9c8e;--my:#14261a;--myl:#24452f;--myc:#9be0b0;--mn:#2c1312;--mnl:#58221d;--mnc:#ff9e90;--ill:#1b1b1b;--mark:#8a2620;color-scheme:dark}
 [data-theme=vivan] body{background-color:var(--bg);background-image:radial-gradient(rgba(255,255,255,.025) 1px,transparent 1px);background-size:4px 4px}
 [data-theme=vivan] h1,[data-theme=vivan] h2,[data-theme=vivan] .toc .t,[data-theme=vivan] .next .what,[data-theme=vivan] .day .dh span{font-family:"Shippori Mincho B1",serif;font-weight:800;letter-spacing:.08em}
@@ -884,7 +897,10 @@ R.schedule=function(){
   {d:"11/14",w:"土",city:"ホーチミン → 名古屋",ev:[["0:20","VN342便で出発","現地時間（日本2:20）・飛行5:15"],["7:35","中部国際空港 到着","入国・荷物・税関"],["8:30","解散",""]],m:[["朝","機内"]],stay:"—"}
  ];
  var h=vh("行程・時間","時刻はすべてその場所の現地時間です。ベトナムにいる間は日本より2時間遅れています。",[2,3]);
- h+='<div class="days">';
+ var tdNow=Date.now(),tdOff=(tdNow>=Date.parse("2026-11-11T13:15:00+07:00")&&tdNow<Date.parse("2026-11-14T07:35:00+09:00"))?7:9,tdN=new Date(tdNow+tdOff*36e5),tdK=(tdN.getUTCMonth()+1)+"/"+tdN.getUTCDate(),tdMD=(tdN.getUTCMonth()+1)*100+tdN.getUTCDate(),dIdx=0;D.forEach(function(x,i){var a=x.d.split("/");if((+a[0])*100+(+a[1])<=tdMD)dIdx=i});
+ h+='<div class="dchips" role="tablist" aria-label="日付">'+D.map(function(x,i){return '<button class="dchip'+(i===dIdx?' on':'')+'" data-day="'+i+'">'+x.d+'<small>'+x.w+'</small>'+(x.d===tdK?'<i>今日</i>':'')+'</button>'}).join("")+'</div>';
+ setTimeout(function(){initDays(dIdx)},0);
+ h+='<div class="days" id="days">';
  D.forEach(function(x){
   var td=new Date(Date.now()+9*36e5),tds=(td.getUTCMonth()+1)+"/"+td.getUTCDate();h+='<div class="day'+(tds===x.d?' today':'')+'"><div class="dh"><b>'+x.d+'<small>'+x.w+'</small></b><span>'+x.city+'</span></div>';
   x.ev.forEach(function(e){h+='<div class="ev"><div class="t">'+e[0]+'</div><div>'+esc(e[1])+(e[2]?'<div class="muted">'+esc(e[2])+'</div>':"")+'</div></div>'});
@@ -1393,6 +1409,11 @@ document.addEventListener("click",function(e){if(!e.target.closest)return;
  if(e.target.closest("#tsok")){var v=tsVals();if(v.length<2){document.getElementById("tserr").textContent="2個以上選んでください";return}try{localStorage.setItem("vn-tabs",JSON.stringify(v))}catch(x){}buildBnav();document.getElementById("tabset").classList.remove("show");toast("タブバーを保存しました");return}
 });
 function closeDrawerSafe(){var d=document.getElementById("drawer"),sc=document.querySelector(".scrim");if(d)d.classList.remove("show");if(sc)sc.classList.remove("show")}
+/* ---------- 行程：横スライドと今日の位置 ---------- */
+function dayGo(i,smooth){var w=document.getElementById("days");if(!w)return;var c=w.children[i];if(!c)return;w.scrollTo({left:c.offsetLeft-w.offsetLeft-parseFloat(getComputedStyle(w).paddingLeft||0),behavior:smooth?"smooth":"auto"});dayMark(i)}
+function dayMark(i){document.querySelectorAll(".dchip").forEach(function(b,j){b.classList.toggle("on",j===i);if(j===i){var r=b.parentElement;if(b.offsetLeft-r.offsetLeft<r.scrollLeft||b.offsetLeft-r.offsetLeft+b.offsetWidth>r.scrollLeft+r.clientWidth)r.scrollLeft=b.offsetLeft-r.offsetLeft-16}})}
+function initDays(i){var w=document.getElementById("days");if(!w)return;w._prog=Date.now();dayGo(i,false);var t=null;w.addEventListener("scroll",function(){if(Date.now()-(w._prog||0)<400)return;clearTimeout(t);t=setTimeout(function(){if(w.scrollWidth-w.clientWidth<8)return;var best=0,bd=1e9;[].forEach.call(w.children,function(c,j){var d=Math.abs(c.offsetLeft-w.offsetLeft-w.scrollLeft-parseFloat(getComputedStyle(w).paddingLeft||0));if(d<bd){bd=d;best=j}});dayMark(best)},80)},{passive:true})}
+document.addEventListener("click",function(e){var b=e.target.closest&&e.target.closest(".dchip");if(b){var w=document.getElementById("days");if(w)w._prog=Date.now()+500;dayGo(+b.dataset.day,true)}});
 /* ---------- converter ---------- */
 var RATE_DEF=163;
 function rate(){try{var r=parseFloat(localStorage.getItem("vn-guide-rate"));if(r>50&&r<400)return r}catch(e){}return RATE_DEF}
